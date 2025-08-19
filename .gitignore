@@ -1,21 +1,43 @@
-# Python
+# === Python / Django ===
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
+*.py[cod]
+*$py.class
+*.so
+.Python
+config/__pycache__/
+env/
 venv/
 .venv/
-*.egg-info/
-dist/
-build/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
 
-# Django
+# === Django ===
+*.log
+*.pot
+*.pyc
+local_settings.py
 db.sqlite3
+db.sqlite3-journal
 media/
 staticfiles/
-local_settings.py
 
-# IDE
+# === IDE ===
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# === OS ===
+.DS_Store
+Thumbs.db
