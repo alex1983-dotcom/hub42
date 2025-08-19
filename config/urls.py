@@ -42,6 +42,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("blog/", include("apps.blog.urls")),
 ]
 
 # Раздаём медиа и статику только в DEBUG

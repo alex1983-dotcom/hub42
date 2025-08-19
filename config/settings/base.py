@@ -12,7 +12,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "ckeditor",
+    "django_ckeditor_5",
     "mdeditor",
     "apps.core",
     "apps.equipment",
