@@ -34,16 +34,25 @@
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+# project/urls.py
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/pages/', include('apps.pages.urls')),
+    path('api/pages/',     include('apps.pages.urls')),
     path('api/equipment/', include('apps.equipment.urls')),
-    path('api/services/',  include('apps.services.urls')),   # аналогично
+    path('api/services/',  include('apps.services.urls')),
     path('api/blog/',      include('apps.blog.urls')),
     path('api/requests/',  include('apps.requests.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    # Swagger / OpenAPI
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/',   SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+]
+
+# раздача media-файлов в DEBUG-режиме
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
