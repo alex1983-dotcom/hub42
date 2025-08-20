@@ -1,0 +1,44 @@
+/* static/css/blog.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #fafafa;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+article {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+article h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+article a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+article small {
+    color: #666;
+}
+
+article p {
+    margin: 8px 0 0;
+    line-height: 1.4;
+}

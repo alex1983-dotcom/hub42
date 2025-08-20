@@ -1,0 +1,8 @@
+<!-- templates/blog/base_blog.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <meta name="description" content="{{ meta_description|default:'Блог компании HUB42' }}">
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
