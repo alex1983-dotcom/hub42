@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
+from .models import ContactRequest
+from .serializers import ContactRequestSerializer
 
-# Create your views here.
+class ContactRequestViewSet(viewsets.ModelViewSet):
+    queryset = ContactRequest.objects.all()
+    serializer_class = ContactRequestSerializer
+    permission_classes = [AllowAny]
