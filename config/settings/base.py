@@ -41,6 +41,7 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "django_ckeditor_5",
     "mdeditor",
+    "django_extensions",
 ]
 
 # Наши приложения
