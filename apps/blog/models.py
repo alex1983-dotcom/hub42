@@ -19,7 +19,7 @@ class Post(TimeStampedModel):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
     published_at = models.DateTimeField("Дата публикации", blank=True, null=True)
     meta_description = models.CharField(
-        "SEO description", max_length=160, blank=True
+        "SEO-описание", max_length=160, blank=True
     )
 
     objects = PostManager()
@@ -30,6 +30,9 @@ class Post(TimeStampedModel):
             models.Index(fields=["-published_at"]),
             models.Index(fields=["slug"]),
         ]
+        verbose_name = "Статья"
+        verbose_name_plural = "Статьи"
+
 
     def __str__(self):
         return self.title

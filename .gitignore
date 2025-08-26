@@ -4,6 +4,13 @@ __pycache__/
 *$py.class
 *.so
 .Python
+
+# === Миграции ===
+apps/blog/migrations/
+apps/pages/migrations/
+apps/requests/migrations/
+
+
 config/__pycache__/
 env/
 venv/
