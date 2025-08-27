@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.html import strip_tags
 from apps.core.models import TimeStampedModel
 from mdeditor.fields import MDTextField
-
+from django.utils import timezone
 
 class PageBlock(TimeStampedModel):
     """
@@ -67,6 +67,44 @@ class BlockItem(TimeStampedModel):
 
     def __str__(self):
         return f"{self.parent_block} — {self.title}"
+
+
+class ApplicationArticle(TimeStampedModel):
+    """Полноценная статья для раздела «Сферы применения»"""
+    title = models.CharField(max_length=255, verbose_name="Название статьи")
+    slug = models.SlugField(unique=True, verbose_name="URL")
+    preview = models.TextField(max_length=500, verbose_name="Анонс")
+    body = MDTextField(verbose_name="Текст статьи")
+    image = models.ImageField(upload_to="applications/", blank=True, verbose_name="Обложка")
+    is_published = models.BooleanField(default=True, verbose_name="Опубликовано")
+    published_at = models.DateTimeField(blank=True, null=True, verbose_name="Дата публикации")
+    sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    # связь с BlockItem
+    related_item = models.OneToOneField(
+        BlockItem,
+        on_delete=models.CASCADE,
+        related_name="article",
+        limit_choices_to={'parent_block__block_type': 'applications'},
+        verbose_name="Связанный элемент"
+    )
+
+    class Meta:
+        verbose_name = "Статья «Сферы применения»"
+        verbose_name_plural = "Статьи «Сферы применения»"
+        ordering = ["sort_order", "-published_at"]
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if self.is_published and not self.published_at:
+            self.published_at = timezone.now()
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse("pages:application_article", kwargs={"slug": self.slug})
 
 
 class ContactFooter(TimeStampedModel):

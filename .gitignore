@@ -9,6 +9,7 @@ __pycache__/
 apps/blog/migrations/
 apps/pages/migrations/
 apps/requests/migrations/
+apps/equipment/migrations/
 
 
 config/__pycache__/
