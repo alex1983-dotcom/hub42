@@ -15,8 +15,10 @@ class PageBlock(TimeStampedModel):
         ('applications',   'Сферы применения'),            # 5 иконок с текстом
         ('products',       'Продукция'),                   # карточки принтеров
         ('advantages',     'Почему это выгоднее'),         # список плюсов
+        ('company', 'О компании'),
         ('services',       'Наши услуги'),                 # 4 карточки услуг
         ('faq',            'FAQ'),                         # вопрос-ответ
+        ('blog', 'Блог и новости'),
     )
 
     block_type = models.CharField(
@@ -105,6 +107,64 @@ class ApplicationArticle(TimeStampedModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse("pages:application_article", kwargs={"slug": self.slug})
+
+
+class Service(TimeStampedModel):
+    """Внедрение 3D-принтера» или «Разработка оборудования»."""
+    SERVICE_TYPES = (
+        ('implementation', 'Внедрение 3D-принтера'),
+        ('custom_equipment', 'Разработка оборудования под ключ'),
+    )
+    service_type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True, verbose_name="Услуга")
+    title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True)
+    sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    class Meta:
+        verbose_name = "Наша услуга"
+        verbose_name_plural = "Наши услуги"
+
+    def __str__(self):
+        return self.get_service_type_display()
+
+
+class ServiceRoadmapItem(TimeStampedModel):
+    """Шаг Roadmap внутри конкретной услуги."""
+    service = models.ForeignKey(
+        Service,
+        on_delete=models.CASCADE,
+        related_name="roadmap_items",
+        verbose_name="Услуга"
+    )
+    text = models.CharField(max_length=255, verbose_name="Шаг")
+    sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    class Meta:
+        verbose_name = "Шаг Roadmap"
+        verbose_name_plural = "Шаги Roadmap"
+        ordering = ["sort_order"]
+
+    def __str__(self):
+        return f"{self.service} — {self.text}"
+
+
+class ServiceOfferItem(TimeStampedModel):
+    """Пункт «Услуги» внутри конкретной услуги."""
+    service = models.ForeignKey(
+        Service,
+        on_delete=models.CASCADE,
+        related_name="offer_items",
+        verbose_name="Услуга"
+    )
+    text = models.CharField(max_length=255, verbose_name="Пункт")
+    sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    class Meta:
+        verbose_name = "Пункт услуги"
+        verbose_name_plural = "Пункты услуг"
+        ordering = ["sort_order"]
+
+    def __str__(self):
+        return f"{self.service} — {self.text}"
 
 
 class ContactFooter(TimeStampedModel):

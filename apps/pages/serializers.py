@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle
+from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle, ServiceRoadmapItem, ServiceOfferItem, Service
 
 
 class BlockItemSerializer(serializers.ModelSerializer):
@@ -24,6 +24,31 @@ class ApplicationArticleSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'title', 'slug', 'preview', 'body', 'image',
             'is_published', 'published_at', 'related_item_title'
+        )
+
+
+# apps/pages/serializers.py
+class ServiceRoadmapItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ServiceRoadmapItem
+        fields = ("id", "text", "sort_order")
+
+
+class ServiceOfferItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ServiceOfferItem
+        fields = ("id", "text", "sort_order")
+
+
+class ServiceSerializer(serializers.ModelSerializer):
+    roadmap_items = ServiceRoadmapItemSerializer(many=True, read_only=True)
+    offer_items = ServiceOfferItemSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Service
+        fields = (
+            "id", "service_type", "title", "sort_order",
+            "roadmap_items", "offer_items"
         )
 
 

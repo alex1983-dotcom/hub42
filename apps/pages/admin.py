@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle
+from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle, ServiceRoadmapItem, ServiceOfferItem, Service
 
 
 class BlockItemInline(admin.TabularInline):
@@ -7,9 +7,26 @@ class BlockItemInline(admin.TabularInline):
     extra = 1
 
 
+class ServiceRoadmapItemInline(admin.TabularInline):
+    model = ServiceRoadmapItem
+    extra = 1
+
+
+
+
+class ServiceOfferItemInline(admin.TabularInline):
+    model = ServiceOfferItem
+    extra = 1
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ("service_type", "title", "sort_order")
+    inlines = [ServiceRoadmapItemInline, ServiceOfferItemInline]
+
+
 @admin.register(PageBlock)
 class PageBlockAdmin(admin.ModelAdmin):
-    list_display = ("block_type", "title", "sort_order", "is_active")
+    list_display = ("block_type", "title", "subtitle", "content", "sort_order", "is_active")
     list_editable = ("sort_order", "is_active")
     inlines = [BlockItemInline]
 

@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
-from .models import ContactFooter, PageBlock, ApplicationArticle
-from .serializers import ContactFooterSerializer, PageBlockSerializer, ApplicationArticleSerializer
+from .models import ContactFooter, PageBlock, ApplicationArticle, Service
+from .serializers import ContactFooterSerializer, PageBlockSerializer, ApplicationArticleSerializer, ServiceSerializer
 
 from django.views.generic import TemplateView
 
@@ -21,6 +21,13 @@ class ApplicationArticleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = ApplicationArticle.objects.filter(is_published=True)
     serializer_class = ApplicationArticleSerializer
     lookup_field = 'slug'
+    permission_classes = [AllowAny]
+
+
+# apps/pages/views.py
+class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Service.objects.all().prefetch_related("roadmap_items", "offer_items")
+    serializer_class = ServiceSerializer
     permission_classes = [AllowAny]
 
 
