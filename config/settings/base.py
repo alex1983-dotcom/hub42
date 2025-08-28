@@ -187,6 +187,45 @@ SPECTACULAR_SETTINGS = {
 }
 
 # --------------------------------------------------
+# MDEditor
+# --------------------------------------------------
+
+# ----------------------------------------------------------------------
+# 19. MDEditor  (Markdown-редактор)
+# ----------------------------------------------------------------------
+MDEDITOR_CONFIGS = {
+    "default": {
+        "language": "en",
+        "width": "100%",
+        "height": 500,
+        "toolbar": [
+            "undo", "redo", "|",
+            "bold", "del", "italic", "quote", "|",
+            "h1", "h2", "h3", "|",
+            "list-ul", "list-ol", "hr", "|",
+            "link", "image", "code", "table", "|",
+            "watch", "preview", "fullscreen"
+        ],
+        "upload_image_formats": ["jpg", "jpeg", "png", "gif", "svg"],
+        "image_folder": "uploads/mdeditor",
+        "theme": "default",          # default / dark
+        "preview_theme": "default",  # тема предпросмотра
+        "editor_theme": "default",   # тема редактора
+        "toolbar_autofixed": True,
+        "search_replace": True,
+        "emoji": False,
+        "tex": True,                 # поддержка $$...$$ формул
+        "flow_chart": False,
+        "sequence": False,
+    }
+}
+
+# # путь для загрузки картинок из редактора
+# MEDIA_URL = "/media/"
+# MEDIA_ROOT = BASE_DIR / "media"
+
+
+# --------------------------------------------------
 # 16. CKEditor 5
 # --------------------------------------------------
 CKEDITOR_5_CONFIGS = {
