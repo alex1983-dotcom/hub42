@@ -1,8 +1,25 @@
 from rest_framework import serializers
-from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle, ServiceRoadmapItem, ServiceOfferItem, Service
+from django.templatetags.static import static
+from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle, ServiceRoadmapItem, ServiceOfferItem, Service, Icon
+
+
+class IconSerializer(serializers.ModelSerializer):
+    url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Icon
+        fields = ("id", "name", "file_name", "css_class", "url")
+
+    def get_url(self, obj):
+        request = self.context.get("request")
+        return request.build_absolute_uri(
+            static("icons/" + obj.file_name)
+        ) if obj.file_name else None
 
 
 class BlockItemSerializer(serializers.ModelSerializer):
+    icon = IconSerializer(read_only=True)
+
     class Meta:
         model = BlockItem
         fields = ("id", "title", "content", "icon", "sort_order")

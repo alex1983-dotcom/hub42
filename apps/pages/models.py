@@ -5,6 +5,26 @@ from apps.core.models import TimeStampedModel
 from mdeditor.fields import MDTextField
 from django.utils import timezone
 
+
+class Icon(TimeStampedModel):
+    """Справочник иконок, которые можно использовать в BlockItem."""
+    name = models.CharField(max_length=64, unique=True,
+                            help_text="Удобное человеческое имя")
+    file_name = models.CharField(max_length=128,
+                                 help_text="Имя файла в static/icons/")
+    css_class = models.CharField(max_length=64, blank=True,
+                                 help_text="CSS-класс, если используем FontAwesome")
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Иконка"
+        verbose_name_plural = "Иконки"
+
+    def __str__(self):
+        return self.name
+
+
 class PageBlock(TimeStampedModel):
     """
     Каждая запись = один видимый «блок» на главной
@@ -54,10 +74,11 @@ class BlockItem(TimeStampedModel):
     )
     title = models.CharField(max_length=255, verbose_name="Заголовок / Вопрос", blank=True)
     content = models.TextField(verbose_name="Описание / Ответ", blank=True)   # то, что ниже заголовка
-    icon = models.CharField(
-        max_length=50,
+    icon = models.ForeignKey(
+        Icon,
+        on_delete=models.SET_NULL,
+        null=True,
         blank=True,
-        help_text="CSS-класс FontAwesome, например: 'fas fa-industry'",
         verbose_name="Иконка"
     )
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
@@ -184,3 +205,5 @@ class ContactFooter(TimeStampedModel):
 
     def __str__(self):
         return "Futer contact"
+
+

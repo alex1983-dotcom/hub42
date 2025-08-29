@@ -1,5 +1,209 @@
 [
 {
+  "model": "pages.icon",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-08-29T14:35:55.899Z",
+    "updated_at": "2025-08-29T14:35:55.899Z",
+    "name": "Иконка инстаграм",
+    "file_name": "instagram.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-08-29T14:37:00.156Z",
+    "updated_at": "2025-08-29T14:37:00.156Z",
+    "name": "Иконка телеграм",
+    "file_name": "stash_telegram.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-08-29T14:47:45.371Z",
+    "updated_at": "2025-08-29T14:47:45.371Z",
+    "name": "Главная фигура",
+    "file_name": "hero/hero_forms_1.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 4,
+  "fields": {
+    "created_at": "2025-08-29T14:50:14.872Z",
+    "updated_at": "2025-08-29T14:50:14.872Z",
+    "name": "Главная фигура планшет",
+    "file_name": "hero/hero_forms_tablet_1.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-08-29T14:52:02.460Z",
+    "updated_at": "2025-08-29T14:52:02.460Z",
+    "name": "Главная фигура (мобильник)",
+    "file_name": "hero/hero_forms_mobile_1.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-08-29T15:03:09.152Z",
+    "updated_at": "2025-08-29T15:03:09.152Z",
+    "name": "Кнопка_1",
+    "file_name": "button/button_1.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 7,
+  "fields": {
+    "created_at": "2025-08-29T15:04:43.839Z",
+    "updated_at": "2025-08-29T15:04:43.839Z",
+    "name": "Оставить заявку",
+    "file_name": "button/button_4.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 8,
+  "fields": {
+    "created_at": "2025-08-29T15:05:22.820Z",
+    "updated_at": "2025-08-29T15:05:22.820Z",
+    "name": "К принтеру",
+    "file_name": "button/button_5.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 9,
+  "fields": {
+    "created_at": "2025-08-29T15:08:06.431Z",
+    "updated_at": "2025-08-29T15:08:06.431Z",
+    "name": "Развернутое поле элемента",
+    "file_name": "item/item_open.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 10,
+  "fields": {
+    "created_at": "2025-08-29T15:08:54.447Z",
+    "updated_at": "2025-08-29T15:08:54.447Z",
+    "name": "Свернутое поле элемента",
+    "file_name": "item/item_close.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 11,
+  "fields": {
+    "created_at": "2025-08-29T15:11:57.720Z",
+    "updated_at": "2025-08-29T15:11:57.720Z",
+    "name": "Кнопка связаться",
+    "file_name": "button/button_6.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 12,
+  "fields": {
+    "created_at": "2025-08-29T15:14:18.560Z",
+    "updated_at": "2025-08-29T15:14:18.560Z",
+    "name": "Кнопка \"Перейти в блог\"",
+    "file_name": "button/button_7.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 13,
+  "fields": {
+    "created_at": "2025-08-29T15:18:03.697Z",
+    "updated_at": "2025-08-29T15:18:03.697Z",
+    "name": "Фото \"Внедрение 3D принтера\"",
+    "file_name": "foto/foto_8.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 14,
+  "fields": {
+    "created_at": "2025-08-29T15:20:31.817Z",
+    "updated_at": "2025-08-29T15:20:31.817Z",
+    "name": "Фото - Разработка оборудования под ключ",
+    "file_name": "foto/foto_9.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 15,
+  "fields": {
+    "created_at": "2025-08-29T15:22:35.384Z",
+    "updated_at": "2025-08-29T15:22:35.384Z",
+    "name": "Принтер CD400HT",
+    "file_name": "printer/CD400HT.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 16,
+  "fields": {
+    "created_at": "2025-08-29T15:23:21.141Z",
+    "updated_at": "2025-08-29T15:23:21.141Z",
+    "name": "Принтер CD400",
+    "file_name": "printer/CD400.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 17,
+  "fields": {
+    "created_at": "2025-08-29T15:24:06.502Z",
+    "updated_at": "2025-08-29T15:24:06.502Z",
+    "name": "Сушилка",
+    "file_name": "printer/FILO.png",
+    "css_class": "",
+    "is_active": true
+  }
+},
+{
   "model": "pages.pageblock",
   "pk": 1,
   "fields": {
@@ -134,7 +338,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Быстрое прототипирование",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -147,7 +351,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Мелкосерийное производство",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -160,7 +364,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Производство оснастки, корпусов и нестандартных крепежей",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -173,7 +377,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Изготовление запчастей на месте",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -186,7 +390,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Ремонт и восстановление нестандартных деталей",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -199,7 +403,7 @@
     "parent_block": 3,
     "title": "",
     "content": "Автотюнинг и кастомизация",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -212,7 +416,7 @@
     "parent_block": 4,
     "title": "Космос",
     "content": "Кожухи, воздуховоды,  крепежи",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -225,7 +429,7 @@
     "parent_block": 4,
     "title": "Нефтехимия",
     "content": "Механизмы, корпуса, учебные макеты",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -238,7 +442,7 @@
     "parent_block": 4,
     "title": "Судостроение",
     "content": "Опоры. прокладки, мелкая фурнитура",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -251,7 +455,7 @@
     "parent_block": 4,
     "title": "Электроника и приборостроение",
     "content": "Корпуса, кожухи, держатели плат",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -264,7 +468,7 @@
     "parent_block": 4,
     "title": "Машиностроение",
     "content": "Кондукторы, редукторы, кронштейны",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -277,7 +481,7 @@
     "parent_block": 4,
     "title": "Архитектура",
     "content": "Макеты, зданий, фасады, ландшафты",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -290,7 +494,7 @@
     "parent_block": 4,
     "title": "Медицина",
     "content": "Ортезы, протезы, анатомические модели",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -303,7 +507,7 @@
     "parent_block": 4,
     "title": "Железная дорога",
     "content": "Кондукторы, редукторы, кронштейны",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -316,7 +520,7 @@
     "parent_block": 4,
     "title": "Образование и R&D",
     "content": "Конструктивы, шестерни, поддоны",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -329,7 +533,7 @@
     "parent_block": 6,
     "title": "Наши клиенты и отзывы",
     "content": "Нам доверяют частные мастера, дизайнеры, архитектурные бюро, производственные компании, образовательные учреждения и инжиниринговые центры. Мы работаем с теми кто ценит точность, надежность и технологичность - от небольших студий до крупных промышленных предприятий.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -342,7 +546,7 @@
     "parent_block": 6,
     "title": "Наши компетенции",
     "content": "Мы специализируемся на подборе, продаже и технической поддержке  3D-принтеров для разных задач - от прототипирования до серийного производства. Консультируем по поводу оборудования, материалов и ПО, обучаем работе с технологиями FDM, SLA, SLS и другими. Помогаем интегрировать 3D-печать в бизнес-процессы под ключ.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -355,7 +559,7 @@
     "parent_block": 6,
     "title": "HUB42 в цифрах",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -368,7 +572,7 @@
     "parent_block": 6,
     "title": "Преимущества сотрудничества",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -381,7 +585,7 @@
     "parent_block": 6,
     "title": "Участие в мероприятиях",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -394,7 +598,7 @@
     "parent_block": 6,
     "title": "Контакты",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -407,7 +611,7 @@
     "parent_block": 9,
     "title": "Когда окупится принтер и как вы это считаете?",
     "content": "По опыту наших клиентов - 6-12 при замене токарки/литья на печать мелких партий. Мы бесплатно считаем ROI на наших деталях: достаточно выгрузить 3-5 типовых CAD-файлов - расчёт получите за 48 часов.",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
@@ -420,7 +624,7 @@
     "parent_block": 9,
     "title": "Какие материалы реально печатает CD400?",
     "content": "",
-    "icon": "",
+    "icon": null,
     "sort_order": 0
   }
 },
