@@ -53,3 +53,4 @@ Thumbs.db
 # === Virtual env & secrets ===
 .env
 
+/logs/
