@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.templatetags.static import static
 from .models import ContactFooter, PageBlock, BlockItem, ApplicationArticle, ServiceRoadmapItem, ServiceOfferItem, Service, Icon
+from drf_spectacular.utils import extend_schema_field
 
 
 class IconSerializer(serializers.ModelSerializer):
@@ -10,6 +11,7 @@ class IconSerializer(serializers.ModelSerializer):
         model = Icon
         fields = ("id", "name", "file_name", "css_class", "url")
 
+    @extend_schema_field(serializers.URLField())
     def get_url(self, obj):
         request = self.context.get("request")
         return request.build_absolute_uri(
@@ -57,7 +59,7 @@ class ServiceOfferItemSerializer(serializers.ModelSerializer):
         fields = ("id", "text", "sort_order")
 
 
-class ServiceSerializer(serializers.ModelSerializer):
+class PageServiceSerializer(serializers.ModelSerializer):
     roadmap_items = ServiceRoadmapItemSerializer(many=True, read_only=True)
     offer_items = ServiceOfferItemSerializer(many=True, read_only=True)
 
