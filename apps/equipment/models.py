@@ -32,6 +32,7 @@ class Product(TimeStampedModel):
     class Meta:
         verbose_name = "3D-принтер"
         verbose_name_plural = "3D-принтеры"
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.name
