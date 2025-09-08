@@ -23,7 +23,6 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
 
 class DryerViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Dryer.objects.filter(is_published=True)\
-                            .prefetch_related('compatible_printers')\
                             .order_by('sort_order', '-created_at')
     serializer_class = DryerSerializer
     permission_classes = [AllowAny]

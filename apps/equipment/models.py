@@ -80,7 +80,7 @@ class Dryer(TimeStampedModel):
     capacity_spools = models.PositiveSmallIntegerField(default=12, verbose_name="Вместимость катушек, шт")
     purpose = models.CharField("Назначение", max_length=255, blank=True)
     heating_type = models.CharField("Нагрев камеры", max_length=255, blank=True)
-    layer_thickness = models.CharField("Толщина слоя", max_length=125, blank=True)
+    # layer_thickness = models.CharField("Толщина слоя", max_length=125, blank=True)
     humidity_and_temperature = models.CharField("Влажность и температура", max_length=255, blank=True)
     noise_level = models.CharField("Уровень шума", max_length=125, blank=True)
     integration = models.CharField("Интеграция", max_length=255, blank=True)

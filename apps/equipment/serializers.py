@@ -32,16 +32,15 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class DryerSerializer(serializers.ModelSerializer):
-    compatible_printers = ProductSerializer(many=True, read_only=True)
 
     class Meta:
         model = Dryer
         fields = (
             'id', 'name', 'slug', 'short_desc', 'description', 'image',
-            'capacity_spools', 'purpose', 'heating_type', 'layer_thickness',
+            'capacity_spools', 'purpose', 'heating_type',
             'humidity_and_temperature', 'noise_level', 'integration',
             'compressed_air', 'weight', 'control', 'dimensions',
-            'power_consumption', 'warranty', 'compatible_printers',
+            'power_consumption', 'warranty',
             'is_published', 'sort_order'
         )
 
