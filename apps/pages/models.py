@@ -95,8 +95,8 @@ class BlockItem(TimeStampedModel):
 class ApplicationArticle(TimeStampedModel):
     """Полноценная статья для раздела «Сферы применения»"""
     title = models.CharField(max_length=255, verbose_name="Название статьи")
-    slug = models.SlugField(unique=True, verbose_name="URL")
-    preview = models.TextField(max_length=500, verbose_name="Анонс")
+    slug = models.SlugField(unique=True, max_length=255, verbose_name="URL")
+    preview = models.TextField(max_length=500, blank=True, null=True, verbose_name="Анонс")
     body = MDTextField(verbose_name="Текст статьи")
     image = models.ImageField(upload_to="applications/", blank=True, verbose_name="Обложка")
     is_published = models.BooleanField(default=True, verbose_name="Опубликовано")
