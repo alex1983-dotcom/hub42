@@ -1,0 +1,54 @@
+.header__title {
+   font-family: Impact;
+   font-weight: 400;
+   font-size: 48px;
+}
+.header__menu {
+   position: fixed;
+   top: -1000px;
+   left: 0px;
+   display: flex;
+   height: max-content;
+   flex-direction: column;
+   width: 100vw;
+   padding-inline: 161px;
+   background-color: #3c3aa5;
+   opacity: 0;
+   transition: all 0.35s linear;
+}
+.header__menu.active {
+   top: 0;
+   opacity: 1;
+   transform: translateY(103px);
+}
+.header__menu-list {
+   display: flex;
+   gap: 10px;
+   justify-content: start;
+}
+.header__menu-item {
+   max-width: 506px;
+   background-color: white;
+   padding: 20px;
+   color: black;
+}
+.header__menu-item img {
+   max-width: 466px;
+   max-height: 376px;
+}
+.header__menu-title {
+   font-family: Impact;
+   font-weight: 400;
+   font-size: 72px;
+   color: #3c3aa5;
+}
+.header__menu-tagline {
+   font-family: Impact;
+   font-weight: 400;
+   font-size: 36px;
+   color: black;
+   margin-bottom: 16px;
+}
+.header_menu-description {
+   color: black;
+}

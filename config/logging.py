@@ -1,3 +1,4 @@
+# config/logging.py
 import os
 from pathlib import Path
 
@@ -5,6 +6,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOG_DIR = Path(os.getenv("LOG_DIR", BASE_DIR / "logs"))
 LOG_DIR.mkdir(exist_ok=True)
+
+# --- удаляем старые логи при импорте настроек --------------------------
+for log_file in ("django.log", "drf.log"):
+    try:
+        (LOG_DIR / log_file).unlink(missing_ok=True)
+    except Exception:          # на случай, если файл занят
+        pass
+# ----------------------------------------------------------------------
 
 LOGGING = {
     "version": 1,
@@ -27,18 +36,18 @@ LOGGING = {
         },
         "file": {
             "level": "INFO",
-            "class": "logging.handlers.RotatingFileHandler",
+            "class": "logging.FileHandler",          # ← не RotatingFileHandler
             "filename": LOG_DIR / "django.log",
-            "maxBytes": 5 * 1024 * 1024,      # 5 MB
-            "backupCount": 5,
+            "mode": "w",                             # новый файл каждый раз
+            "encoding": "utf-8",
             "formatter": "verbose",
         },
         "drf_file": {
             "level": "WARNING",
-            "class": "logging.handlers.RotatingFileHandler",
+            "class": "logging.FileHandler",          # ← не RotatingFileHandler
             "filename": LOG_DIR / "drf.log",
-            "maxBytes": 3 * 1024 * 1024,
-            "backupCount": 3,
+            "mode": "w",
+            "encoding": "utf-8",
             "formatter": "verbose",
         },
     },

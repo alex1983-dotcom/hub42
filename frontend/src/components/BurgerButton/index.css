@@ -1,0 +1,9 @@
+.header__menu-button {
+   width: 151px;
+   height: 64px;
+   background-color: transparent;
+   color: white;
+   padding: 0;
+   border: 0;
+   cursor: pointer;
+}

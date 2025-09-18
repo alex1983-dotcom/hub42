@@ -1,0 +1,42 @@
+.header {
+   color: white;
+   max-height: 104px;
+   height: 104px;
+   background-color: #3c3aa5;
+   padding-inline: 161px;
+   padding-block: 22px;
+   display: flex;
+   font-size: 16px;
+}
+
+.logo {
+   font-size: 40px;
+   font-weight: 00;
+   margin-right: auto;
+}
+nav{
+   display: flex;
+   align-items: center;
+   margin-right: 100px;
+}
+.wrapper {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+}
+.wrapper-items {
+   padding-inline: 13px 8px;
+   white-space: nowrap;
+   flex-shrink: 0;
+}
+.wrapper-items a {
+   text-decoration: none;
+   color: white;
+}
+.wrapper-items img {
+   height: 40px;
+   width: auto;
+   min-width: 40px;
+   min-height: 40px;
+   object-fit: contain;
+}
