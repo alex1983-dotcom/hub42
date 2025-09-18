@@ -1,4 +1,6 @@
+# config/settings/development.py
 from .base import *
+import pathlib
 
 DEBUG = True
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
@@ -10,9 +12,12 @@ DATABASES = {
     }
 }
 
-# ---------- логи: новые файлы при каждом запуске -----------------
+# --- обнуляем логи ПЕРЕД созданием хэндлеров ----------
 LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(exist_ok=True)
+for log_name in ("django.log", "drf.log"):
+    pathlib.Path(LOG_DIR / log_name).write_text("", encoding="utf-8")
+# -------------------------------------------------------
 
 LOGGING = {
     "version": 1,
@@ -37,7 +42,7 @@ LOGGING = {
             "level": "INFO",
             "class": "logging.FileHandler",
             "filename": LOG_DIR / "django.log",
-            "mode": "w",                # обнуляем каждый раз
+            "mode": "a",  # append, но файл уже пустой
             "encoding": "utf-8",
             "formatter": "verbose",
         },
@@ -45,7 +50,7 @@ LOGGING = {
             "level": "WARNING",
             "class": "logging.FileHandler",
             "filename": LOG_DIR / "drf.log",
-            "mode": "w",                # обнуляем каждый раз
+            "mode": "a",  # append, но файл уже пустой
             "encoding": "utf-8",
             "formatter": "verbose",
         },
@@ -71,4 +76,11 @@ LOGGING = {
             "propagate": False,
         },
     },
+}
+
+# ---------- выключаем INFO-логи запросов ----------
+LOGGING['loggers']['django.server'] = {
+    'handlers': ['console'],
+    'level': 'WARNING',   # ← INFO не пишем
+    'propagate': False,
 }
