@@ -4,6 +4,7 @@ from django.utils.html import strip_tags
 from apps.core.models import TimeStampedModel
 from mdeditor.fields import MDTextField
 from django.utils import timezone
+from django.templatetags.static import static
 
 
 class Icon(TimeStampedModel):
@@ -23,6 +24,29 @@ class Icon(TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+
+class IconicMixin(models.Model):
+    """
+    Даёт любой модели поле icon + property icon_url.
+    icon_url возвращает абсолютный URL к файлу в static/icons/.
+    """
+    icon = models.ForeignKey(
+        Icon,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Иконка"
+    )
+
+    class Meta:
+        abstract = True
+
+    @property
+    def icon_url(self):
+        if self.icon and self.icon.file_name:
+            return static("icons/" + self.icon.file_name)
+        return None
 
 
 class PageBlock(TimeStampedModel):
