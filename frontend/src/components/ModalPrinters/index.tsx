@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FC } from "react";
 import { BurgerButtonPropsMini } from "../../types";
 import "./index.css";
 import { useFetch } from "../../Helpers";
 import { Printer } from "../../types";
 const url = "http://localhost:8000/api";
-
+const endpoints = [
+   "http://localhost:8000/api/equipment/products/protype-cd400ht/",
+   "http://localhost:8000/api/equipment/products/cd400/",
+   "http://localhost:8000/api/equipment/products/cd400/",
+];
 export const ModalPrinters: FC<BurgerButtonPropsMini> = ({ isOpen }) => {
-   const endpoints = [
-      "http://localhost:8000/api/equipment/products/protype-cd400ht/",
-      "http://localhost:8000/api/equipment/products/cd400/",
-      "http://localhost:8000/api/equipment/products/cd400/",
-   ];
-   const { printers, loading, error } = useFetch<Printer>(endpoints);
+   const { printers, loading, error } = useFetch<Printer>(
+      useMemo(() => endpoints, []) // ← стабильная ссылка
+   );
 
    if (loading) return <p>Loading…</p>;
    if (error) return <p>Ошибка загрузки</p>;
