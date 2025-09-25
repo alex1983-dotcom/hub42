@@ -1,0 +1,8 @@
+.header__menu-button--printer {
+   height: 91px;
+   background-color: transparent;
+   font-size: 48px;
+   font-family: Impact;
+   border: 3px solid black;
+   cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.header__menu-button--request {
+   height: 91px;
+   background-color: #3c3aa5;
+   color: white;
+   font-size: 48px;
+   font-family: Impact;
+   border: none;
+   cursor: pointer;
+}

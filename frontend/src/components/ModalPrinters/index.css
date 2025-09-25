@@ -5,13 +5,14 @@
 }
 .header__menu {
    position: fixed;
-   top: -1000px;
+   top: -1500px;
    left: 0px;
    display: flex;
    height: max-content;
    flex-direction: column;
    width: 100vw;
    padding-inline: 161px;
+   padding-bottom: 20px;
    background-color: #3c3aa5;
    opacity: 0;
    transition: all 0.35s linear;
@@ -22,19 +23,31 @@
    transform: translateY(103px);
 }
 .header__menu-list {
+   align-self: center;
    display: flex;
    gap: 10px;
    justify-content: start;
 }
 .header__menu-item {
-   max-width: 506px;
+   width: 506px; /* точная ширина из Figma */
+   height: 1003px; /* минимальная высота = высоте картинки */
+   padding: 20px; /* внутренний отступ по макету */
    background-color: white;
    padding: 20px;
    color: black;
+   border: 3px solid black;
+   display: flex;
+   flex-direction: column;
 }
+
 .header__menu-item img {
-   max-width: 466px;
-   max-height: 376px;
+   align-self: center;
+   width: 353px; /* растягиваем на всю ширину карточки */
+   height: 376px; /* фиксируем высоту по макету */
+   object-fit: cover; /* обрезаем лишнее, сохраняя пропорции */
+   object-position: center;
+   display: block; /* убираем лишний отступ снизу */
+   margin-bottom: 34px;
 }
 .header__menu-title {
    font-family: Impact;
@@ -48,7 +61,24 @@
    font-size: 36px;
    color: black;
    margin-bottom: 16px;
+   height: 132px;
+   letter-spacing: 0;
+   line-height: 100%;
 }
-.header_menu-description {
+.header__menu-description {
    color: black;
+   font-size: 24px;
+   line-height: 100%;
+   font-weight: 400;
+   /* 1. высота по макету (высота 1 строки ≈ 24 px) */
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3; /* ровно 2 строки */
+   overflow: hidden;
+   margin-bottom: 32px;
+}
+.header__menu-buttons {
+   display: flex;
+   flex-direction: column;
+   row-gap: 15px;
 }
