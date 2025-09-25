@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Category, Product, ProductImage
 from apps.pages.models import Icon
+from drf_spectacular.utils import extend_schema_field
 
 
 class EquipmentIconSerializer(serializers.ModelSerializer):  # ← другое имя
@@ -10,6 +11,7 @@ class EquipmentIconSerializer(serializers.ModelSerializer):  # ← другое 
         model = Icon
         fields = ('id', 'name', 'file_name', 'css_class', 'url')
 
+    @extend_schema_field(serializers.URLField())
     def get_url(self, obj):
         request = self.context.get('request')
         if obj.file_name:

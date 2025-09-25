@@ -1,5 +1,5 @@
 from rest_framework import viewsets, filters
-from rest_framework.permissions import AllowAny
+from apps.core.permissions import OnlyWithApiKeyOrFromFrontend
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -16,8 +16,9 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
         .order_by('sort_order', '-created_at')
     )
     serializer_class = ProductSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [OnlyWithApiKeyOrFromFrontend]
     lookup_field = 'slug'
     filter_backends = [filters.OrderingFilter]
     ordering_fields = ['price', 'created_at', 'name']
     ordering = ['-created_at']
+
