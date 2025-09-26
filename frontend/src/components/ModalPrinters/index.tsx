@@ -1,16 +1,15 @@
-
 import { BurgerButtonPropsMini, ObjectPrinters } from "../../types";
 import { useFetch } from "../../Helpers";
 import "./index.css";
 import { ButtonRequest } from "../ButtonRequest";
 import { ButtonToPrinter } from "../ButtonToPrinter";
-import { BASE_URL } from "../../config/env";
 
 
 export const ModalPrinters: React.FC<BurgerButtonPropsMini> = ({ isOpen }) => {
-   
-   const { data, loading, error } = useFetch<ObjectPrinters>(BASE_URL+'/equipment/products/');
-   
+   const { data, loading, error } = useFetch<ObjectPrinters>(
+      "http://localhost:8000/api/equipment/products/"
+   );
+
    if (loading) return <p>Loading…</p>;
 
    if (error) return <p>Ошибка загрузки</p>;
