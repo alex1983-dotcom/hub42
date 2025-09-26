@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Main } from "../../types";
 import "./index.css";
-import { BurgerButton, ModalPrinters } from "../index";
+import { BurgerButton, ModalPrinters, NavDrawer } from "../index";
 
 const url = "http://localhost:8000/api";
 export const Header = () => {
@@ -37,7 +37,7 @@ export const Header = () => {
       <div className="app">
          <header className="header">
             <h1 className="logo">{data?.title}</h1>
-            <nav>
+            <nav className="header__nav__bar">
                <ul className="wrapper">
                   <li className="wrapper-items">
                      <a href="#equipment">Оборудование</a>
@@ -58,19 +58,20 @@ export const Header = () => {
                      <a href="#blog">Блог</a>
                   </li>
                   <li className="wrapper-items">
-                     <a href="">
-                        <img src={imgs.img_1} alt="" />
+                     <a href="something">
+                        <img src={imgs.img_1} alt="instagram" />
                      </a>
                   </li>
                   <li className="wrapper-items">
-                     <a href="">
-                        <img src={imgs.img_2} alt="" />
+                     <a href="something">
+                        <img src={imgs.img_2} alt="instagram" />
                      </a>
                   </li>
                </ul>
             </nav>
             <BurgerButton isOpen={isOpen} setOpen={setOpen} />
             <ModalPrinters isOpen={isOpen} />
+            <NavDrawer isOpen={isOpen} onClose={() => setOpen(false)} />
          </header>
       </div>
    );
