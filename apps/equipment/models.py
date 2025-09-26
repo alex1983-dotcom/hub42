@@ -2,7 +2,7 @@
 from django.db import models
 from django.urls import reverse
 from apps.core.models import TimeStampedModel
-from apps.pages.models import IconicMixin  # ← миксин
+from apps.pages.models import IconicMixin
 
 
 class Category(TimeStampedModel):
@@ -20,7 +20,7 @@ class Category(TimeStampedModel):
 
 class Product(IconicMixin, TimeStampedModel):
     """
-    ЕДИНАЯ модель вместо старого Product и Dryer.
+    ЕДИНАЯ модель объединяющая все продукты.
     Различаем тип через product_type.
     """
     PRODUCT_TYPES = (
@@ -148,7 +148,7 @@ class ProductImage(TimeStampedModel):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
-        related_name='images',   # ← как было
+        related_name='images',
         verbose_name="Продукт"
     )
     image = models.ImageField(

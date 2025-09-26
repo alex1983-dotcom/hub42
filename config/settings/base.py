@@ -167,7 +167,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_PERMISSION_CLASSES": ["apps.core.permissions.DocsOrApiKey"],
 }
+
 
 # --------------------------------------------------
 # 14. CORS (для React dev-сервера)
@@ -185,6 +187,16 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Документация REST API проекта HUB42",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
+    "APPEND_COMPONENTS": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-KEY"
+            }
+        }
+    },
+    "SECURITY": [{"ApiKeyAuth": []}],
 }
 
 # --------------------------------------------------

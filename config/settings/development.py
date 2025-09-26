@@ -84,3 +84,10 @@ LOGGING['loggers']['django.server'] = {
     'level': 'WARNING',   # ← INFO не пишем
     'propagate': False,
 }
+
+# ------------- Настройки CORS ---------------------
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+

@@ -13,6 +13,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+from rest_framework.permissions import AllowAny
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+
+# свои view-классы без токена
+class OpenSpectacularAPIView(SpectacularAPIView):
+    permission_classes = [AllowAny]
+
+
+class OpenSpectacularSwaggerView(SpectacularSwaggerView):
+    permission_classes = [AllowAny]
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/pages/',     include('apps.pages.urls')),

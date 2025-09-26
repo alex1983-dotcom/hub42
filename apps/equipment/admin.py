@@ -55,7 +55,7 @@ class ProductAdmin(admin.ModelAdmin):
                 'product_type',
                 'is_published',
                 'price',
-                'icon',  # ← иконка из pages
+                'icon',
             )
         }),
         ('Технические характеристики', {
