@@ -91,3 +91,9 @@ export interface Printer extends Record<string, unknown> {
   created_at: string; // ISO-8601
   updated_at: string; // ISO-8601
 }
+export type ObjectPrinters = {
+   count: number;
+   next: string;
+   previous: string;
+   results: Printer[];
+};

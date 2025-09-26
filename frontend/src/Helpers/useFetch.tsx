@@ -1,34 +1,30 @@
 import { useEffect, useState } from "react";
 
-
-export const useFetch = <T,>(endpoints: string[]) => {
-   const [printers, setPrinters] = useState<T[]>([]);
+export const useFetch = <T,>(url: string) => {
+   const [data, setData] = useState<T | null>(null);
    const [loading, setLoading] = useState(true);
-   const [error, setError] = useState<unknown>(null);
+   const [error, setError] = useState<string | null>(null);
 
    useEffect(() => {
-      if (!endpoints.length) return;
-
-      let cancelled = false;
-
-      const load = async () => {
+      const customfetch = async () => {
          try {
-            const res = await Promise.all(
-               endpoints.map((e) => fetch(e).then((r) => r.json()))
-            );
-            if (!cancelled) setPrinters(res.flat()); // .flat() если каждый endpoint возвращает массив
-         } catch (e) {
-            if (!cancelled) setError(e);
+            const response = await fetch(url);
+
+            if (!response.ok) throw new Error("Something went wrong");
+
+            const data = await response.json();
+
+            setData(data);
+            setError(null);
+         } catch (error) {
+            if (error instanceof Error) {
+               setError(error.message);
+            }
          } finally {
-            if (!cancelled) setLoading(false);
+            setLoading(false);
          }
       };
-
-      load();
-      return () => {
-         cancelled = true;
-      };
-   }, [endpoints]);
-
-   return { printers, loading, error };
+      customfetch();
+   }, [url]);
+   return { data, error, loading };
 };

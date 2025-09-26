@@ -40,3 +40,8 @@ nav{
    min-height: 40px;
    object-fit: contain;
 }
+@media (max-width: 1600px) {
+   .header__nav__bar {
+      display: none;
+   }
+}

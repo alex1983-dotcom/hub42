@@ -1,0 +1,47 @@
+@media (min-width: 1600px) {
+   .nav-drawer,
+   .nav-drawer-overlay {
+      display: none;
+   }
+}
+@media (max-width: 1600px) {
+   .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0px;
+      width: 300px;
+      height: 100vh;
+      background: transparent;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+      transition: left 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+   }
+   .nav-drawer.open {
+      left: 0;
+   }
+
+   .nav-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 999;
+   }
+
+   .nav-drawer-nav {
+   
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      color: black;
+   }
+
+   .nav-drawer-nav a {
+      font-size: 18px;
+      color: black;
+      text-decoration: none;
+   }
+}

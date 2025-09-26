@@ -1,32 +1,25 @@
-import React, { useMemo } from "react";
-import { BurgerButtonPropsMini } from "../../types";
+
+import { BurgerButtonPropsMini, ObjectPrinters } from "../../types";
 import { useFetch } from "../../Helpers";
-import { Printer } from "../../types";
 import "./index.css";
 import { ButtonRequest } from "../ButtonRequest";
 import { ButtonToPrinter } from "../ButtonToPrinter";
+import { BASE_URL } from "../../config/env";
 
-const ENDPOINTS = [
-   "http://localhost:8000/api/equipment/products/cd400/",
-   "http://localhost:8000/api/equipment/products/cd400ht",
-   "http://localhost:8000/api/equipment/products/filo",
-];
 
 export const ModalPrinters: React.FC<BurgerButtonPropsMini> = ({ isOpen }) => {
-   const endpoints = useMemo(() => ENDPOINTS, []);
-   const { printers, loading, error } = useFetch<Printer>(endpoints);
-
+   
+   const { data, loading, error } = useFetch<ObjectPrinters>(BASE_URL+'/equipment/products/');
+   
    if (loading) return <p>Loading…</p>;
 
    if (error) return <p>Ошибка загрузки</p>;
 
-
-
-   return     (
+   return (
       <div className={`header__menu ${isOpen ? "active" : ""}`}>
          <h2 className="header__title">Наше Оборудование</h2>
          <ul className="header__menu-list">
-            {printers.map((p, idx) => (
+            {data?.results.map((p, idx) => (
                <li key={idx} className="header__menu-item">
                   <h3 className="header__menu-title">{p.name}</h3>
                   <img src={p.icon.url} alt={p.name} />
