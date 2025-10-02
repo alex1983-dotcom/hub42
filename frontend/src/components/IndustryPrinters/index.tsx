@@ -1,0 +1,43 @@
+import React from "react";
+import { Icon, Main } from "../../types";
+import { useFetch } from "../../Helpers";
+import { ButtonRequest } from "../ButtonRequest";
+import "./index.css";
+
+export const IndustryPrinters = () => {
+   const {
+      data: blockData,
+      loading: blockLoading,
+      error: blockError,
+   } = useFetch<Main>("http://localhost:8000/api/pages/blocks/2");
+   const {
+      data: iconData,
+      loading: iconLoading,
+      error: iconError,
+   } = useFetch<Icon>("http://localhost:8000/api/pages/icons/3/");
+   const loading = blockLoading || iconLoading;
+   const error = blockError || iconError;
+   if (loading) return <p>Loading…</p>;
+
+   if (error) return <p>Ошибка загрузки</p>;
+   return (
+      <section
+         className="industry__section"
+         // style={
+         //    { "--bg-url": `url(${iconData?.url || ""})` } as React.CSSProperties
+         // }
+      >
+         <div className="industry__section-block">
+            <h2 className="industry__title">{blockData?.title}</h2>
+            <p className="industry__content">{blockData?.content}</p>
+            <div className="industry__wrapper-buttons">
+               <ButtonRequest />
+               <a href="nothingyet" className="industry__section-toPrinter">
+                  К принтерам
+               </a>
+            </div>
+         </div>
+         <img src={iconData?.url} alt="" className="industry__section-img" />
+      </section>
+   );
+};

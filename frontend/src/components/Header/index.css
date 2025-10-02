@@ -1,9 +1,16 @@
+
 .header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+
    color: white;
    max-height: 104px;
    height: 104px;
    background-color: #3c3aa5;
-   padding-inline: 161px;
+   padding-inline: clamp(2rem, -5.125rem + 11.25vw, 16.1rem);
    padding-block: 22px;
    display: flex;
    font-size: 16px;
@@ -14,7 +21,7 @@
    font-weight: 00;
    margin-right: auto;
 }
-nav{
+nav {
    display: flex;
    align-items: center;
    margin-right: 100px;
@@ -43,5 +50,10 @@ nav{
 @media (max-width: 1600px) {
    .header__nav__bar {
       display: none;
+   }
+}
+@media (max-width: 880px) {
+   .header {
+      padding-inline: 5vw;
    }
 }

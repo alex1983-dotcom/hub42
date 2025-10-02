@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./index.css";
 
+
 export const NavDrawer = ({
    isOpen,
    onClose,
@@ -20,7 +21,6 @@ export const NavDrawer = ({
       <>
          <div className="nav-drawer-overlay" onClick={onClose} />
          <aside className="nav-drawer">
-         
             <nav className="nav-drawer-nav">
                <a href="#equipment" onClick={onClose}>
                   Оборудование
@@ -41,6 +41,7 @@ export const NavDrawer = ({
                   Блог
                </a>
             </nav>
+            
          </aside>
       </>
    );
