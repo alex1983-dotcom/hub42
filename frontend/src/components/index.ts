@@ -4,3 +4,5 @@ export * from "./ModalPrinters";
 export * from "./ButtonRequest";
 export * from "./ButtonToPrinter";
 export * from "./NavDrawer";
+export * from "./IndustryPrinters";
+export * from "./3dPrint";

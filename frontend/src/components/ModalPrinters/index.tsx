@@ -4,7 +4,6 @@ import "./index.css";
 import { ButtonRequest } from "../ButtonRequest";
 import { ButtonToPrinter } from "../ButtonToPrinter";
 
-
 export const ModalPrinters: React.FC<BurgerButtonPropsMini> = ({ isOpen }) => {
    const { data, loading, error } = useFetch<ObjectPrinters>(
       "http://localhost:8000/api/equipment/products/"

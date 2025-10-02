@@ -7,10 +7,10 @@
 @media (max-width: 1600px) {
    .nav-drawer {
       position: fixed;
-      top: 0;
+      top: 104px;
       left: 0px;
-      width: 300px;
-      height: 100vh;
+      width: 100%;
+
       background: transparent;
       box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
       transition: left 0.3s ease;
@@ -18,12 +18,14 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+       z-index: 1000;
    }
    .nav-drawer.open {
       left: 0;
    }
 
    .nav-drawer-overlay {
+      
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);
@@ -31,12 +33,13 @@
    }
 
    .nav-drawer-nav {
-   
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 16px;
       padding: 24px;
       color: black;
+      margin-right: 0;
    }
 
    .nav-drawer-nav a {
