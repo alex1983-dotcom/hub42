@@ -96,7 +96,7 @@ class BlockItem(TimeStampedModel):
         related_name="items",
         verbose_name="Блок-родитель"
     )
-    title = models.CharField(max_length=255, verbose_name="Заголовок / Вопрос", blank=True)
+    title = models.CharField(max_length=255, verbose_name="Заголовок / Вопрос", blank=True, default="Не указано")
     content = models.TextField(verbose_name="Описание / Ответ", blank=True)   # то, что ниже заголовка
     icon = models.ForeignKey(
         Icon,
