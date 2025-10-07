@@ -6,7 +6,7 @@
 
 from pathlib import Path
 from decouple import config
-from config.logging import LOGGING
+
 
 # --------------------------------------------------
 # 1. Базовые директории
