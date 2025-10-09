@@ -16,6 +16,8 @@ class Icon(TimeStampedModel):
     css_class = models.CharField(max_length=64, blank=True,
                                  help_text="CSS-класс, если используем FontAwesome")
     is_active = models.BooleanField(default=True)
+    is_system = models.BooleanField("Системная иконка", default=False, editable=False)
+
 
     class Meta:
         ordering = ["name"]
@@ -76,6 +78,10 @@ class PageBlock(TimeStampedModel):
     content = models.TextField(blank=True, verbose_name="Доп. текст / HTML")
     is_active = models.BooleanField(default=True, verbose_name="Показывать")
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_system = models.BooleanField(
+        "Системный блок", default=False, editable=False,
+        help_text="Запрещено удалять - используется фронтом"
+    )
 
     class Meta:
         verbose_name = "Блок главной"
@@ -106,6 +112,8 @@ class BlockItem(TimeStampedModel):
         verbose_name="Иконка"
     )
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_active = models.BooleanField("Показывать на сайте", default=True)
+    is_system = models.BooleanField("Системный элемент", default=False, editable=False)
 
     class Meta:
         verbose_name = "Элемент"
@@ -163,6 +171,7 @@ class Service(TimeStampedModel):
     service_type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True, verbose_name="Услуга")
     title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True)
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_system = models.BooleanField("Системная услуга", default=False, editable=False)
 
     class Meta:
         verbose_name = "Наша услуга"
@@ -182,6 +191,7 @@ class ServiceRoadmapItem(TimeStampedModel):
     )
     text = models.CharField(max_length=255, verbose_name="Шаг")
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_system = models.BooleanField("Системный шаг", default=False, editable=False)
 
     class Meta:
         verbose_name = "Шаг Roadmap"
@@ -202,6 +212,7 @@ class ServiceOfferItem(TimeStampedModel):
     )
     text = models.CharField(max_length=255, verbose_name="Пункт")
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_system = models.BooleanField("Системный пункт", default=False, editable=False)
 
     class Meta:
         verbose_name = "Пункт услуги"
@@ -222,6 +233,7 @@ class ContactFooter(TimeStampedModel):
     service_address = models.CharField(max_length=255, verbose_name="Адрес сервисного центра")
     service_phone = models.CharField(max_length=30, blank=True, verbose_name="Телефон сервисного центра")
     user_agreement = MDTextField("Пользовательское соглашение", default="")
+    is_system = models.BooleanField("Системные данные футера", default=True, editable=False)
 
     class Meta:
         verbose_name = "Данные футера"
