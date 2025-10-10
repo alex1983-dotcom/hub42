@@ -30,7 +30,7 @@ export const IndustryPrinters = () => {
             <p className="industry__content">{blockData?.content}</p>
             <div className="industry__wrapper-buttons">
                <ButtonRequest />
-               <a href="nothingyet" className="industry__section-toPrinter">
+               <a href="#nothingyet" className="industry__section-toPrinter">
                   К принтерам
                </a>
             </div>

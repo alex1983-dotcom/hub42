@@ -11,9 +11,7 @@
    Убираем внутренние отступы слева тегам списков,
    у которых есть атрибут class
   */
-/* a:visited {
-   color: rgb(246, 228, 228);
-} */
+
 
 :where(ul, ol):where([class]) {
    padding-left: 0;

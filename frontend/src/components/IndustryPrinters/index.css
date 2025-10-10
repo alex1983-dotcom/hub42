@@ -1,23 +1,20 @@
 .industry__section {
-   margin-inline: clamp(2rem, -5.125rem + 11.25vw, 16.1rem);
+   margin-inline: var(--margin-inline);
    position: relative;
    max-width: 100vw;
    margin-top: 104px;
 }
 .industry__section-img {
-   position: absolute; 
+   position: absolute;
    top: 150px;
    right: 191px;
-   width: auto; 
+   width: auto;
    height: 100%;
    object-fit: contain;
-   object-position: -20px -20px; 
-
-   
+   object-position: -20px -20px;
    transform: scale(2.2);
-
-   z-index: -1; 
-   pointer-events: none; 
+   z-index: -1;
+   pointer-events: none;
 }
 .industry__section-block {
    padding-left: clamp(0px, -163.2px + 21vw, 204px);
@@ -28,7 +25,6 @@
 }
 .industry__title {
    font-size: clamp(36px, -24px + 5vw, 72px);
-
    line-height: 100%;
    letter-spacing: 0;
    margin-bottom: 16px;

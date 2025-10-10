@@ -16,7 +16,7 @@ export const Print = () => {
          <div className="print__section-block">
             <h2 className="print__section-title">{data?.title}</h2>
             <div className="print__section-wrapper">
-               <p className="print__section-subtitle">{data?.subtitle}</p>
+               <h3 className="print__section-subtitle">{data?.subtitle}</h3>
                <ul className="print__section-list">
                   {data?.items.map((p, idx) => (
                      <li key={idx} className="print__section-item">

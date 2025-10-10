@@ -40,8 +40,8 @@ export const SliderSpheres = () => {
    return (
       <section className="sliderShperes__section">
          <h2 className="sliderShperes__section-title">{data?.title}</h2>
-         <p className="sliderShperes__section-subtitle">{data?.subtitle}</p>
-         <div className="sliderSheres__section-container">
+         <h3 className="sliderShperes__section-subtitle">{data?.subtitle}</h3>
+         <div className="sliderShperes__section-container">
             <Swiper
                modules={[Navigation, Pagination, EffectFade]}
                grabCursor // Передайте нужные модули

@@ -1,0 +1,4 @@
+.products__section {
+   margin-top: 100px;
+   padding-inline: var(--margin-inline);
+}

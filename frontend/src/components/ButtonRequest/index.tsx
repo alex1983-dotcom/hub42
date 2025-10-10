@@ -1,7 +1,9 @@
 import React from "react";
-import "./index.css"
+import "./index.css";
 export const ButtonRequest = () => {
    return (
-      <button className="header__menu-button--request">Оставить заявку</button>
+      <a href="#something" className="header__menu-button--request">
+         Оставить заявку
+      </a>
    );
 };
