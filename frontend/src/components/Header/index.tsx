@@ -34,45 +34,43 @@ export const Header = () => {
    }, []);
 
    return (
-      <div className="app">
-         <header className="header">
-            <h1 className="logo">{data?.title}</h1>
-            <nav className="header__nav__bar">
-               <ul className="wrapper">
-                  <li className="wrapper-items">
-                     <a href="#equipment">Оборудование</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="#company">О компании</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="#services">Наши услуги</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="#request">Оставить заявку</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="#FAQ">FAQ</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="#blog">Блог</a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="something">
-                        <img src={imgs.img_1} alt="instagram" />
-                     </a>
-                  </li>
-                  <li className="wrapper-items">
-                     <a href="something">
-                        <img src={imgs.img_2} alt="instagram" />
-                     </a>
-                  </li>
-               </ul>
-            </nav>
-            <BurgerButton isOpen={isOpen} setOpen={setOpen} />
-            <ModalPrinters isOpen={isOpen} />
-            <NavDrawer isOpen={isOpen} onClose={() => setOpen(false)} />
-         </header>
-      </div>
+      <header className="header">
+         <h1 className="logo">{data?.title}</h1>
+         <nav className="header__nav__bar">
+            <ul className="wrapper">
+               <li className="wrapper-items">
+                  <a href="#equipment">Оборудование</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="#company">О компании</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="#services">Наши услуги</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="#request">Оставить заявку</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="#FAQ">FAQ</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="#blog">Блог</a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="something">
+                     <img src={imgs.img_1} alt="instagram" />
+                  </a>
+               </li>
+               <li className="wrapper-items">
+                  <a href="something">
+                     <img src={imgs.img_2} alt="instagram" />
+                  </a>
+               </li>
+            </ul>
+         </nav>
+         <BurgerButton isOpen={isOpen} setOpen={setOpen} />
+         <ModalPrinters isOpen={isOpen} onClose={() => setOpen(false)} />
+         <NavDrawer isOpen={isOpen} onClose={() => setOpen(false)} />
+      </header>
    );
 };

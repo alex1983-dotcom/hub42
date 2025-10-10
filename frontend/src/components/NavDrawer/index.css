@@ -18,14 +18,12 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-       z-index: 1000;
    }
    .nav-drawer.open {
       left: 0;
    }
 
    .nav-drawer-overlay {
-      
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);

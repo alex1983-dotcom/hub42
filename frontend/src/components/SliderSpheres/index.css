@@ -1,0 +1,105 @@
+.sliderShperes__section {
+   margin-top: 100px;
+}
+
+.sliderSheres__section-container {
+}
+.swiper {
+   padding: 60px;
+}
+.sliderSpheres__section-list-item-img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.sliderShperes__section-title {
+   font-size: var(--font-adaptive-title36);
+   margin-left: var(--margin-inline);
+   font-weight: 400;
+   max-width: 612px;
+   width: 100%;
+}
+.sliderShperes__section-subtitle {
+   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+   margin-inline: var(--margin-inline);
+   padding-left: 100px;
+   border-top: var(--border-top);
+   font-size: var(--font-adaptive-subtitle48);
+   padding-top: 40px;
+}
+.sliderShperes__section-list {
+   display: flex;
+   gap: 52px;
+}
+.swiper-slide {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 20px;
+   background-color: var(--add-color);
+   width: 375px;
+   min-height: 484px;
+   height: 100%;
+}
+.sliderShperes__section-item-title {
+   color: white;
+   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+   font-size: var(--font-adaptive-title36);
+   line-height: 100%;
+   letter-spacing: 0;
+   margin-bottom: 8px;
+   font-weight: 400;
+}
+.sliderSpheres__section-item-img {
+   width: 303px;
+   height: 260px;
+}
+.sliderShperes__section-item-wrapper {
+   background-color: white;
+   color: black;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   padding: 16px;
+}
+.sliderShperes__section-item-content {
+   font-weight: 400;
+   font-size: var(--font-adaptive-subtitle24);
+}
+@media (max-width: 735px) {
+   .sliderShperes__section-subtitle {
+      padding-left: 0;
+      padding-top: 16px;
+   }
+   .sliderShperes__section-item {
+      min-height: 350px;
+      height: 100%;
+      justify-content: flex-start;
+   }
+   .sliderShperes__section-item {
+      width: 250px;
+      max-height: 243px;
+   }
+   .sliderSpheres__section-item-img {
+      width: 168px;
+      height: 127px;
+   }
+}
+@media (max-width: 375px) {
+   .swiper {
+      padding-top: 16px;
+   }
+   .sliderShperes__section-item {
+      width: 216px;
+      max-height: 243px;
+   }
+   .sliderSpheres__section-item-img {
+      width: 168px;
+      height: 127px;
+   }
+   .sliderShperes__section {
+      margin-top: 40px;
+   }
+}

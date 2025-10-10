@@ -30,9 +30,9 @@
    justify-content: start;
 }
 .header__menu-item {
-   max-width: 506px; /* точная ширина из Figma */
-   height: 1003px; /* минимальная высота = высоте картинки */
-   padding: 20px; /* внутренний отступ по макету */
+   max-width: 506px; 
+   height: 1003px; 
+   padding: 20px; 
    background-color: white;
    padding: 20px;
    color: black;
@@ -43,11 +43,11 @@
 
 .header__menu-item img {
    align-self: center;
-   max-width: 353px; /* растягиваем на всю ширину карточки */
-   max-height: 376px; /* фиксируем высоту по макету */
-   object-fit: cover; /* обрезаем лишнее, сохраняя пропорции */
+   max-width: 353px; 
+   max-height: 376px; 
+   object-fit: cover; 
    object-position: center;
-   display: block; /* убираем лишний отступ снизу */
+   display: block; 
    margin-bottom: 34px;
 }
 .header__menu-title {
@@ -71,10 +71,10 @@
    font-size: 24px;
    line-height: 100%;
    font-weight: 400;
-   /* 1. высота по макету (высота 1 строки ≈ 24 px) */
+
    display: -webkit-box;
    -webkit-box-orient: vertical;
-   -webkit-line-clamp: 3; /* ровно 2 строки */
+   -webkit-line-clamp: 3; 
    overflow: hidden;
    margin-bottom: 32px;
 }

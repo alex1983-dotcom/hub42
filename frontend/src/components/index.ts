@@ -6,3 +6,5 @@ export * from "./ButtonToPrinter";
 export * from "./NavDrawer";
 export * from "./IndustryPrinters";
 export * from "./3dPrint";
+export * from "./ScopeApplication";
+export * from "./SliderSpheres";

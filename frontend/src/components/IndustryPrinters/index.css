@@ -5,19 +5,19 @@
    margin-top: 104px;
 }
 .industry__section-img {
-   position: absolute; /* вне потока */
+   position: absolute; 
    top: 150px;
    right: 191px;
-   width: auto; /* не растягиваем */
-   height: 100%; /* высота секции */
-   object-fit: contain; /* влезает целиком */
-   object-position: -20px -20px; /* сдвиг по макету */
+   width: auto; 
+   height: 100%;
+   object-fit: contain;
+   object-position: -20px -20px; 
 
-   /* масштаб / сдвиг (по макету) */
+   
    transform: scale(2.2);
 
-   z-index: -1; /* под контентом */
-   pointer-events: none; /* не мешает кликам */
+   z-index: -1; 
+   pointer-events: none; 
 }
 .industry__section-block {
    padding-left: clamp(0px, -163.2px + 21vw, 204px);
@@ -67,6 +67,7 @@
 @media (max-width: 768px) {
    .industry__section {
       margin-top: 56px;
+      padding-top: 104px;
    }
    .industry__section-img {
       top: 18px;
@@ -84,6 +85,7 @@
 @media (max-width: 375px) {
    .industry__section {
       margin-top: 20px;
+      padding-top: 155px;
    }
    .industry__section-img {
       top: 224px;

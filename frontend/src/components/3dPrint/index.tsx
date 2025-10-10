@@ -14,7 +14,7 @@ export const Print = () => {
    return (
       <section className="print__section">
          <div className="print__section-block">
-            <h1 className="print__section-title">{data?.title}</h1>
+            <h2 className="print__section-title">{data?.title}</h2>
             <div className="print__section-wrapper">
                <p className="print__section-subtitle">{data?.subtitle}</p>
                <ul className="print__section-list">

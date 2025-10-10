@@ -1,10 +1,37 @@
-import { BurgerButtonPropsMini, ObjectPrinters } from "../../types";
+import { ObjectPrinters } from "../../types";
 import { useFetch } from "../../Helpers";
 import "./index.css";
 import { ButtonRequest } from "../ButtonRequest";
 import { ButtonToPrinter } from "../ButtonToPrinter";
+import { useEffect } from "react";
 
-export const ModalPrinters: React.FC<BurgerButtonPropsMini> = ({ isOpen }) => {
+export const ModalPrinters = ({
+   isOpen,
+   onClose,
+}: {
+   isOpen: boolean;
+   onClose: () => void;
+}) => {
+   useEffect(() => {
+      // if (!isOpen) return;
+
+      const drawer = document.querySelector(".header__menu");
+      if (!drawer) return;
+
+      const handleClick = (e: Event) => {
+         const target = e.target as Element | null;
+         if (!target) return;
+
+         const card = target.closest(".header__menu-item");
+         if (drawer.contains(target) && !card) {
+            onClose();
+         }
+      };
+
+      drawer.addEventListener("click", handleClick);
+      return () => drawer.removeEventListener("click", handleClick);
+   }, [isOpen, onClose]);
+
    const { data, loading, error } = useFetch<ObjectPrinters>(
       "http://localhost:8000/api/equipment/products/"
    );

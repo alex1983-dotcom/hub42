@@ -1,0 +1,139 @@
+:root {
+   --card-w: 506px;
+   --card-gap: 10px;
+   --img-h: 376px;
+}
+.applications-slider {
+   padding: clamp(2rem, 5vw, 6rem) clamp(1rem, 3vw, 4rem);
+   background: #f5f5f5;
+   overflow: hidden;
+}
+
+.applications-header {
+   text-align: center;
+   margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.applications-title {
+   font-family: Impact, sans-serif;
+   font-size: clamp(24px, -8px + 4.27vw, 48px);
+   color: #3c3aa5;
+   margin: 0 0 0.5em;
+}
+
+.applications-subtitle {
+   font-size: clamp(16px, -4px + 2.13vw, 24px);
+   color: #222;
+}
+
+/* ----- слайдер ----- */
+.applications-slider-body {
+   display: flex;
+   gap: var(--card-gap);
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   cursor: grab;
+   user-select: none;
+}
+
+.slider-track {
+   display: flex;
+   transition: transform 0.35s ease;
+   gap: var(--card-gap);
+}
+
+/* ----- карточка ----- */
+.application-card {
+   flex: 0 0 clamp(280px, 26.3vw, var(--card-w)); /* 506 px → 280 px */
+   max-width: clamp(280px, 26.3vw, var(--card-w));
+   display: flex;
+   flex-direction: column;
+   background: #fff;
+   border: 3px solid #000;
+   padding: clamp(1rem, 2vw, 2rem);
+   gap: 1rem;
+   aspect-ratio: 506 / 680; /* пропорция из макета */
+   scroll-snap-align: start;
+}
+.application-card-img {
+   width: 100%;
+   height: clamp(200px, 19.5vw, var(--img-h)); /* 376 px → 200 px */
+   object-fit: cover;
+   object-position: center;
+}
+.application-card-title {
+   font-family: Impact, sans-serif;
+   font-size: clamp(24px, -4px + 2.13vw, 36px);
+   color: #3c3aa5;
+}
+.application-card-desc {
+   font-size: clamp(16px, -4px + 2.13vw, 24px);
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+   overflow: hidden;
+}
+
+/* ----- стрелки ----- */
+.slider-arrow {
+   flex: 0 0 48px;
+   height: 48px;
+   border: none;
+   background: #3c3aa5;
+   color: #fff;
+   font-size: 24px;
+   cursor: pointer;
+   border-radius: 50%;
+   transition: background 0.2s;
+}
+.slider-arrow:hover {
+   background: #2a2980;
+}
+.slider-arrow--left {
+   order: -1;
+}
+.slider-arrow--right {
+   order: 1;
+}
+
+/* ----- точки ----- */
+.slider-dots {
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   margin-top: 2rem;
+}
+.slider-dot {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   border: none;
+   background: #ccc;
+   cursor: pointer;
+   transition: background 0.2s;
+}
+.slider-dot.active {
+   background: #3c3aa5;
+}
+.slider-body {
+   cursor: grab;
+   user-select: none;
+   scroll-snap-type: x mandatory;
+}
+.slider-body:active {
+   cursor: grabbing;
+}
+
+.slider-track {
+   display: flex;
+   transition: transform 0.35s ease;
+   width: 100%;
+}
+
+/* ---------- стрелки и точки (как раньше) ---------- */
+.slider-arrow {
+   /* ваши стили */
+}
+.slider-dots {
+   /* ваши стили */
+}

@@ -23,12 +23,10 @@ export const IndustryPrinters = () => {
    return (
       <section
          className="industry__section"
-         // style={
-         //    { "--bg-url": `url(${iconData?.url || ""})` } as React.CSSProperties
-         // }
+         
       >
          <div className="industry__section-block">
-            <h2 className="industry__title">{blockData?.title}</h2>
+            <h1 className="industry__title">{blockData?.title}</h1>
             <p className="industry__content">{blockData?.content}</p>
             <div className="industry__wrapper-buttons">
                <ButtonRequest />
