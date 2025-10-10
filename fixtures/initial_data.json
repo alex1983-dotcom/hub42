@@ -8,7 +8,8 @@
     "name": "Иконка инстаграм",
     "file_name": "instagram.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -20,7 +21,8 @@
     "name": "Иконка телеграм",
     "file_name": "stash_telegram.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -32,7 +34,8 @@
     "name": "Главная фигура",
     "file_name": "hero/hero_forms_1.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -44,7 +47,8 @@
     "name": "Главная фигура планшет",
     "file_name": "hero/hero_forms_tablet_1.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -56,7 +60,8 @@
     "name": "Главная фигура (мобильник)",
     "file_name": "hero/hero_forms_mobile_1.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -68,7 +73,8 @@
     "name": "Кнопка_1",
     "file_name": "button/button_1.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -80,7 +86,8 @@
     "name": "Оставить заявку",
     "file_name": "button/button_4.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -92,7 +99,8 @@
     "name": "К принтеру",
     "file_name": "button/button_5.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -104,7 +112,8 @@
     "name": "Развернутое поле элемента",
     "file_name": "item/item_open.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -116,7 +125,8 @@
     "name": "Свернутое поле элемента",
     "file_name": "item/item_close.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -128,7 +138,8 @@
     "name": "Кнопка связаться",
     "file_name": "button/button_6.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -140,7 +151,8 @@
     "name": "Кнопка \"Перейти в блог\"",
     "file_name": "button/button_7.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -152,7 +164,8 @@
     "name": "Фото \"Внедрение 3D принтера\"",
     "file_name": "foto/foto_8.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -164,7 +177,8 @@
     "name": "Фото - Разработка оборудования под ключ",
     "file_name": "foto/foto_9.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -176,7 +190,8 @@
     "name": "Принтер CD400HT",
     "file_name": "printer/CD400HT.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -188,7 +203,8 @@
     "name": "Принтер CD400",
     "file_name": "printer/CD400.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -200,7 +216,8 @@
     "name": "Сушилка",
     "file_name": "printer/FILO.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -212,7 +229,8 @@
     "name": "Фигура_1",
     "file_name": "figura_1.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -224,7 +242,8 @@
     "name": "Фигура_2",
     "file_name": "figura_2_2.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -236,7 +255,8 @@
     "name": "Фигура_3",
     "file_name": "figura_3.png",
     "css_class": "",
-    "is_active": true
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -250,7 +270,8 @@
     "subtitle": "",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -264,7 +285,8 @@
     "subtitle": "",
     "content": "Принтеры  производят детали прямо у вас на производстве —\r\nбез логистических задержек и дефицита комплектующих",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -272,13 +294,14 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-08-27T14:15:55.233Z",
-    "updated_at": "2025-08-27T14:15:55.233Z",
+    "updated_at": "2025-10-10T18:57:40.946Z",
     "block_type": "advantages",
     "title": "Где 3D-печать решает задачи быстрее и дешевле",
     "subtitle": "УСКОРЯЕТ РАБОТУ ТАМБ, ГДЕ КЛАССИЧЕСКОЕ ПРОИЗВОДСТВО ТОРМОЗИТ",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -286,13 +309,14 @@
   "pk": 4,
   "fields": {
     "created_at": "2025-08-27T20:03:14.925Z",
-    "updated_at": "2025-08-28T07:23:30.114Z",
+    "updated_at": "2025-10-10T18:45:40.864Z",
     "block_type": "applications",
     "title": "Сферы применения",
     "subtitle": "Где уже работают принтеры",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -300,13 +324,14 @@
   "pk": 5,
   "fields": {
     "created_at": "2025-08-28T07:28:48.538Z",
-    "updated_at": "2025-09-08T09:33:40.352Z",
+    "updated_at": "2025-10-10T20:29:51.383Z",
     "block_type": "products",
-    "title": "Выберите оптимальный вариант для своих  задач",
-    "subtitle": "",
+    "title": "Продукция",
+    "subtitle": "Выберите оптимальный вариант для своих  задач",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -320,7 +345,8 @@
     "subtitle": "Компания HUB42",
     "content": "Дистрибутор 3D-сканеров, программного обеспечения, 3D-принтеров и расходных материалов ведущих мировых производителей. Наша команда из 20 экспертов, инженеров и технологов разрабатывает и внедряет уникальные 3D-решения на промышленных предприятиях, в исследовательских центрах, проектах малого и среднего бизнеса. Технологические навыки и опыт команды, знание мировых трендов индустрии и успешная практика разработки 3D- решений обеспечивают конкурентоспособность и высокую эффективность предприятий ключевых отраслей.",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -334,7 +360,8 @@
     "subtitle": "",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -348,7 +375,8 @@
     "subtitle": "Ответы тут",
     "content": "Эти пункты закрывают 90% вопросов, которые мы слышим на переговорах и отраслевых выставках; при необходимости готовы развернуть технические детали и финансовые расчеты под конкретный кейс.",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -362,7 +390,8 @@
     "subtitle": "",
     "content": "",
     "is_active": true,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -375,7 +404,9 @@
     "title": "Космос",
     "content": "Кожухи, воздуховоды,  крепежи",
     "icon": 20,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -388,7 +419,9 @@
     "title": "Нефтехимия",
     "content": "Механизмы, корпуса, учебные макеты",
     "icon": 19,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -401,7 +434,9 @@
     "title": "Судостроение",
     "content": "Опоры. прокладки, мелкая фурнитура",
     "icon": 18,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -414,7 +449,9 @@
     "title": "Электроника и приборостроение",
     "content": "Корпуса, кожухи, держатели плат",
     "icon": 20,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -427,7 +464,9 @@
     "title": "Машиностроение",
     "content": "Кондукторы, редукторы, кронштейны",
     "icon": 19,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -435,12 +474,14 @@
   "pk": 12,
   "fields": {
     "created_at": "2025-08-28T07:23:30.123Z",
-    "updated_at": "2025-10-06T19:03:42.621Z",
+    "updated_at": "2025-10-10T18:44:25.600Z",
     "parent_block": 4,
     "title": "Архитектура",
     "content": "Макеты, зданий, фасады, ландшафты",
     "icon": 18,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -448,12 +489,14 @@
   "pk": 13,
   "fields": {
     "created_at": "2025-08-28T07:23:30.123Z",
-    "updated_at": "2025-10-06T19:03:33.167Z",
+    "updated_at": "2025-10-10T18:55:59.939Z",
     "parent_block": 4,
     "title": "Медицина",
     "content": "Ортезы, протезы, анатомические модели",
     "icon": 20,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -466,7 +509,9 @@
     "title": "Железная дорога",
     "content": "Кондукторы, редукторы, кронштейны",
     "icon": 19,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -479,7 +524,9 @@
     "title": "Образование и R&D",
     "content": "Конструктивы, шестерни, поддоны",
     "icon": 18,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -492,7 +539,9 @@
     "title": "Наши клиенты и отзывы",
     "content": "Нам доверяют частные мастера, дизайнеры, архитектурные бюро, производственные компании, образовательные учреждения и инжиниринговые центры. Мы работаем с теми кто ценит точность, надежность и технологичность - от небольших студий до крупных промышленных предприятий.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -505,7 +554,9 @@
     "title": "Наши компетенции",
     "content": "Мы специализируемся на подборе, продаже и технической поддержке  3D-принтеров для разных задач - от прототипирования до серийного производства. Консультируем по поводу оборудования, материалов и ПО, обучаем работе с технологиями FDM, SLA, SLS и другими. Помогаем интегрировать 3D-печать в бизнес-процессы под ключ.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -518,7 +569,9 @@
     "title": "HUB42 в цифрах",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -531,7 +584,9 @@
     "title": "Преимущества сотрудничества",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -544,7 +599,9 @@
     "title": "Участие в мероприятиях",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -557,7 +614,9 @@
     "title": "Контакты",
     "content": "За последние 3 года мы увеличили количество реализованных проектов на 200% процентов, расширили ассортимент оборудования в 3 раза и вышли на сотрудничество с 50+ отраслевыми партнерами по всей стране. Ежегодный рост клиентской базы - более 30%.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -570,7 +629,9 @@
     "title": "Когда окупится принтер и как вы это считаете?",
     "content": "По опыту наших клиентов - 6-12 при замене токарки/литья на печать мелких партий. Мы бесплатно считаем ROI на наших деталях: достаточно выгрузить 3-5 типовых CAD-файлов - расчёт получите за 48 часов.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -583,7 +644,9 @@
     "title": "Какие материалы реально печатает CD400?",
     "content": "",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -591,12 +654,14 @@
   "pk": 36,
   "fields": {
     "created_at": "2025-10-06T15:19:27.857Z",
-    "updated_at": "2025-10-06T15:19:27.857Z",
+    "updated_at": "2025-10-10T18:57:40.946Z",
     "parent_block": 3,
     "title": "Не указано",
     "content": "Автотюнинг и кастомизация",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": false,
+    "is_system": true
   }
 },
 {
@@ -609,7 +674,9 @@
     "title": "Не указано",
     "content": "Изготовление запчастей на месте",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -622,7 +689,9 @@
     "title": "Не указано",
     "content": "Мелкосерийное производство",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -635,7 +704,9 @@
     "title": "Не указано",
     "content": "Ремонт и восстановление нестандартных деталей",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -648,7 +719,9 @@
     "title": "Не указано",
     "content": "Производство оснастки, корпусов и нестандартных крепежей",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -661,7 +734,9 @@
     "title": "Не указано",
     "content": "Быстрое прототипирование",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -674,7 +749,9 @@
     "title": "Компания HUB42",
     "content": "Дистрибутор 3D-сканеров, программного обеспечения, 3D-принтеров и расходных материалов ведущих мировых производителей.\r\nНаша команда из 20 экспертов, инженеров и технологов разрабатывает и внедряет уникальные 3D-решения на промышленных предприятиях, в исследовательских центрах, проектах малого и среднего бизнеса.\r\nТехнологические навыки и опыт команды, знание мировых трендов индустрии и успешная практика разработки 3D-решений обеспечивают конкурентоспособность и высокую эффективность предприятий ключевых отраслей.",
     "icon": null,
-    "sort_order": 0
+    "sort_order": 0,
+    "is_active": true,
+    "is_system": true
   }
 },
 {
@@ -838,7 +915,8 @@
     "updated_at": "2025-10-06T20:05:51.282Z",
     "service_type": "implementation",
     "title": "",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -849,7 +927,8 @@
     "updated_at": "2025-08-28T09:54:14.807Z",
     "service_type": "custom_equipment",
     "title": "",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -860,7 +939,8 @@
     "updated_at": "2025-08-28T09:48:44.041Z",
     "service": 1,
     "text": "Выезд специалиста",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -871,7 +951,8 @@
     "updated_at": "2025-08-28T09:48:44.042Z",
     "service": 1,
     "text": "Анализ ваших потребностей",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -882,7 +963,8 @@
     "updated_at": "2025-08-28T09:48:44.043Z",
     "service": 1,
     "text": "Расчёт окупаемости",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -893,7 +975,8 @@
     "updated_at": "2025-08-28T09:48:44.043Z",
     "service": 1,
     "text": "Подбор оборудования и расходных материалов",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -904,7 +987,8 @@
     "updated_at": "2025-08-28T09:48:44.043Z",
     "service": 1,
     "text": "Интеграция в процессы",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -915,7 +999,8 @@
     "updated_at": "2025-08-28T09:48:44.044Z",
     "service": 1,
     "text": "Поддержка и сервис",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -926,7 +1011,8 @@
     "updated_at": "2025-08-28T09:54:14.811Z",
     "service": 2,
     "text": "Выезд специалиста",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -937,7 +1023,8 @@
     "updated_at": "2025-08-28T09:54:14.814Z",
     "service": 2,
     "text": "Анализ ваших потребностей",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -948,7 +1035,8 @@
     "updated_at": "2025-08-28T09:54:14.814Z",
     "service": 2,
     "text": "Расчет окупаемости",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -959,7 +1047,8 @@
     "updated_at": "2025-08-28T09:54:14.814Z",
     "service": 2,
     "text": "Подбор оборудования и расходных материалов",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -970,7 +1059,8 @@
     "updated_at": "2025-08-28T09:54:14.815Z",
     "service": 2,
     "text": "Интеграция в процессы",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -981,7 +1071,8 @@
     "updated_at": "2025-08-28T09:54:14.816Z",
     "service": 2,
     "text": "Поддержка и сервис",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -992,7 +1083,8 @@
     "updated_at": "2025-08-28T09:48:44.044Z",
     "service": 1,
     "text": "Подбор оптимального оборудования",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -1003,7 +1095,8 @@
     "updated_at": "2025-08-28T09:48:44.044Z",
     "service": 1,
     "text": "Аудит текущего производства",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -1014,7 +1107,8 @@
     "updated_at": "2025-08-28T09:48:44.044Z",
     "service": 1,
     "text": "Настройка обучение и сопровождение",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -1025,7 +1119,8 @@
     "updated_at": "2025-08-28T09:54:14.817Z",
     "service": 2,
     "text": "Подбор оптимального оборудования",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -1036,7 +1131,8 @@
     "updated_at": "2025-08-28T09:54:14.817Z",
     "service": 2,
     "text": "Аудит текущего производства",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
@@ -1047,7 +1143,8 @@
     "updated_at": "2025-08-28T09:54:14.818Z",
     "service": 2,
     "text": "Настройка обучения и сопровождения",
-    "sort_order": 0
+    "sort_order": 0,
+    "is_system": true
   }
 },
 {
