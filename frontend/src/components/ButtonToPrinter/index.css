@@ -9,3 +9,10 @@
    justify-content: center;
    align-items: center;
 }
+
+@media (max-width: 540px) {
+   .header__menu-button--printer {
+      height: 61px;
+      font-size: 24px;
+   }
+}

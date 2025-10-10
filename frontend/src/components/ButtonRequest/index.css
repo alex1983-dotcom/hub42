@@ -11,9 +11,9 @@
    align-items: center;
    justify-content: center;
 }
-@media (max-width:375px) {
-   .header__menu-button--request{
-      font-size: 24px;
+@media (max-width: 540px) {
+   .header__menu-button--request {
       height: 61px;
+      font-size: 24px;
    }
 }

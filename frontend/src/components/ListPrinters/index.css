@@ -1,4 +1,5 @@
 .header__menu-list {
+   align-items: center;
    align-self: center;
    display: flex;
    gap: 10px;
@@ -16,7 +17,7 @@
 .header__menu-item img {
    align-self: center;
    max-width: 353px;
-   max-height: 376px;
+   max-height: auto;
    object-fit: cover;
    object-position: center;
    display: block;
@@ -53,4 +54,29 @@
    display: flex;
    flex-direction: column;
    row-gap: 15px;
+}
+@media (max-width: 1520px) {
+   .header__menu-list {
+      flex-direction: column;
+   }
+}
+@media (max-width: 540px) {
+   .header__menu-item img {
+      max-width: 120px;
+      margin-bottom: 0;
+   }
+   .header__menu-title {
+      font-size: 36px;
+   }
+   .header__menu-item {
+      max-width: 240px;
+   }
+   .header__menu-tagline {
+      font-size: 24px;
+      height: max-content;
+      overflow-wrap: break-word; /* или word-wrap: break-word */
+   }
+   .header__menu-description {
+      font-size: 12px;
+   }
 }
