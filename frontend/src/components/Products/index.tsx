@@ -14,8 +14,8 @@ export const Products = () => {
    if (error) return <p>Ошибка загрузки</p>;
    return (
       <section className="products__section">
-         <h2 className="products__section-title">{data?.block_type}</h2>
-         <p className="products__secton-subtitle">{data?.title}</p>
+         <h2 className="products__section-title">{data?.title}</h2>
+         <h3 className="products__secton-subtitle">{data?.subtitle}</h3>
          <ListPrinters />
       </section>
    );
