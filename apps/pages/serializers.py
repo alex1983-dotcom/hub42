@@ -24,7 +24,7 @@ class BlockItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BlockItem
-        fields = ("id", "title", "content", "icon", "sort_order")
+        fields = ("id", "title", "content", "icon", "sort_order", "is_active")
 
 
 class PageBlockSerializer(serializers.ModelSerializer):
