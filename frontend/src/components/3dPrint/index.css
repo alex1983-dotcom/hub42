@@ -1,9 +1,9 @@
 .print__section {
-   margin-inline: clamp(2rem, -5.125rem + 11.25vw, 16.1rem);
+   margin-inline: var(--margin-inline);
    margin-top: 200px;
 }
 .print__section-title {
-   font-size: clamp(12px, -12px + 6.4vw, 36px);
+   font-size: var(--font-adaptive-title36);
    font-weight: 400;
    max-width: 612px;
    width: 100%;
@@ -12,12 +12,12 @@
    max-width: 580px;
    font-family: Impact;
    font-weight: 400;
-   font-size: clamp(24px, -24px + 6.4vw, 48px);
+   font-size: var(--font-adaptive-subtitle48);
 }
 .print__section-wrapper {
    display: flex;
    align-items: center;
-   border-top: 4px solid blue;
+   border-top: var(--border-top);
    margin-top: 16px;
    padding-top: 40px;
    justify-content: space-between;
@@ -41,7 +41,7 @@
    font-size: 36px;
 }
 .print__section-item-description {
-   font-size: clamp(16px, -8px + 4.2667vw, 24px);
+   font-size: var(--font-adaptive-subtitle24);
    max-width: 986px;
 }
 @media (max-width: 1045px) {
