@@ -3,16 +3,11 @@
    margin-top: 200px;
 }
 .print__section-title {
-   font-size: var(--font-adaptive-title36);
-   font-weight: 400;
    max-width: 612px;
    width: 100%;
 }
 .print__section-subtitle {
    max-width: 580px;
-   font-family: Impact;
-   font-weight: 400;
-   font-size: var(--font-adaptive-subtitle48);
 }
 .print__section-wrapper {
    display: flex;

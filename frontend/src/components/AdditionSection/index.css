@@ -1,0 +1,27 @@
+.addition__section {
+   padding-block: 22.5px;
+   background-color: var(--add-color);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 30px;
+   margin-top: 100px;
+   padding-inline: var(--margin-inline);
+}
+.addition__section-title {
+   font-size: var(--font-adaptive-title36);
+   color: var(--main-color);
+   font-weight: 400;
+}
+@media (max-width: 1180px) {
+   .addition__section {
+      flex-direction: column;
+      margin-top: 40px;
+   }
+}
+@media (max-width: 375px) {
+   .addition__section {
+      flex-direction: column;
+      gap: 15px;
+   }
+}

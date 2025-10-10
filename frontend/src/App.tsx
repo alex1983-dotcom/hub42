@@ -1,9 +1,10 @@
 import "./normalize.css";
 import "./App.css";
 
-import { Header, ScopeApplication, SliderSpheres } from "./components";
+import { Header, ListPrinters, Products, SliderSpheres } from "./components";
 import { IndustryPrinters } from "./components/IndustryPrinters";
 import { Print } from "./components/3dPrint";
+import { AdditionSection } from "./components/AdditionSection";
 
 function App() {
    return (
@@ -12,8 +13,9 @@ function App() {
             <Header />
             <IndustryPrinters />
             <Print />
-            {/* <ScopeApplication /> */}
-            <SliderSpheres/>
+            <SliderSpheres />
+            <AdditionSection />
+            <Products />
          </div>
       </>
    );
