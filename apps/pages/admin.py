@@ -60,7 +60,7 @@ class PageBlockAdmin(admin.ModelAdmin):
 
 @admin.register(BlockItem)
 class BlockItemAdmin(admin.ModelAdmin):
-    list_display = ('title', 'parent_block', 'icon', 'sort_order', 'is_system')
+    list_display = ('title', 'parent_block', 'icon', 'sort_order', 'is_active', 'is_system')
     list_filter = ('parent_block', 'icon')
     search_fields = ('title',)
     autocomplete_fields = ('icon',)

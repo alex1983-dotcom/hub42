@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from apps.core.permissions import OnlyWithApiKeyOrFromFrontend
-from .models import ContactFooter, PageBlock, ApplicationArticle, Service, Icon
+from .models import ContactFooter, PageBlock, ApplicationArticle, Service, Icon, BlockItem
 from .serializers import ContactFooterSerializer, IconSerializer, PageBlockSerializer, ApplicationArticleSerializer, PageServiceSerializer
-
+from django.db.models import Prefetch
 from django.views.generic import TemplateView
 
 
@@ -20,7 +20,10 @@ class IconViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class PageBlockViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = PageBlock.objects.filter(is_active=True).prefetch_related("items")
+    queryset = PageBlock.objects.filter(is_active=True).prefetch_related(
+        Prefetch('items', queryset=BlockItem.objects.filter(is_active=True))
+    )
+
     serializer_class = PageBlockSerializer
     permission_classes = [OnlyWithApiKeyOrFromFrontend]
 
