@@ -14,6 +14,7 @@
 }
 html {
    font-size: 62.5%;
+   scroll-behavior: smooth;
 }
 body {
    font-family: "Helvetica Neue", Arial, sans-serif;
@@ -44,9 +45,17 @@ p {
 h2 {
    font-size: var(--font-adaptive-title36);
    font-weight: 400;
+   margin-bottom: 16px;
 }
 h3 {
    font-size: var(--font-adaptive-subtitle48);
    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
    font-weight: 400;
+}
+h4 {
+   font-weight: 400;
+   font-size: 36px;
+}
+section {
+   margin-top: 100px;
 }

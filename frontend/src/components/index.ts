@@ -10,3 +10,4 @@ export * from "./SliderSpheres";
 export * from "./ConnectionButton";
 export * from "./ListPrinters";
 export * from "./Products";
+export * from "./ReviewsAnswersAccordion";
