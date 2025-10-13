@@ -13,24 +13,6 @@ import "./index.css";
 export const SliderSpheres = () => {
    const swiperWrappedRef = useRef<HTMLElement | null>(null);
 
-   function adjustMargin(): void {
-      const screenWidth = window.innerWidth;
-      if (swiperWrappedRef.current) {
-         swiperWrappedRef.current.style.marginLeft =
-            screenWidth <= 520
-               ? "0px"
-               : screenWidth <= 650
-               ? "-50px"
-               : screenWidth <= 800
-               ? "-100px"
-               : "-150px";
-      }
-   }
-   useEffect(() => {
-      adjustMargin();
-      window.addEventListener("resize", adjustMargin);
-      return () => window.removeEventListener("resize", adjustMargin);
-   }, []);
    const { data, error, loading } = useFetch<Main>(
       "http://localhost:8000/api/pages/blocks/4/"
    );

@@ -12,7 +12,6 @@
    у которых есть атрибут class
   */
 
-
 :where(ul, ol):where([class]) {
    padding-left: 0;
 }

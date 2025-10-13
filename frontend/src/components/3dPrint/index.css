@@ -13,7 +13,7 @@
    display: flex;
    align-items: center;
    border-top: var(--border-top);
-   margin-top: 16px;
+   
    padding-top: 40px;
    justify-content: space-between;
    align-items: start;

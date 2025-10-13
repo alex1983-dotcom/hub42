@@ -1,6 +1,4 @@
-.sliderShperes__section {
-   margin-top: 100px;
-}
+
 .swiper {
    padding: 40px;
 }
@@ -60,6 +58,8 @@
 .sliderShperes__section-item-content {
    font-weight: 400;
    font-size: var(--font-adaptive-subtitle24);
+   max-width: 100%;
+   overflow-wrap: break-word;
 }
 @media (max-width: 735px) {
    .sliderShperes__section-subtitle {
