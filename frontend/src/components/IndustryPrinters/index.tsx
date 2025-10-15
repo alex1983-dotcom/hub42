@@ -1,8 +1,8 @@
 import React from "react";
 import { Icon, Main } from "../../types";
 import { useFetch } from "../../Helpers";
-import { ButtonRequest } from "../ButtonRequest";
 import "./index.css";
+import { ConnectionButton } from "../ConnectionButton";
 
 export const IndustryPrinters = () => {
    const {
@@ -21,16 +21,13 @@ export const IndustryPrinters = () => {
 
    if (error) return <p>Ошибка загрузки</p>;
    return (
-      <section
-         className="industry__section"
-         
-      >
+      <section className="industry__section">
          <div className="industry__section-block">
             <h1 className="industry__title">{blockData?.title}</h1>
             <p className="industry__content">{blockData?.content}</p>
             <div className="industry__wrapper-buttons">
-               <ButtonRequest />
-               <a href="#nothingyet" className="industry__section-toPrinter">
+               <ConnectionButton color="blueBg" content="Оставить заявку"/>
+               <a href="#equipment" className="industry__section-toPrinter">
                   К принтерам
                </a>
             </div>

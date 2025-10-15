@@ -1,8 +1,8 @@
 import "./index.css";
-import { ButtonRequest } from "../ButtonRequest";
 import { ButtonToPrinter } from "../ButtonToPrinter";
 import { useFetch } from "../../Helpers";
 import { ObjectPrinters } from "../../types";
+import { ConnectionButton } from "../ConnectionButton";
 
 export const ListPrinters = () => {
    const { data, loading, error } = useFetch<ObjectPrinters>(
@@ -22,7 +22,7 @@ export const ListPrinters = () => {
                <h4 className="header__menu-tagline">{p.tagline}</h4>
                <p className="header__menu-description">{p.description}</p>
                <div className="header__menu-buttons">
-                  <ButtonRequest />
+                  <ConnectionButton color="blueBg" content="Оставить заявку"/>
                   <ButtonToPrinter />
                </div>
             </li>

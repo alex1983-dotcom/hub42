@@ -1,0 +1,28 @@
+.formrequest__section {
+   padding-inline: var(--margin-inline);
+   background-color: var(--add-color);
+   padding-block: 100px;
+}
+.formrequest__section-content {
+   padding: 32px;
+   max-width: 612px;
+}
+.formrequest__section-title {
+   color: var(--main-color);
+
+   margin-bottom: 183px;
+}
+.formrequest__section-subtitle {
+   color: var(--main-color);
+}
+.formrequest__section-item {
+   border-bottom: 2px solid grey;
+   padding-block: 10px;
+}
+.formrequest__section-item-description {
+   color: var(--main-color);
+   font-size: 24px;
+}
+.formrequest__section-wrapper{
+   display: flex;
+}

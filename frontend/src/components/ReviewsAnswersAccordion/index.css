@@ -1,5 +1,5 @@
 .accordion__section {
-   padding-inline: var(--margin-inline);
+   margin-inline: var(--margin-inline);
 }
 .accordion__section-wrapper {
    max-width: 374px;

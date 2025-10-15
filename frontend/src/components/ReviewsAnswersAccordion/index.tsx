@@ -21,7 +21,7 @@ export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
 
    if (error) return <p>Ошибка загрузки</p>;
    return (
-      <section className="accordion__section" id="equipment">
+      <section className="accordion__section" id="company">
          <h2 className="accordion__section-title">{data?.title}</h2>
          <div className="accordion__section-inner">
             <div className="accordion__section-wrapper">
@@ -70,7 +70,7 @@ export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
                                  </div>
                               ) : (
                                  <div className="accordion__section-item-wrapper-link">
-                                    <ConnectionButton color="blueBg" />
+                                    <ConnectionButton color="blueBg" content="Связаться"/>
                                  </div>
                               ))}
                         </div>
