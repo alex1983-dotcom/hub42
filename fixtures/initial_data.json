@@ -260,6 +260,32 @@
   }
 },
 {
+  "model": "pages.icon",
+  "pk": 22,
+  "fields": {
+    "created_at": "2025-10-15T19:21:36.713Z",
+    "updated_at": "2025-10-15T19:21:36.713Z",
+    "name": "Левая фигура для блока оставить заявку",
+    "file_name": "figura_4.png",
+    "css_class": "",
+    "is_active": true,
+    "is_system": false
+  }
+},
+{
+  "model": "pages.icon",
+  "pk": 23,
+  "fields": {
+    "created_at": "2025-10-15T19:23:02.453Z",
+    "updated_at": "2025-10-15T19:23:02.453Z",
+    "name": "Правая фигура для блока оставить заявку",
+    "file_name": "figura_5.png",
+    "css_class": "",
+    "is_active": true,
+    "is_system": false
+  }
+},
+{
   "model": "pages.pageblock",
   "pk": 1,
   "fields": {
@@ -294,7 +320,7 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-08-27T14:15:55.233Z",
-    "updated_at": "2025-10-10T18:57:40.946Z",
+    "updated_at": "2025-10-11T08:14:39.287Z",
     "block_type": "advantages",
     "title": "Где 3D-печать решает задачи быстрее и дешевле",
     "subtitle": "УСКОРЯЕТ РАБОТУ ТАМБ, ГДЕ КЛАССИЧЕСКОЕ ПРОИЗВОДСТВО ТОРМОЗИТ",
@@ -474,7 +500,7 @@
   "pk": 12,
   "fields": {
     "created_at": "2025-08-28T07:23:30.123Z",
-    "updated_at": "2025-10-10T18:44:25.600Z",
+    "updated_at": "2025-10-11T11:49:22.832Z",
     "parent_block": 4,
     "title": "Архитектура",
     "content": "Макеты, зданий, фасады, ландшафты",
@@ -654,13 +680,13 @@
   "pk": 36,
   "fields": {
     "created_at": "2025-10-06T15:19:27.857Z",
-    "updated_at": "2025-10-10T18:57:40.946Z",
+    "updated_at": "2025-10-11T11:50:09.166Z",
     "parent_block": 3,
     "title": "Не указано",
     "content": "Автотюнинг и кастомизация",
     "icon": null,
     "sort_order": 0,
-    "is_active": false,
+    "is_active": true,
     "is_system": true
   }
 },
@@ -729,7 +755,7 @@
   "pk": 41,
   "fields": {
     "created_at": "2025-10-06T15:24:48.037Z",
-    "updated_at": "2025-10-06T15:24:48.037Z",
+    "updated_at": "2025-10-11T08:33:25.013Z",
     "parent_block": 3,
     "title": "Не указано",
     "content": "Быстрое прототипирование",
@@ -912,10 +938,12 @@
   "pk": 1,
   "fields": {
     "created_at": "2025-08-28T09:48:44.037Z",
-    "updated_at": "2025-10-06T20:05:51.282Z",
+    "updated_at": "2025-10-15T19:25:52.821Z",
+    "parent_block": 8,
     "service_type": "implementation",
-    "title": "",
+    "title": "Внедрение 3D-принтера",
     "sort_order": 0,
+    "icon": 13,
     "is_system": true
   }
 },
@@ -924,10 +952,12 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-08-28T09:54:14.807Z",
-    "updated_at": "2025-08-28T09:54:14.807Z",
+    "updated_at": "2025-10-15T19:14:57.084Z",
+    "parent_block": 8,
     "service_type": "custom_equipment",
-    "title": "",
+    "title": "Разработка оборудования под ключ",
     "sort_order": 0,
+    "icon": 14,
     "is_system": true
   }
 },
@@ -1381,6 +1411,21 @@
     "company": "OOO Romashka",
     "lead_source": null,
     "message": "I want printer",
+    "is_processed": false
+  }
+},
+{
+  "model": "requests.contactrequest",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-10-13T16:04:56.017Z",
+    "updated_at": "2025-10-13T16:04:56.017Z",
+    "name": "Test",
+    "email": "test@example.com",
+    "phone": "+375291234567",
+    "company": "OOO Test",
+    "lead_source": null,
+    "message": "with token",
     "is_processed": false
   }
 }

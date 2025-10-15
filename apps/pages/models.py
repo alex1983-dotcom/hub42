@@ -168,9 +168,24 @@ class Service(TimeStampedModel):
         ('implementation', 'Внедрение 3D-принтера'),
         ('custom_equipment', 'Разработка оборудования под ключ'),
     )
+    parent_block = models.ForeignKey(
+        PageBlock,
+        on_delete=models.CASCADE,
+        related_name="services",
+        verbose_name="Блок-родитель",
+        null=True,
+        blank=True,
+    )
     service_type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True, verbose_name="Услуга")
-    title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True)
+    title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True, default="")
     sort_order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    icon = models.ForeignKey(
+        Icon,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Иконка"
+    )
     is_system = models.BooleanField("Системная услуга", default=False, editable=False)
 
     class Meta:

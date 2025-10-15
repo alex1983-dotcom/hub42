@@ -60,13 +60,15 @@ class ServiceOfferItemSerializer(serializers.ModelSerializer):
 
 
 class PageServiceSerializer(serializers.ModelSerializer):
+    icon = IconSerializer(read_only=True)
+    parent_block = PageBlockSerializer(read_only=True)
     roadmap_items = ServiceRoadmapItemSerializer(many=True, read_only=True)
     offer_items = ServiceOfferItemSerializer(many=True, read_only=True)
 
     class Meta:
         model = Service
         fields = (
-            "id", "service_type", "title", "sort_order",
+            "id", "service_type", "parent_block", "title", "icon", "sort_order",
             "roadmap_items", "offer_items"
         )
 

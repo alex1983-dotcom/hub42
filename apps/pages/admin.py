@@ -25,7 +25,7 @@ class ServiceOfferItemInline(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("service_type", "title", "sort_order", "is_system")
+    list_display = ("service_type", "title", "icon", "sort_order", "is_system")
     inlines = [ServiceRoadmapItemInline, ServiceOfferItemInline]
 
     def has_delete_permission(self, request, obj=None):
