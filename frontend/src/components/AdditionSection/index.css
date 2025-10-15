@@ -2,15 +2,16 @@
    padding-block: 22.5px;
    background-color: var(--add-color);
    display: flex;
-   justify-content: space-between;
+   
    align-items: center;
-   gap: 30px;
+   
    padding-inline: var(--margin-inline);
 }
 .addition__section-title {
    font-size: var(--font-adaptive-title36);
    color: var(--main-color);
    font-weight: 400;
+   max-width: 928px;
 }
 @media (max-width: 1180px) {
    .addition__section {

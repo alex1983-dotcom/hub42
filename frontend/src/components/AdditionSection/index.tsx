@@ -9,7 +9,7 @@ export const AdditionSection = () => {
             Наши клиенты запускают печать без оснастки, получают детали за часы,
             а не недели
          </h2>
-         <ConnectionButton color="whiteBg" />
+         <ConnectionButton color="whiteBg" content="Связаться" />
       </section>
    );
 };

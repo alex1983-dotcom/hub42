@@ -1,5 +1,5 @@
 .products__section {
-   padding-inline: var(--margin-inline);
+   margin-inline: var(--margin-inline);
 }
 .products__secton-subtitle {
    padding-top: 40px;

@@ -98,3 +98,31 @@ export type ObjectPrinters = {
    results: Printer[];
 };
 export type ButtonColor = "whiteBg" | "blueBg";
+export type ButtonContent = "Связаться" | "Оставить заявку";
+export interface RoadmapItem {
+   id: number;
+   text: string;
+   sort_order: number;
+}
+
+export interface OfferItem {
+   id: number;
+   text: string;
+   sort_order: number;
+}
+
+export interface Service {
+   id: number;
+   service_type: string;
+   title: string;
+   sort_order: number;
+   roadmap_items: RoadmapItem[];
+   offer_items: OfferItem[];
+}
+
+export interface ServicesResponse {
+   count: number;
+   next: null | string;
+   previous: null | string;
+   results: Service[];
+}

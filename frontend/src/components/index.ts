@@ -1,7 +1,6 @@
 export * from "./Header";
 export * from "./BurgerButton";
 export * from "./ModalPrinters";
-export * from "./ButtonRequest";
 export * from "./ButtonToPrinter";
 export * from "./NavDrawer";
 export * from "./IndustryPrinters";
@@ -11,3 +10,6 @@ export * from "./ConnectionButton";
 export * from "./ListPrinters";
 export * from "./Products";
 export * from "./ReviewsAnswersAccordion";
+export * from "./ServicesSection";
+export * from "./FormRequest";
+export * from "./Form";

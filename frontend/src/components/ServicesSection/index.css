@@ -1,0 +1,119 @@
+:root {
+   --padding-size: 16px 44px 16px 16px;
+}
+.services__section {
+   margin-inline: var(--margin-inline);
+}
+.services__wrapper {
+   border-top: var(--border-top);
+   padding-top: 40px;
+}
+.services__wrapper-list {
+   display: flex;
+   flex-direction: column;
+   row-gap: 80px;
+}
+.services__wrapper-item-inner {
+   display: flex;
+   justify-content: start;
+   align-items: end;
+   gap: 34px;
+}
+.services__wrapper-item-title {
+   height: max-content;
+   margin-bottom: 16px;
+   display: flex;
+   align-items: end;
+}
+.services__wrapper-item-title span {
+   margin-right: 10px;
+   font-size: 48px;
+}
+.services__wrapper-item-inner-img {
+   width: 491px;
+   height: 545px;
+   border: 1px solid red;
+}
+.services__wrapper-item-inner-roadmap {
+   border: var(--border);
+}
+.services__wrapper-item-inner-roadmap-title {
+   padding: var(--padding-size);
+   border: var(--border);
+}
+.services__wrapper-item-inner-roadmap-item {
+   padding: var(--padding-size);
+   border: var(--border);
+}
+.services__wrapper-item-inner-roadmap-item-description {
+   display: flex;
+   align-items: center;
+   column-gap: 8px;
+}
+.services__wrapper-item-inner-roadmap-item-description p {
+   font-size: var(--font-adaptive-subtitle24);
+   max-width: 405px;
+}
+.services__wrapper-item-inner-offers {
+   border: var(--border);
+   margin-bottom: 16px;
+}
+.services__wrapper-item-inner-offers-title {
+   padding: var(--padding-size);
+   border: var(--border);
+}
+.services__wrapper-item-inner-offers-item {
+   padding: var(--padding-size);
+}
+.services__wrapper-item-inner-offers-item-description p {
+   font-size: var(--font-adaptive-subtitle24);
+   max-width: 447px;
+}
+.services__wrapper-item-inner-offers-item {
+   border: var(--border);
+}
+@media (max-width: 768px) {
+   .services__wrapper {
+      padding-top: 24px;
+   }
+   .services__wrapper-list {
+      row-gap: 24px;
+   }
+   .services__wrapper-item-inner-img {
+      width: 728px;
+      height: 674x;
+   }
+   .services__wrapper-item-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+   }
+}
+@media (max-width: 375px) {
+   .services__section {
+      margin-top: 40px;
+   }
+   .services__wrapper-item-inner-roadmap-item {
+      padding-right: 16px;
+   }
+   .services__wrapper-item-inner-roadmap-title {
+      font-size: 16px;
+   }
+   .services__wrapper-item-inner-roadmap-item-description {
+      column-gap: 16px;
+   }
+   .services__wrapper-item-inner-roadmap-item-description span {
+      font-size: 16px;
+   }
+   .services__wrapper-item-inner-offers-item {
+      padding-right: 16px;
+   }
+   .services__wrapper-item-inner-offers-title {
+      font-size: 16px;
+   }
+   .services__wrapper-item-inner-img {
+      width: 335px;
+      height: 120px;
+   }
+}

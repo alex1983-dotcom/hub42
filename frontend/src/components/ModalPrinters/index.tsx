@@ -1,8 +1,4 @@
-import { ObjectPrinters } from "../../types";
-import { useFetch } from "../../Helpers";
 import "./index.css";
-import { ButtonRequest } from "../ButtonRequest";
-import { ButtonToPrinter } from "../ButtonToPrinter";
 import { useEffect } from "react";
 import { ListPrinters } from "../ListPrinters";
 

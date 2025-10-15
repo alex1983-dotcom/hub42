@@ -29,6 +29,7 @@ body {
 :root {
    --main-color: white;
    --add-color: #3c3aa5;
+   --border: 1px solid black;
    --border-top: 4px solid blue;
    --margin-inline: clamp(2rem, -5.125rem + 11.25vw, 16.1rem);
    --font-adaptive-title36: clamp(12px, -12px + 6.4vw, 36px);
@@ -58,4 +59,10 @@ h4 {
 }
 section {
    margin-top: 100px;
+}
+
+span {
+   color: var(--add-color);
+   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+   font-size: 36px;
 }

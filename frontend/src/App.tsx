@@ -2,9 +2,11 @@ import "./normalize.css";
 import "./App.css";
 
 import {
+   FormRequest,
    Header,
    Products,
    ReviewsAnswersAccordion,
+   ServicesSection,
    SliderSpheres,
 } from "./components";
 import { IndustryPrinters } from "./components/IndustryPrinters";
@@ -22,6 +24,8 @@ function App() {
             <AdditionSection />
             <Products />
             <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/6/" />
+            <ServicesSection />
+            <FormRequest />
          </div>
       </>
    );
