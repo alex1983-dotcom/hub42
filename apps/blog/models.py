@@ -1,7 +1,26 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 from mdeditor.fields import MDTextField
 from apps.core.models import TimeStampedModel
+
+
+class Category(models.Model):
+    name = models.CharField("Название", max_length=100, unique=True)
+    slug = models.SlugField("URL", max_length=120, unique=True, db_index=True)
+
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name, allow_unicode=True)
+        super().save(*args, **kwargs)
 
 
 class PostManager(models.Manager):
@@ -21,6 +40,14 @@ class Post(TimeStampedModel):
     meta_description = models.CharField(
         "SEO-описание", max_length=160, blank=True
     )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="posts",
+        verbose_name="Категория",
+    )
 
     objects = PostManager()
 
@@ -33,7 +60,6 @@ class Post(TimeStampedModel):
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
 
-
     def __str__(self):
         return self.title
 
@@ -45,3 +71,4 @@ class Post(TimeStampedModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse("blog:detail", kwargs={"slug": self.slug})
+    
