@@ -4,7 +4,7 @@ from apps.pages.models import Icon
 from drf_spectacular.utils import extend_schema_field
 
 
-class EquipmentIconSerializer(serializers.ModelSerializer):  # ← другое имя
+class EquipmentIconSerializer(serializers.ModelSerializer):
     url = serializers.SerializerMethodField()
 
     class Meta:
@@ -27,16 +27,16 @@ class ProductImageSerializer(serializers.ModelSerializer):
         fields = ('image', 'alt')
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class EquipmentCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ('id', 'name', 'slug')
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(read_only=True)
+    category = EquipmentCategorySerializer(read_only=True)
     images = ProductImageSerializer(many=True, read_only=True)
-    icon = EquipmentIconSerializer(read_only=True)  # ← иконка
+    icon = EquipmentIconSerializer(read_only=True)
 
     class Meta:
         model = Product
