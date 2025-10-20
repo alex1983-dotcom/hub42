@@ -11,11 +11,18 @@
    font-family: Arial, Helvetica, sans-serif;
 }
 
-.order-form__title {
-   font-size: 32px;
-   margin: 0 0 24px;
+.order-form__wrapper {
+   display: flex;
+   justify-content: space-between;
 }
-
+.order-form__title,
+.order-form__subtitle {
+   display: inline;
+}
+.order-form__subtitle {
+   max-width: 215px;
+   font-size: clamp(12px, 0.8vw + 9px, 24px);
+}
 /* ---------- сетка 2 колонки ---------- */
 .order-form__grid {
    display: grid;
@@ -29,10 +36,11 @@
 
 /* ---------- элементы ---------- */
 .order-form__label {
+   font-family: helvetica;
    display: block;
-   font-size: 14px;
+   font-size: 24px;
    margin-bottom: 8px;
-   color: #333;
+   color: #1f1f1f;
 }
 
 .order-form__field input,

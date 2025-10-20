@@ -26,6 +26,8 @@ function App() {
             <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/6/" />
             <ServicesSection />
             <FormRequest />
+            <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/9/" />
+            <AdditionSection />
          </div>
       </>
    );

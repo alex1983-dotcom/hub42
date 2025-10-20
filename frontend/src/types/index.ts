@@ -114,7 +114,23 @@ export interface OfferItem {
 export interface Service {
    id: number;
    service_type: string;
+   parent_block: {
+      id: number;
+      block_type: string;
+      title: string;
+      subtitle: string;
+      content: string;
+      is_active: boolean;
+      items: unknown[]; // ← замените на конкретный тип элементов, когда появится
+   };
    title: string;
+   icon: {
+      id: number;
+      name: string;
+      file_name: string;
+      css_class: string;
+      url: string;
+   };
    sort_order: number;
    roadmap_items: RoadmapItem[];
    offer_items: OfferItem[];
@@ -126,3 +142,21 @@ export interface ServicesResponse {
    previous: null | string;
    results: Service[];
 }
+export interface SourcesInformation {
+   count: number;
+   next: null | string;
+   previous: null | string;
+   results: Source[];
+}
+export interface Source {
+   id: number;
+   name: string;
+}
+export type FormData = {
+   name: string;
+   email: string;
+   phone: string;
+   company: string;
+   message: string;
+   lead_source: number;
+};

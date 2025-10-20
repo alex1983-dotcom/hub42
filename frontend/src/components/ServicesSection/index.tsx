@@ -13,20 +13,21 @@ export const ServicesSection = () => {
 
    if (error) return <p>Ошибка загрузки</p>;
    return (
-      <section className="services__section">
-         <h2 className="services__title">Наши услуги</h2>
-
+      <section className="services__section" id="services">
+         <h2 className="services__title">
+            {data?.results[0]?.parent_block.title ?? "error 404"}
+         </h2>
          <div className="services__wrapper">
             <ul className="services__wrapper-list">
                {data?.results.map((serviceType, idx) => (
                   <li key={idx} className="services__wrapper-item">
                      <h3 className="services__wrapper-item-title">
                         <span>0{idx + 1}</span>
-                        {serviceType.service_type}
+                        {serviceType.title}
                      </h3>
                      <div className="services__wrapper-item-inner">
                         <img
-                           src="something"
+                           src={serviceType.icon.url}
                            alt="тут какаят-о картинка"
                            className="services__wrapper-item-inner-img"
                         />

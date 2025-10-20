@@ -25,7 +25,7 @@ const data = {
 
 export const FormRequest = () => {
    return (
-      <section className="formrequest__section">
+      <section className="formrequest__section" id="request">
          <div className="formrequest__section-wrapper">
             <div className="formrequest__section-content">
                <h3 className="formrequest__section-title">{data.title}</h3>
@@ -42,7 +42,7 @@ export const FormRequest = () => {
                   ))}
                </ul>
             </div>
-            <MyForm/>
+            <MyForm />
          </div>
       </section>
    );
