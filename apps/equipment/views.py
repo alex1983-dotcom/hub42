@@ -17,7 +17,7 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     )
     serializer_class = ProductSerializer
     permission_classes = [OnlyWithApiKeyOrFromFrontend]
-    lookup_field = 'slug'
+    lookup_field = 'id'
     filter_backends = [filters.OrderingFilter]
     ordering_fields = ['price', 'created_at', 'name']
     ordering = ['-created_at']
