@@ -10,12 +10,11 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
     GET /api/blog/?ordering=title          # по алфавиту
     GET /api/blog/<slug>/                  # детально
     """
-    queryset = Post.objects.published()
+    queryset = Post.objects.published().select_related("category")
     serializer_class = PostSerializer
-    lookup_field = 'slug'
+    lookup_field = "slug"
     permission_classes = [OnlyWithApiKeyOrFromFrontend]
 
-    # включаем сортировку
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['published_at', 'title', 'created_at']
-    ordering = ['-published_at']
+    ordering_fields = ["published_at", "title", "created_at"]
+    ordering = ["-published_at"]

@@ -243,11 +243,12 @@ class ContactFooter(TimeStampedModel):
     Контент футера
     """
     title = models.CharField(max_length=255, verbose_name="Заголовок футера", default="")
+    subtitle = models.CharField(max_length=255, verbose_name="Подзаголовок", default="")
     office_address = models.CharField(max_length=255, verbose_name="Адрес офиса")
     office_phone = models.CharField(max_length=30, blank=True, verbose_name="Телефон офиса")
-    service_address = models.CharField(max_length=255, verbose_name="Адрес сервисного центра")
-    service_phone = models.CharField(max_length=30, blank=True, verbose_name="Телефон сервисного центра")
+    email = models.CharField(max_length=255, verbose_name="Электронная почта", default="noemail@example.com")
     user_agreement = MDTextField("Пользовательское соглашение", default="")
+    privacy_policy = MDTextField("Политика конфиденциальности", default="")
     is_system = models.BooleanField("Системные данные футера", default=True, editable=False)
 
     class Meta:
@@ -255,6 +256,6 @@ class ContactFooter(TimeStampedModel):
         verbose_name_plural = "Данные футера"
 
     def __str__(self):
-        return "Futer contact"
+        return f"{self.office_phone} - {self.email}"
 
 

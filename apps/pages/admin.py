@@ -140,9 +140,10 @@ class ApplicationArticleAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     readonly_fields = ("published_at",)
 
+
 @admin.register(ContactFooter)
 class ContactFooterAdmin(admin.ModelAdmin):
-    list_display = ('office_address', 'office_phone', 'service_phone', 'is_system')
+    list_display = ('office_address', 'office_phone', 'email', 'is_system')
 
     def has_delete_permission(self, request, obj=None):
         if obj and obj.is_system:
