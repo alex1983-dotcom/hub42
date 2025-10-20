@@ -410,10 +410,10 @@
   "pk": 10,
   "fields": {
     "created_at": "2025-08-28T10:13:36.137Z",
-    "updated_at": "2025-08-28T10:13:36.137Z",
+    "updated_at": "2025-10-20T19:11:39.265Z",
     "block_type": "blog",
-    "title": "Свежие публикации в нашем блоге",
-    "subtitle": "",
+    "title": "Блог и новости",
+    "subtitle": "Свежие публикации в нашем блоге",
     "content": "",
     "is_active": true,
     "sort_order": 0,
