@@ -1,34 +1,21 @@
 import "./normalize.css";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { MainLayout } from "./Layouts/MainLayout";
+import { routes } from "./Routes";
 
-import {
-   FormRequest,
-   Header,
-   Products,
-   ReviewsAnswersAccordion,
-   ServicesSection,
-   SliderSpheres,
-} from "./components";
-import { IndustryPrinters } from "./components/IndustryPrinters";
-import { Print } from "./components/3dPrint";
-import { AdditionSection } from "./components/AdditionSection";
+import Printer from "./components/PrinterPage";
+import { Home } from "./components";
 
 function App() {
    return (
       <>
-         <div className="App">
-            <Header />
-            <IndustryPrinters />
-            <Print />
-            <SliderSpheres />
-            <AdditionSection />
-            <Products />
-            <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/6/" />
-            <ServicesSection />
-            <FormRequest />
-            <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/9/" />
-            <AdditionSection />
-         </div>
+         <Routes>
+            <Route element={<MainLayout />}>
+               <Route path={routes.main} element={<Home />}></Route>
+               {/* <Route path={routes.printer} element={<Printer />}></Route> */}
+            </Route>
+         </Routes>
       </>
    );
 }

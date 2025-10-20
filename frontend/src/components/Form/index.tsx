@@ -31,10 +31,10 @@ export const MyForm: React.FC = () => {
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault();
 
-      // 1. собираем payload по спецификации API
+      
 
       try {
-         // 2. POST-запрос на endpoint из скриншота
+         
          const res = await fetch(
             "http://localhost:8000/api/requests/contact-requests/",
             {
@@ -45,7 +45,7 @@ export const MyForm: React.FC = () => {
          );
 
          if (!res.ok) {
-            // 3. обработка HTTP-ошибок
+         
             const err = await res
                .json()
                .catch(() => ({ detail: "Network error" }));

@@ -1,5 +1,5 @@
 .order-form {
-   width: 986px;
+   max-width: 986px;
    height: auto;
    padding: 60px 80px;
    box-sizing: border-box;
@@ -79,4 +79,30 @@
    border-radius: 4px;
    cursor: pointer;
    width: 100%;
+}
+@media (max-width: 768px) {
+   .order-form__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px 32px;
+   }
+   .order-form {
+      padding: 32px;
+   }
+}
+@media (max-width: 375px) {
+   .order-form__label {
+      font-size: 12px;
+   }
+   .order-form__field input,
+   .order-form__field select,
+   .order-form__field textarea {
+      padding: 10px;
+   }
+   .order-form__grid {
+      row-gap: 8px;
+   }
+   .order-form {
+      row-gap: 16px;
+   }
 }

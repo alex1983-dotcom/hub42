@@ -30,3 +30,16 @@
 #request {
    scroll-margin-top: 104px;
 }
+@media (max-width: 768px) {
+   .formrequest__section-wrapper {
+      flex-direction: column;
+   }
+   .formrequest__section {
+      padding-block: 20px;
+   }
+   .formrequest__section-title {
+      color: var(--main-color);
+
+      margin-bottom: 23px;
+   }
+}
