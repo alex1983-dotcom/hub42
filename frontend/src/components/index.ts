@@ -13,3 +13,6 @@ export * from "./ReviewsAnswersAccordion";
 export * from "./ServicesSection";
 export * from "./FormRequest";
 export * from "./Form";
+export * from "./PrinterPage";
+export * from "./Home";
+export * from "./ItemCard";

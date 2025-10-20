@@ -3,6 +3,8 @@ import { ButtonToPrinter } from "../ButtonToPrinter";
 import { useFetch } from "../../Helpers";
 import { ObjectPrinters } from "../../types";
 import { ConnectionButton } from "../ConnectionButton";
+import { ItemCard } from "../ItemCard";
+
 
 export const ListPrinters = () => {
    const { data, loading, error } = useFetch<ObjectPrinters>(
@@ -16,15 +18,8 @@ export const ListPrinters = () => {
    return (
       <ul className="header__menu-list">
          {data?.results.map((p, idx) => (
-            <li key={idx} className="header__menu-item">
-               <h3 className="header__menu-title">{p.name}</h3>
-               <img src={p.icon.url} alt={p.name} />
-               <h4 className="header__menu-tagline">{p.tagline}</h4>
-               <p className="header__menu-description">{p.description}</p>
-               <div className="header__menu-buttons">
-                  <ConnectionButton color="blueBg" content="Оставить заявку"/>
-                  <ButtonToPrinter />
-               </div>
+            <li key={p.id} className="header__menu-item">
+               <ItemCard {...p}></ItemCard>
             </li>
          ))}
       </ul>
