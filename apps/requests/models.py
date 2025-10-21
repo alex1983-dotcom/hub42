@@ -22,6 +22,12 @@ class ContactRequest(TimeStampedModel):
     message = models.TextField(blank=True, verbose_name="Текст заявки")
     is_processed = models.BooleanField(default=False, verbose_name="Обработано")
 
+    def save(self, *args, **kwargs):
+        if self.lead_source_id is None:  # пользователь ничего не выбрал
+            other, _ = LeadSource.objects.get_or_create(name='Другое')
+            self.lead_source = other
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "Заказчик"
         verbose_name_plural = "Заказчики"

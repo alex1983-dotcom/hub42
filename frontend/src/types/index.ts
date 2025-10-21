@@ -158,5 +158,5 @@ export type FormData = {
    phone: string;
    company: string;
    message: string;
-   lead_source: number;
+   lead_source: number | null;
 };
