@@ -61,7 +61,7 @@ export interface Printer extends Record<string, unknown> {
    product_type: "dryer";
    category: Category;
    images: unknown[]; // если понадобится – замените на конкретный тип
-   icon: Icon ;
+   icon: Icon;
    volume_construction: string;
    extruders_count: string;
    bed_max_temp: number | null;
@@ -158,5 +158,5 @@ export type FormData = {
    phone: string;
    company: string;
    message: string;
-   lead_source: number;
+   lead_source: string;
 };

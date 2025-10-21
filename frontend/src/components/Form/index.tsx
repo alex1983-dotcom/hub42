@@ -16,7 +16,7 @@ export const MyForm: React.FC = () => {
       phone: "",
       company: "",
       message: "",
-      lead_source: 0,
+      lead_source: "",
    });
 
    const handleChange = (
@@ -30,7 +30,7 @@ export const MyForm: React.FC = () => {
 
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault();
-
+      console.log(form);
       try {
          const res = await fetch(
             "http://localhost:8000/api/requests/contact-requests/",
@@ -59,8 +59,8 @@ export const MyForm: React.FC = () => {
             email: "",
             phone: "",
             company: "",
-            lead_source: 0,
             message: "",
+            lead_source: "",
          });
       } catch (networkError) {
          console.error("Сетевая ошибка:", networkError);
