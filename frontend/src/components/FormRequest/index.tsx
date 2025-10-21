@@ -34,7 +34,7 @@ export const FormRequest = () => {
                </h2>
                <ul className="formrequest__section-list">
                   {data.items.map((p, idx) => (
-                     <li className="formrequest__section-item">
+                     <li className="formrequest__section-item" key={idx}>
                         <div className="formrequest__section-item-description">
                            <p>{p.content}</p>
                         </div>

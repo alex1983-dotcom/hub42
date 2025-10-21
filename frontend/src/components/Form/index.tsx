@@ -31,10 +31,7 @@ export const MyForm: React.FC = () => {
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault();
 
-      
-
       try {
-         
          const res = await fetch(
             "http://localhost:8000/api/requests/contact-requests/",
             {
@@ -45,7 +42,6 @@ export const MyForm: React.FC = () => {
          );
 
          if (!res.ok) {
-         
             const err = await res
                .json()
                .catch(() => ({ detail: "Network error" }));

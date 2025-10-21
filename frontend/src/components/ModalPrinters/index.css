@@ -8,7 +8,8 @@
    top: -1500px;
    left: 0px;
    display: flex;
-   height: max-content;
+   max-height: 90vh; 
+   overflow-y: auto; 
    flex-direction: column;
    width: 100vw;
    padding-inline: 161px;
@@ -22,6 +23,7 @@
    top: 0;
    opacity: 1;
    transform: translateY(103px);
+   overflow-y: scroll;
 }
 @media (max-width: 1600px) {
    .header__menu {
