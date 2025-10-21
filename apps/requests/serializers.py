@@ -9,20 +9,19 @@ class LeadSourceSerializer(serializers.ModelSerializer):
 
 
 class ContactRequestSerializer(serializers.ModelSerializer):
+    lead_source_name = serializers.CharField(source='lead_source.name', read_only=True)
+
     class Meta:
         model = ContactRequest
-        fields = '__all__'
+        fields = [
+            'id', 'name', 'email', 'phone', 'company', 'message',
+            'lead_source', 'lead_source_name', 'created_at'
+        ]
 
-    def validate_lead_source(self, value):
-        # если фронт прислал 0 или "0" – возвращаем объект «Другое»
-        if value in (0, "0"):
-            # ищем запись «Другое»; если нет – создаём
-            other, _ = LeadSource.objects.get_or_create(
-                defaults={'name': 'Другое'},
-                name='Другое'          # уникальное поле
-            )
-            return other
-        # Проверка существования id
-        if value and not LeadSource.objects.filter(pk=value).exists():
-            raise serializers.ValidationError("Указан несуществующий источник.")
-        return value
+    # def validate_lead_source(self, value):
+    #     if value in (0, "0", ""):
+    #         other, _ = LeadSource.objects.get_or_create(name='Другое')
+    #         return other
+    #     if value and not LeadSource.objects.filter(pk=value).exists():
+    #         raise serializers.ValidationError("Указан несуществующий источник.")
+    #     return value
