@@ -32,6 +32,7 @@ class Post(TimeStampedModel):
     STATUS_CHOICES = (("draft", "Черновик"), ("published", "Опубликовано"))
 
     title = models.CharField("Заголовок", max_length=255, db_index=True)
+    image = models.ImageField(upload_to="post/", verbose_name="Изображение-обложка статьи")
     slug = models.SlugField("URL", unique=True, max_length=255)
     preview = models.TextField("Анонс", max_length=500)
     body = MDTextField("Текст")
@@ -71,4 +72,3 @@ class Post(TimeStampedModel):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse("blog:detail", kwargs={"slug": self.slug})
-    
