@@ -13,7 +13,7 @@ function App() {
          <Routes>
             <Route element={<MainLayout />}>
                <Route path={routes.main} element={<Home />}></Route>
-               {/* <Route path={routes.printer} element={<Printer />}></Route> */}
+               <Route path={routes.printer} element={<Printer />}></Route>
             </Route>
          </Routes>
       </>

@@ -17,10 +17,14 @@ export const ModalPrinters = ({
          const target = e.target as Element | null;
          if (!target) return;
 
-         const card = target.closest(".header__menu-item");
-         if (drawer.contains(target) && !card) {
+         const link = target.closest("a");
+         if (link) {
             onClose();
+            return;
          }
+
+         const card = target.closest(".header__menu-item");
+         if (!card) onClose();
       };
 
       drawer.addEventListener("click", handleClick);
