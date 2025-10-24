@@ -1,0 +1,6 @@
+.header__wrapper-list.footer {
+   flex-direction: column;
+   padding: 0;
+   margin-block: 0;
+   align-items: start;
+}
