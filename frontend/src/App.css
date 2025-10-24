@@ -29,12 +29,13 @@ body {
 :root {
    --main-color: white;
    --add-color: #3c3aa5;
-   --border: 1px solid black;
+   --border: 3px solid black;
    --border-top: 4px solid blue;
    --margin-inline: clamp(2rem, -5.125rem + 11.25vw, 16.1rem);
    --font-adaptive-title36: clamp(12px, -12px + 6.4vw, 36px);
    --font-adaptive-subtitle48: clamp(24px, -24px + 6.4vw, 48px);
    --font-adaptive-subtitle24: clamp(16px, -8px + 4.2667vw, 24px);
+   --font-adaptive-subtitle36: clamp(16px, -16px + 6.4vw, 36px);
 }
 h1,
 h2,
@@ -55,7 +56,7 @@ h3 {
 }
 h4 {
    font-weight: 400;
-   font-size: 36px;
+   font-size: var(--font-adaptive-subtitle36);
 }
 section {
    margin-top: 100px;

@@ -37,36 +37,34 @@ export const Header = () => {
       <header className="header">
          <h1 className="logo">{data?.title}</h1>
          <nav className="header__nav__bar">
-            <ul className="wrapper">
-               <li className="wrapper-items">
+            <ul className="header__wrapper-list">
+               <li className="header__wrapper-item">
                   <a href="#equipment">Оборудование</a>
                </li>
-               <li className="wrapper-items">
+               <li className="header__wrapper-item">
                   <a href="#company">О компании</a>
                </li>
-               <li className="wrapper-items">
+               <li className="header__wrapper-item">
                   <a href="#services">Наши услуги</a>
                </li>
-               <li className="wrapper-items">
+               <li className="header__wrapper-item">
                   <a href="#request">Оставить заявку</a>
                </li>
-               <li className="wrapper-items">
+               <li className="header__wrapper-item">
                   <a href="#FAQ">FAQ</a>
                </li>
-               <li className="wrapper-items">
+               <li className="header__wrapper-item">
                   <a href="#blog">Блог</a>
                </li>
-               <li className="wrapper-items">
-                  <a href="something">
-                     <img src={imgs.img_1} alt="instagram" />
-                  </a>
-               </li>
-               <li className="wrapper-items">
-                  <a href="something">
-                     <img src={imgs.img_2} alt="instagram" />
-                  </a>
-               </li>
             </ul>
+
+            <a href="something">
+               <img src={imgs.img_1} alt="instagram" />
+            </a>
+
+            <a href="something">
+               <img src={imgs.img_2} alt="instagram" />
+            </a>
          </nav>
          <BurgerButton isOpen={isOpen} setOpen={setOpen} />
          <ModalPrinters isOpen={isOpen} onClose={() => setOpen(false)} />
