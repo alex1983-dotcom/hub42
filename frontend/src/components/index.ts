@@ -16,3 +16,7 @@ export * from "./Form";
 export * from "./PrinterPage";
 export * from "./Home";
 export * from "./ItemCard";
+export * from "./BlogNews";
+export * from "./BlogsPage";
+export * from "./Footer";
+export * from "./NavigationBar";

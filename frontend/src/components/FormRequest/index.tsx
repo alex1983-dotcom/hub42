@@ -1,8 +1,10 @@
 import React from "react";
 import "./index.css";
 import { MyForm } from "../Form";
+import { useFetch } from "../../Helpers";
+import { IconsResponse } from "../../types";
 
-const data = {
+const myData = {
    title: "Рассчитаем, сколько вы сэкономите с 3D-печатью",
    subtitle: "Проведем оценку на вашем производстве ",
    items: [
@@ -24,16 +26,24 @@ const data = {
 };
 
 export const FormRequest = () => {
+   const { data, loading, error } = useFetch<IconsResponse>(
+      "http://localhost:8000/api/pages/icons/"
+   );
+
+   if (loading) return <p>Loading…</p>;
+
+   if (error) return <p>Ошибка загрузки</p>;
+
    return (
       <section className="formrequest__section" id="request">
          <div className="formrequest__section-wrapper">
             <div className="formrequest__section-content">
-               <h3 className="formrequest__section-title">{data.title}</h3>
+               <h3 className="formrequest__section-title">{myData.title}</h3>
                <h2 className="formrequest__section-subtitle">
-                  {data.subtitle}
+                  {myData.subtitle}
                </h2>
                <ul className="formrequest__section-list">
-                  {data.items.map((p, idx) => (
+                  {myData.items.map((p, idx) => (
                      <li className="formrequest__section-item" key={idx}>
                         <div className="formrequest__section-item-description">
                            <p>{p.content}</p>
@@ -44,6 +54,21 @@ export const FormRequest = () => {
             </div>
             <MyForm />
          </div>
+         {data?.results.map((icon, idx) => (
+            <React.Fragment key={idx}>
+               {(icon.id === 22 || icon.id === 23) && (
+                  <img
+                     src={icon.url}
+                     alt={icon.name}
+                     className={
+                        icon.id === 22
+                           ? "formrequest__section-img left"
+                           : "formrequest__section-img right"
+                     }
+                  />
+               )}
+            </React.Fragment>
+         ))}
       </section>
    );
 };

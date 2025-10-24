@@ -7,9 +7,9 @@ import { Products } from "../Products";
 import { ReviewsAnswersAccordion } from "../ReviewsAnswersAccordion";
 import { ServicesSection } from "../ServicesSection";
 import { FormRequest } from "../FormRequest";
+import { BlogNews } from "../BlogNews";
 
 export const Home = () => {
-
    return (
       <div className="App">
          <IndustryPrinters />
@@ -22,6 +22,7 @@ export const Home = () => {
          <FormRequest />
          <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/9/" />
          <AdditionSection />
+         <BlogNews />
       </div>
    );
 };

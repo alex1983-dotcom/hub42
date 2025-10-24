@@ -9,6 +9,7 @@
    background: #e6e6e6;
    border: 1px solid #e0e0e0;
    font-family: Arial, Helvetica, sans-serif;
+   z-index: 1000;
 }
 
 .order-form__wrapper {
@@ -104,5 +105,10 @@
    }
    .order-form {
       row-gap: 16px;
+   }
+   .order-form {
+      margin-left: calc(-1 * var(--section-padding-inline, 20px));
+      margin-right: calc(-1 * var(--section-padding-inline, 20px));
+      width: calc(100% + 2 * var(--section-padding-inline, 20px));
    }
 }
