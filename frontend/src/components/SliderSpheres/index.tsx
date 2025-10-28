@@ -56,7 +56,7 @@ export const SliderSpheres = () => {
                               {p.content}
                            </p>
                            <img
-                              src={p.icon.url}
+                              src={p.icon?.url}
                               alt="images"
                               className="sliderSpheres__section-item-img"
                            />
