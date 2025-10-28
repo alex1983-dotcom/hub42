@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ContactRequest, LeadSource
+from .models import ContactRequest, LeadSource, Reviews
 
 
 class LeadSourceSerializer(serializers.ModelSerializer):
@@ -18,10 +18,25 @@ class ContactRequestSerializer(serializers.ModelSerializer):
             'lead_source', 'lead_source_name', 'created_at'
         ]
 
-    # def validate_lead_source(self, value):
-    #     if value in (0, "0", ""):
-    #         other, _ = LeadSource.objects.get_or_create(name='Другое')
-    #         return other
-    #     if value and not LeadSource.objects.filter(pk=value).exists():
-    #         raise serializers.ValidationError("Указан несуществующий источник.")
-    #     return value
+
+class ReviewSerializer(serializers.ModelSerializer):
+    """Для GET-запроса (опубликованные отзывы)."""
+    class Meta:
+        model = Reviews
+        fields = (
+            'id', 'name', 'email', 'company', 'review', 'created_at'
+        )
+
+
+class ReviewCreateSerializer(serializers.ModelSerializer):
+    """Для POST-запроса (оставить отзыв)."""
+    class Meta:
+        model = Reviews
+        fields = (
+            'name', 'email', 'phone', 'company', 'review'
+        )
+        extra_kwargs = {
+            'phone': {'required': False},
+            'company': {'required': False},
+            'review': {'required': True}
+        }

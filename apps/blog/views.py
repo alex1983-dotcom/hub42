@@ -10,7 +10,7 @@ class PostViewSet(viewsets.ReadOnlyModelViewSet):
     GET /api/blog/?ordering=title          # по алфавиту
     GET /api/blog/<slug>/                  # детально
     """
-    queryset = Post.objects.published().select_related("category")
+    queryset = Post.objects.published()
     serializer_class = PostSerializer
     lookup_field = "slug"
     permission_classes = [OnlyWithApiKeyOrFromFrontend]

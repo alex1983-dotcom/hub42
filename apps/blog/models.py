@@ -7,24 +7,6 @@ from mdeditor.fields import MDTextField
 from apps.core.models import TimeStampedModel
 
 
-class Category(models.Model):
-    name = models.CharField("Название", max_length=100, unique=True)
-    slug = models.SlugField("URL", max_length=120, unique=True, db_index=True)
-
-    class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
-        ordering = ["name"]
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name, allow_unicode=True)
-        super().save(*args, **kwargs)
-
-
 class PostManager(models.Manager):
     def published(self):
         return self.filter(status="published", published_at__lte=timezone.now())
@@ -42,14 +24,6 @@ class Post(TimeStampedModel):
     published_at = models.DateTimeField("Дата публикации", blank=True, null=True)
     meta_description = models.CharField(
         "SEO-описание", max_length=160, blank=True
-    )
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="posts",
-        verbose_name="Категория",
     )
 
     objects = PostManager()

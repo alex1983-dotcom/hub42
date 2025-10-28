@@ -49,7 +49,6 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "apps.core",
     "apps.equipment",
-    "apps.services",
     "apps.blog",
     "apps.requests",
     "apps.pages",
