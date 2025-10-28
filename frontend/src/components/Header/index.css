@@ -32,6 +32,7 @@ nav {
    display: flex;
    align-items: center;
    gap: 16px;
+   margin-right: 16px;
 }
 .header__wrapper-item {
    padding-inline: 13px 8px;

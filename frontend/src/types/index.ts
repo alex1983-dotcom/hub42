@@ -23,6 +23,33 @@ export interface Icon {
    css_class: string;
    url: string;
 }
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+export interface Blog {
+  id: number;
+  image: string; // URL
+  title: string;
+  slug: string;
+  preview: string;
+  body: string; // Markdown
+  status: 'published' | 'draft';
+  published_at: string;
+  meta_description: string;
+  created_at: string;
+  updated_at: string;
+  category: Category;
+}
+
+export interface Blogs {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Blog[];
+}
 export interface Img {
    id: number;
    name: string;
