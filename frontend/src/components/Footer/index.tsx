@@ -26,7 +26,7 @@ export const Footer = () => {
                <a href="">Политика конфиденциальности</a>
             </div>
             <address className="footer__contacts">
-               <p>Контакты</p>
+               <p>Контакты:</p>
                <a href="mailto:office@hub.by">{data?.email}</a>
                <a href="tel:+375296999999">{data?.office_phone}</a>
                <div className="footer__pict">
@@ -39,7 +39,7 @@ export const Footer = () => {
                </div>
             </address>
             <address className="footer__address">
-               <span>Офис:</span>
+               <p>Офис:</p>
                <p>{data?.office_address}</p>
             </address>
          </div>
