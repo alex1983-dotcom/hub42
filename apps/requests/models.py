@@ -34,4 +34,20 @@ class ContactRequest(TimeStampedModel):
 
     def __str__(self):
         return f"{self.name} ({self.company})"
-    
+
+
+class Reviews(TimeStampedModel):
+    name = models.CharField(max_length=128, verbose_name="Имя")
+    email = models.EmailField(verbose_name="Электронная почта")
+    phone = models.CharField(max_length=32, blank=True, verbose_name="Телефон")
+    company = models.CharField(max_length=128, blank=True, verbose_name="Компания")
+    review = models.TextField(blank=True, verbose_name="Текст отзыва")
+    is_published = models.BooleanField(default=False, verbose_name="Опубликовано")
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.name} ({self.company})"
