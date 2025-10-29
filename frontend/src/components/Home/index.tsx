@@ -15,13 +15,23 @@ export const Home = () => {
          <IndustryPrinters />
          <Print />
          <SliderSpheres />
-         <AdditionSection />
+         <AdditionSection
+            color="black"
+            bgColor="white"
+            content="Связаться"
+            mainContent="Наши клиенты запускают печать без оснастки, получают детали за часы, а не недели"
+         />
          <Products />
          <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/6/" />
          <ServicesSection />
          <FormRequest />
          <ReviewsAnswersAccordion url="http://localhost:8000/api/pages/blocks/9/" />
-         <AdditionSection />
+         <AdditionSection
+            color="black"
+            bgColor="white"
+            content="Связаться"
+            mainContent="Наши клиенты запускают печать без оснастки, получают детали за часы, а не недели"
+         />
          <BlogNews />
       </div>
    );

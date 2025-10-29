@@ -70,7 +70,7 @@ export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
                                  </div>
                               ) : (
                                  <div className="accordion__section-item-wrapper-link">
-                                    <ConnectionButton color="blueBg" content="Связаться"/>
+                                    <ConnectionButton color="white" content="Связаться" bgColor="#3c3aa5"/>
                                  </div>
                               ))}
                         </div>
