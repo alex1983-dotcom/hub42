@@ -64,7 +64,12 @@ export const CharacteristicsOfPrinter = () => {
                {SPEC_CONFIG.map(({ key, label, icon }) => {
                   const raw = data[key];
                   /* пропускаем пустые/null */
-                  if (raw === "" || raw === null || raw === undefined)
+                  if (
+                     raw === "" ||
+                     raw === null ||
+                     raw === undefined ||
+                     raw === 0
+                  )
                      return null;
 
                   return (
