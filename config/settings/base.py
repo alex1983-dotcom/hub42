@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = [
     "django_ckeditor_5",
     "mdeditor",
     "django_extensions",
+    "django_filters",
 ]
 
 # Наши приложения
