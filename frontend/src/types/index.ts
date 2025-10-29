@@ -24,31 +24,31 @@ export interface Icon {
    url: string;
 }
 export interface Category {
-  id: number;
-  name: string;
-  slug: string;
+   id: number;
+   name: string;
+   slug: string;
 }
 
 export interface Blog {
-  id: number;
-  image: string; // URL
-  title: string;
-  slug: string;
-  preview: string;
-  body: string; // Markdown
-  status: 'published' | 'draft';
-  published_at: string;
-  meta_description: string;
-  created_at: string;
-  updated_at: string;
-  category: Category;
+   id: number;
+   image: string; // URL
+   title: string;
+   slug: string;
+   preview: string;
+   body: string; // Markdown
+   status: "published" | "draft";
+   published_at: string;
+   meta_description: string;
+   created_at: string;
+   updated_at: string;
+   category: Category;
 }
 
 export interface Blogs {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Blog[];
+   count: number;
+   next: string | null;
+   previous: string | null;
+   results: Blog[];
 }
 export interface Img {
    id: number;
@@ -75,7 +75,10 @@ export interface Category {
    name: string;
    slug: string;
 }
-
+export interface image {
+   image: string;
+   alt: string;
+}
 export interface Printer extends Record<string, unknown> {
    id: number;
    name: string;
@@ -87,7 +90,7 @@ export interface Printer extends Record<string, unknown> {
    price: number;
    product_type: "dryer";
    category: Category;
-   images: unknown[]; // если понадобится – замените на конкретный тип
+   images: image[]; // если понадобится – замените на конкретный тип
    icon: Icon;
    volume_construction: string;
    extruders_count: string;
@@ -124,8 +127,17 @@ export type ObjectPrinters = {
    previous: string;
    results: Printer[];
 };
-export type ButtonColor = "whiteBg" | "blueBg";
-export type ButtonContent = "Связаться" | "Оставить заявку";
+
+export interface PropsAdditionSection {
+   color: string;
+   bgColor: string;
+   content: string;
+   mainContent: string;
+}
+export type PropsConnectionButtons = Pick<
+   PropsAdditionSection,
+   "color" | "bgColor" | "content"
+>;
 export interface RoadmapItem {
    id: number;
    text: string;

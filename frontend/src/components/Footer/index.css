@@ -4,7 +4,6 @@
    padding-block: 40px;
 }
 .logo {
-   margin-bottom: 16px;
 }
 .footer__inner {
    display: grid;
@@ -37,6 +36,7 @@
 }
 .footer__pict {
    display: flex;
+   gap: 20px;
 }
 .footer__contacts,
 .footer__address {

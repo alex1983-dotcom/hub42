@@ -70,8 +70,9 @@ export const ServicesSection = () => {
                               </ul>
                            </div>
                            <ConnectionButton
-                              color="blueBg"
+                              color="white"
                               content="Связаться"
+                              bgColor="#3c3aa5"
                            />
                         </div>
                      </div>
