@@ -1,0 +1,95 @@
+.printer__section {
+   padding-inline: var(--margin-inline);
+   margin-top: 124px;
+   position: relative;
+}
+
+.printer__section-span,
+.printer__section-linkToMain {
+   font-size: var(--font-adaptive-title36);
+}
+.printer__section-navigation {
+   display: flex;
+   gap: 13px;
+   margin-bottom: 15px;
+}
+.printer__section-linkToMain {
+   color: black;
+}
+.printer__section-content {
+   max-width: 1075px;
+   height: max-content;
+}
+.printer__section-printer {
+   border: var(--border);
+   padding: 20px;
+}
+.printer__section-inner {
+   display: flex;
+   justify-content: space-between;
+}
+.printer__section-printer-title.header__menu-title {
+   margin-bottom: 40px;
+}
+.printer__section-printer-description {
+   color: black;
+   font-size: 24px;
+   line-height: 100%;
+   font-weight: 400;
+
+   margin-bottom: 32px;
+}
+.printer__section-inner-buttons {
+   max-width: 1075px;
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 16px;
+}
+.printer__section-printer-img {
+   max-width: 483px;
+
+   width: 100%;
+
+   object-fit: contain;
+   display: block;
+}
+@media (max-width: 1501px) {
+   .printer__section-printer-img {
+      max-width: 275px;
+   }
+   .header__menu-tagline {
+      height: max-content;
+   }
+   .printer__section-inner-buttons {
+      width: 100%;
+      max-width: none;
+   }
+   .printer__section-printer-title.header__menu-title {
+      margin-bottom: 10px;
+   }
+}
+@media (max-width: 780px) {
+   .printer__section-printer-tagline.header__menu-tagline {
+      font-size: 16px;
+   }
+   .printer__section {
+      margin-bottom: 20px;
+   }
+   .printer__section-printer-img {
+      max-width: 144px;
+   }
+   .printer__section-inner-buttons {
+      grid-auto-flow: none;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+   }
+   .printer__section-printer-description{
+      font-size: 12px;
+   }
+}
+@media (max-width: 417px) {
+   .printer__section-content {
+      max-width: 151px;
+   }
+}

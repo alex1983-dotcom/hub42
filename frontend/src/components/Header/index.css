@@ -16,23 +16,24 @@
 }
 
 .logo {
-   font-size: 40px;
+   font-size: 65px;
    color: var(--main-color);
    font-weight: 400;
    margin-right: auto;
    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
    align-self: center;
 }
-nav {
+.header__nav__bar {
    display: flex;
    align-items: center;
    margin-right: 100px;
+   gap: 16px;
 }
+
 .header__wrapper-list {
    display: flex;
    align-items: center;
    gap: 16px;
-   margin-right: 16px;
 }
 .header__wrapper-item {
    padding-inline: 13px 8px;

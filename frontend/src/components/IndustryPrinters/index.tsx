@@ -26,7 +26,7 @@ export const IndustryPrinters = () => {
             <h1 className="industry__title">{blockData?.title}</h1>
             <p className="industry__content">{blockData?.content}</p>
             <div className="industry__wrapper-buttons">
-               <ConnectionButton color="blueBg" content="Оставить заявку"/>
+               <ConnectionButton color="white" content="Оставить заявку" bgColor="#3c3aa5"/>
                <a href="#equipment" className="industry__section-toPrinter">
                   К принтерам
                </a>

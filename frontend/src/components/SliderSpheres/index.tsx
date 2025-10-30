@@ -1,14 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import { Navigation, Pagination, EffectFade } from "swiper/modules";
-import "swiper/css"; // Основные стили
-import "swiper/css/navigation"; // Стили для навигации
-import "swiper/css/pagination"; // Стили для пагинации
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useFetch } from "../../Helpers";
 import { Main } from "../../types";
 import "./index.css";
-
-// Импортируйте модули, если вы их используете (например, для эффектов или навигации)
 
 export const SliderSpheres = () => {
    const swiperWrappedRef = useRef<HTMLElement | null>(null);
@@ -26,7 +24,7 @@ export const SliderSpheres = () => {
          <div className="sliderShperes__section-container">
             <Swiper
                modules={[Navigation, Pagination, EffectFade]}
-               grabCursor // Передайте нужные модули
+               grabCursor
                initialSlide={3}
                centeredSlides
                slidesPerView="auto"

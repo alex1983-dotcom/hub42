@@ -1,16 +1,18 @@
 import React from "react";
 import "./index.css";
-import { ButtonColor, ButtonContent } from "../../types";
+import { PropsConnectionButtons } from "../../types";
 
 export const ConnectionButton = ({
-   color,
+   bgColor,
    content,
-}: {
-   color: ButtonColor;
-   content: ButtonContent;
-}) => {
+   color,
+}: PropsConnectionButtons) => {
    return (
-      <a href="#request" className={`connection__button ${color}`}>
+      <a
+         href="#request"
+         className="connection__button"
+         style={{ backgroundColor: `${bgColor}`, color: `${color}` }}
+      >
          {content}
       </a>
    );

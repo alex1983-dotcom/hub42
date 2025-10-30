@@ -1,7 +1,7 @@
 import React from "react";
 import { ConnectionButton } from "../ConnectionButton";
 import { ButtonToPrinter } from "../ButtonToPrinter";
-
+import "./index.css";
 import { Printer } from "../../types";
 
 export const ItemCard = ({ printer }: { printer: Printer }) => {
@@ -13,7 +13,11 @@ export const ItemCard = ({ printer }: { printer: Printer }) => {
             <h4 className="header__menu-tagline">{printer.tagline}</h4>
             <p className="header__menu-description">{printer.description}</p>
             <div className="header__menu-buttons">
-               <ConnectionButton color="blueBg" content="Оставить заявку" />
+               <ConnectionButton
+                  bgColor="#3c3aa5"
+                  content="Оставить заявку"
+                  color="white"
+               />
                <ButtonToPrinter id={printer.id} />
             </div>
          </li>

@@ -3,19 +3,10 @@
    align-items: center;
    justify-content: center;
    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-   font-size: 48px;
+   font-size: var(--font-adaptive-subtitle48);
    height: 91px;
    flex-grow: 1;
-}
-.connection__button.whiteBg {
-   background-color: var(--main-color);
-
-   color: black;
-}
-.connection__button.blueBg {
-   background-color: var(--add-color);
-
-   color: var(--main-color);
+   border: var(--border);
 }
 
 @media (max-width: 1180px) {

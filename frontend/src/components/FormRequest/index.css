@@ -88,6 +88,12 @@
    }
 }
 @media (max-width: 375px) {
+   .formrequest__section {
+      margin-top: 40px;
+   }
+   .printer {
+      margin-top: 20px;
+   }
    .formrequest__section-img.left {
       left: -120px;
       top: -493px;

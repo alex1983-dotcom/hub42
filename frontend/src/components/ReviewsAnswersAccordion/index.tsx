@@ -6,7 +6,13 @@ import { ConnectionButton } from "../ConnectionButton";
 import closeAccord from "../../assets/close_accord.png";
 import openAccord from "../../assets/open_accord.png";
 
-export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
+export const ReviewsAnswersAccordion = ({
+   url,
+   idSection,
+}: {
+   url: string;
+   idSection: string;
+}) => {
    const [openId, setId] = useState<number | null>(0);
    const itemRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -21,7 +27,7 @@ export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
 
    if (error) return <p>Ошибка загрузки</p>;
    return (
-      <section className="accordion__section" id="company">
+      <section className="accordion__section" id={idSection}>
          <h2 className="accordion__section-title">{data?.title}</h2>
          <div className="accordion__section-inner">
             <div className="accordion__section-wrapper">
@@ -70,7 +76,11 @@ export const ReviewsAnswersAccordion = ({ url }: { url: string }) => {
                                  </div>
                               ) : (
                                  <div className="accordion__section-item-wrapper-link">
-                                    <ConnectionButton color="blueBg" content="Связаться"/>
+                                    <ConnectionButton
+                                       color="white"
+                                       content="Связаться"
+                                       bgColor="#3c3aa5"
+                                    />
                                  </div>
                               ))}
                         </div>
