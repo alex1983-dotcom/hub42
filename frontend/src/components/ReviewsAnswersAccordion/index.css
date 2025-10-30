@@ -75,8 +75,6 @@
    .accordion__section-inner {
       padding-left: 50px;
    }
-   .accordion__section-content {
-   }
 }
 @media (max-width: 768px) {
    .accordion__section-inner {

@@ -6,13 +6,12 @@ import { useSelector } from "react-redux";
 import { getIdPrinter } from "../../store/selectors";
 import clsx from "clsx";
 
-export const Products = () => {
+export const Products = ({ main }: { main: boolean }) => {
    const currentId = useSelector(getIdPrinter);
 
-   const url =
-      currentId === null && currentId === undefined
-         ? "http://localhost:8000/api/pages/blocks/5/"
-         : "http://localhost:8000/api/pages/blocks/6/";
+   const url = main
+      ? "http://localhost:8000/api/pages/blocks/5/"
+      : "http://localhost:8000/api/pages/blocks/11/";
 
    const { data, loading, error } = useFetch<Main>(url);
 
