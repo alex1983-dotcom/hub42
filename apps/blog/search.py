@@ -1,15 +1,14 @@
-from django.db.models import Q, Case, When
+from django.db.models import Q, Case, When, Func, Value, IntegerField
 from rest_framework import filters
 import re
 
 
 def _trigrams(text: str) -> set[str]:
-    """3-буквенные кубики без регистра и пробелов."""
     text = re.sub(r"\s+", "", text.lower())
     return {text[i : i + 3] for i in range(len(text) - 2)}
 
 
-class TrigramSearchFilter(filters.SearchFilter):
+class MultiWordSearchFilter(filters.SearchFilter):
     search_param = "search"
 
     def filter_queryset(self, request, queryset, view):
@@ -17,22 +16,27 @@ class TrigramSearchFilter(filters.SearchFilter):
         if not raw:
             return queryset
 
-        # 1. быстрая предфильтрация (регистро-независимая)
-        candidates = queryset.filter(
-            Q(title__icontains=raw)
-            | Q(preview__icontains=raw)
-            | Q(body__icontains=raw)
-        )
+        # 1. режем на слова
+        words = [w.lower() for w in re.findall(r"\w+", raw)]
+        if not words:
+            return queryset
 
-        # 2. ранжируем по совпадению кубиков
-        query_cubes = _trigrams(raw)
+        # 2. быстрый фильтр: хоть одно слово встречается
+        q = Q()
+        for w in words:
+            q |= Q(title__icontains=w) | Q(preview__icontains=w) | Q(body__icontains=w)
+        candidates = queryset.filter(q).distinct()
+
+        # 3. ранжируем: чем больше слов совпало, тем выше
         ranked = []
         for post in candidates.only("id", "title", "preview", "body").iterator():
-            score = (
-                len(query_cubes & _trigrams(post.title)) * 3
-                + len(query_cubes & _trigrams(post.preview))
-                + len(query_cubes & _trigrams(post.body))
-            )
+            score = 0
+            for w in words:
+                score += (
+                    (w in post.title.lower()) * 3 +
+                    (w in post.preview.lower()) * 1 +
+                    (w in post.body.lower()) * 1
+                )
             if score:
                 ranked.append((post.id, score))
 
@@ -41,7 +45,5 @@ class TrigramSearchFilter(filters.SearchFilter):
 
         ranked.sort(key=lambda x: x[1], reverse=True)
         ids = [pk for pk, _ in ranked]
-
-        # 3. сохраняем порядок через Case
         preserved = Case(*[When(id=pk, then=pos) for pos, pk in enumerate(ids)])
         return candidates.filter(id__in=ids).order_by(preserved)
