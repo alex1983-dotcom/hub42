@@ -7,10 +7,15 @@ import { getIdPrinter } from "../../store/selectors";
 import clsx from "clsx";
 
 export const Products = () => {
-   const { data, loading, error } = useFetch<Main>(
-      "http://localhost:8000/api/pages/blocks/5/"
-   );
    const currentId = useSelector(getIdPrinter);
+
+   const url =
+      currentId === null && currentId === undefined
+         ? "http://localhost:8000/api/pages/blocks/5/"
+         : "http://localhost:8000/api/pages/blocks/6/";
+
+   const { data, loading, error } = useFetch<Main>(url);
+
    const sectionClass = clsx("products__section", {
       printer: typeof currentId === "number",
    });
