@@ -4,18 +4,6 @@ import { routes } from "../../Routes";
 import { useFetch } from "../../Helpers";
 import { Blogs, Main } from "../../types";
 import "./index.css";
-const myData = [
-   {
-      url: "something",
-      title: "Хранение металлических порошков: практические рекомендации",
-      subtitle: "#Основы 3D #Эксперты рекомендуют Время чтения: 8 минут",
-   },
-   {
-      url: "something",
-      title: "Хранение металлических порошков: практические рекомендации",
-      subtitle: "#Основы 3D #Эксперты рекомендуют Время чтения: 8 минут",
-   },
-];
 export const BlogNews = () => {
    const {
       data: headerContent,
@@ -29,7 +17,7 @@ export const BlogNews = () => {
    } = useFetch<Blogs>("http://localhost:8000/api/blog/");
    if (headerLoading || itemLoading) return <p>Loading…</p>;
 
-   if (headerError || itemError) return <p>Error :(</p>;
+   if (headerError || itemError) return <p>Error :</p>;
    return (
       <section className="blog__section" id="blog">
          <div className="blog__section-wrapper">

@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+
 import { IndustryPrinters } from "../IndustryPrinters";
 import { Print } from "../3dPrint";
 import { SliderSpheres } from "../SliderSpheres";
@@ -21,7 +21,7 @@ export const Home = () => {
             content="Связаться"
             mainContent="Наши клиенты запускают печать без оснастки, получают детали за часы, а не недели"
          />
-         <Products />
+         <Products main={true} />
          <ReviewsAnswersAccordion
             url="http://localhost:8000/api/pages/blocks/6/"
             idSection="company"

@@ -1,4 +1,3 @@
-import React from "react";
 import {
    PrinterSection,
    AdditionSection,
@@ -7,7 +6,7 @@ import {
    Products,
 } from "../../components";
 
-const PrinterPage = () => {
+export const PrinterPage = () => {
    return (
       <>
          <PrinterSection />
@@ -19,7 +18,7 @@ const PrinterPage = () => {
          />
          <CharacteristicsOfPrinter />
          <FormRequest />
-         <Products />
+         <Products main={false}/>
       </>
    );
 };

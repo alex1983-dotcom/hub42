@@ -6,6 +6,7 @@ export const useFetch = <T,>(url: string) => {
    const [error, setError] = useState<string | null>(null);
 
    useEffect(() => {
+      
       const customfetch = async () => {
          try {
             const response = await fetch(url);
