@@ -5,16 +5,15 @@ import { useFetch } from "../../Helpers";
 import { Printer } from "../../types";
 
 type SpecEntry = {
-   key: keyof Printer; // строгое перечисление ключей Printer
+   key: keyof Printer; 
    label: string;
-   icon: string; // эмодзи пока что, можно заменить на React-компонент
+   icon: string; 
 };
 const SPEC_CONFIG: SpecEntry[] = [
    { key: "volume_construction", label: "Объём построения", icon: "📦" },
    { key: "dimensions", label: "Габариты (Д×Ш×В)", icon: "📏" },
    { key: "extruders_count", label: "Кол-во экструдеров", icon: "🖨️" },
    { key: "bed_max_temp", label: "Температура стола", icon: " 🌡️" },
-   { key: "layer_thickness", label: "Толщина слоя", icon: " 🧱" },
    { key: "filament_diameter", label: "Диаметр сопел", icon: "🔩" },
    { key: "print_speed", label: "Скорость печати", icon: "🚀" },
    { key: "positioning_accuracy", label: "Точность", icon: "📐" },
@@ -64,7 +63,12 @@ export const CharacteristicsOfPrinter = () => {
                {SPEC_CONFIG.map(({ key, label, icon }) => {
                   const raw = data[key];
                   /* пропускаем пустые/null */
-                  if (raw === "" || raw === null || raw === undefined)
+                  if (
+                     raw === "" ||
+                     raw === null ||
+                     raw === undefined ||
+                     raw === 0
+                  )
                      return null;
 
                   return (

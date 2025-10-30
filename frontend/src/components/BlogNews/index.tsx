@@ -31,7 +31,7 @@ export const BlogNews = () => {
 
    if (headerError || itemError) return <p>Error :(</p>;
    return (
-      <section className="blog__section">
+      <section className="blog__section" id="blog">
          <div className="blog__section-wrapper">
             <h2 className="blog__section-title">{headerContent?.title}</h2>
             <div className="blog__section-content">

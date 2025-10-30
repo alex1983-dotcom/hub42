@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import  idPrinterPage  from "./slices/idPrinterPage";
 export const store = configureStore({
-   reducer: {},
+   reducer: {
+      idPrinter: idPrinterPage,
+   },
 });
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
