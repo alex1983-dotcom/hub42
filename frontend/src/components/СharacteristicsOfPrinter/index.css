@@ -1,5 +1,6 @@
 .characters__section {
    padding-inline: var(--margin-inline);
+   margin-top: 40px;
 }
 .spec-grid-wrapper {
    max-width: 1200px;
@@ -39,13 +40,13 @@
 /* ---------- «badge» card ---------- */
 .spec-cell {
    background: #ffffff;
-   border: 1px solid #e5e7eb;
+   border: 1px solid hsl(220, 13%, 91%);
    border-radius: 12px;
    padding: 1.25rem 1rem;
    text-align: center;
    display: flex;
    flex-direction: column;
-   gap: 0.5rem;
+   gap: 20px;
    transition: transform 0.15s ease;
 }
 .spec-cell:hover {
@@ -59,15 +60,34 @@
 }
 
 .spec-label {
-   font-size: 0.75rem;
+   font-size: 24px;
    color: #6b7280;
    text-transform: uppercase;
    letter-spacing: 0.05em;
 }
 
 .spec-value {
-   font-size: 1.125rem;
+   font-size: 24px;
    font-weight: 700;
    color: #111827;
    word-break: break-word;
+}
+@media (max-width: 375px) {
+   .characters__section {
+      margin-top: 20px;
+   }
+   .spec-value {
+      font-size: 12px;
+   }
+   .spec-label {
+      font-size: 12px;
+   }
+}
+@media (max-width: 768px) {
+   .spec-value {
+      font-size: 18px;
+   }
+   .spec-label {
+      font-size: 18px;
+   }
 }

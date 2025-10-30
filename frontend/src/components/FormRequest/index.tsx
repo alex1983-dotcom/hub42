@@ -3,6 +3,9 @@ import "./index.css";
 import { MyForm } from "../Form";
 import { useFetch } from "../../Helpers";
 import { IconsResponse } from "../../types";
+import { useSelector } from "react-redux";
+import { getIdPrinter } from "../../store/selectors";
+import clsx from "clsx";
 
 const myData = {
    title: "Рассчитаем, сколько вы сэкономите с 3D-печатью",
@@ -30,12 +33,17 @@ export const FormRequest = () => {
       "http://localhost:8000/api/pages/icons/"
    );
 
+   const currentId = useSelector(getIdPrinter);
+   const sectionClass = clsx("formrequest__section", {
+      printer: typeof currentId === "number",
+   });
+
    if (loading) return <p>Loading…</p>;
 
    if (error) return <p>Ошибка загрузки</p>;
 
    return (
-      <section className="formrequest__section" id="request">
+      <section className={sectionClass} id="request">
          <div className="formrequest__section-wrapper">
             <div className="formrequest__section-content">
                <h3 className="formrequest__section-title">{myData.title}</h3>

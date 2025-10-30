@@ -3,6 +3,8 @@ import {
    PrinterSection,
    AdditionSection,
    CharacteristicsOfPrinter,
+   FormRequest,
+   Products,
 } from "../../components";
 
 const PrinterPage = () => {
@@ -16,6 +18,8 @@ const PrinterPage = () => {
             mainContent="Нужен тестовый период?"
          />
          <CharacteristicsOfPrinter />
+         <FormRequest />
+         <Products />
       </>
    );
 };

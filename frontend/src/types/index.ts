@@ -219,6 +219,7 @@ export interface FooterSection {
    privacy_policy: string;
    is_system: boolean;
 }
+export type StateIdPrinter = { id: number | null };
 // export type ID = number;
 // export type ISOString = string; // ISO-8601
 // export type Slug = string;
