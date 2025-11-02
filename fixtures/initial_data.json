@@ -1971,5 +1971,23 @@
     "review": "string",
     "is_published": false
   }
+},
+{
+  "model": "social.sociallink",
+  "pk": 1,
+  "fields": {
+    "name": "Телеграмм",
+    "url": "https://t.me/aliaksandr_makarau",
+    "is_active": true
+  }
+},
+{
+  "model": "social.sociallink",
+  "pk": 2,
+  "fields": {
+    "name": "Инстаграмм",
+    "url": "https://instagram.com/aleksandrmakarov9271",
+    "is_active": true
+  }
 }
 ]
