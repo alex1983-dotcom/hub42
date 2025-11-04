@@ -1,6 +1,6 @@
 .printer__section {
    padding-inline: var(--margin-inline);
-   margin-top: 124px;
+
    position: relative;
 }
 
@@ -12,6 +12,7 @@
    display: flex;
    gap: 13px;
    margin-bottom: 15px;
+   margin-top: 124px;
 }
 .printer__section-linkToMain {
    color: black;
@@ -84,7 +85,7 @@
       grid-template-columns: repeat(1, 1fr);
       gap: 16px;
    }
-   .printer__section-printer-description{
+   .printer__section-printer-description {
       font-size: 12px;
    }
 }

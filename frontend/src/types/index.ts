@@ -196,8 +196,9 @@ export type FormData = {
    email: string;
    phone: string;
    company: string;
-   message: string;
-   lead_source: number | null;
+   message?: string; // для заявки
+   review?: string; // для отзыва
+   lead_source?: number | null;
 };
 export interface IconsResponse {
    count: number;
@@ -220,6 +221,17 @@ export interface FooterSection {
    is_system: boolean;
 }
 export type StateIdPrinter = { id: number | null };
+
+export interface UrlSoc1als {
+   count: number;
+   next: null | string;
+   previous: null | string;
+   results: ObjSoc1al[];
+}
+export type ObjSoc1al = {
+   name: string;
+   url: string;
+};
 // export type ID = number;
 // export type ISOString = string; // ISO-8601
 // export type Slug = string;
