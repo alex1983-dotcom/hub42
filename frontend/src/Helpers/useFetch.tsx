@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+// src/Helpers/useFetch.ts
+import { useEffect, useState } from 'react';
 
-export const useFetch = <T,>(url: string) => {
-   const [data, setData] = useState<T | null>(null);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState<string | null>(null);
+export const useFetch = <T,>(url: string | null) => {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState<boolean>(!!url); // true только если url есть
+  const [error, setError] = useState<string | null>(null);
 
-   useEffect(() => {
-      
-      const customfetch = async () => {
-         try {
-            const response = await fetch(url);
+  useEffect(() => {
+    if (!url) return; // <-- ничего не делаем
 
-            if (!response.ok) throw new Error("Something went wrong");
+    const customFetch = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Network error');
+        const json: T = await res.json();
+        setData(json);
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-            const data = await response.json();
+    customFetch();
+  }, [url]);
 
-            setData(data);
-            setError(null);
-         } catch (error) {
-            if (error instanceof Error) {
-               setError(error.message);
-            }
-         } finally {
-            setLoading(false);
-         }
-      };
-      customfetch();
-   }, [url]);
-   return { data, error, loading };
+  return { data, error, loading };
 };

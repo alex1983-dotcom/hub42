@@ -6,6 +6,7 @@ import { ConnectionButton } from "../ConnectionButton";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setIdPrinter } from "../../store/slices/idPrinterPage";
+import { Tabs } from "../Tabs";
 
 export const PrinterSection = () => {
    const { id } = useParams();
@@ -27,14 +28,7 @@ export const PrinterSection = () => {
 
    return (
       <section className="printer__section">
-         <div className="printer__section-navigation">
-            <Link to="/" className="printer__section-linkToMain">
-               Главная
-            </Link>
-            <span className="printer__section-span">/</span>
-            <span className="printer__section-span">Наши продукты</span>
-         </div>
-
+         <Tabs isReviewPage={false} />
          <div className="printer__section-printer">
             <div className="printer__section-inner">
                <div className="printer__section-content">

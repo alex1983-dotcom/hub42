@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
-import { Main } from "../../types";
+import { Main, UrlSoc1als } from "../../types";
 import "./index.css";
 import { BurgerButton, ModalPrinters, NavDrawer } from "../index";
+import { useFetch } from "../../Helpers";
 
 const url = "http://localhost:8000/api";
 export const Header = () => {
    const [isOpen, setOpen] = useState(false);
    const [data, setData] = useState<Main>();
    const [imgs, setImgs] = useState({ img_1: "", img_2: "" });
+   const {
+      data: urls,
+      loading,
+      error,
+   } = useFetch<UrlSoc1als>("http://localhost:8000/api/social/");
+
    useEffect(() => {
       const customFetch = async () => {
          try {
@@ -32,7 +39,9 @@ export const Header = () => {
       };
       customFetch();
    }, []);
+   if (loading) return <p>Loading…</p>;
 
+   if (error) return <p>Ошибка загрузки</p>;
    return (
       <header className="header">
          <h1 className="logo">{data?.title}</h1>
@@ -58,11 +67,11 @@ export const Header = () => {
                </li>
             </ul>
 
-            <a href="something">
+            <a href={urls?.results[1].url} target="_blank">
                <img src={imgs.img_1} alt="instagram" />
             </a>
 
-            <a href="something">
+            <a href={urls?.results[0].url} target="_blank">
                <img src={imgs.img_2} alt="instagram" />
             </a>
          </nav>
