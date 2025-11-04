@@ -5,6 +5,8 @@ import { Main } from "../../types";
 import { ConnectionButton } from "../ConnectionButton";
 import closeAccord from "../../assets/close_accord.png";
 import openAccord from "../../assets/open_accord.png";
+import { Link } from "react-router-dom";
+import { routes } from "../../Routes";
 
 export const ReviewsAnswersAccordion = ({
    url,
@@ -67,12 +69,13 @@ export const ReviewsAnswersAccordion = ({
                            {idx === 0 &&
                               (data.title === "О компании" ? (
                                  <div className="accordion__section-item-wrapper-link">
-                                    <a
-                                       href="#target"
+                                    <Link
+                                       to={routes.opinions}
                                        className="accordion__section-item-link"
                                     >
+                                       {" "}
                                        К Отзывам
-                                    </a>
+                                    </Link>
                                  </div>
                               ) : (
                                  <div className="accordion__section-item-wrapper-link">

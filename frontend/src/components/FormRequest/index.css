@@ -38,6 +38,7 @@
    height: 100%;
    object-fit: contain;
    transform: scale(1);
+   pointer-events: none; /* ← вот эта строка */
 }
 .formrequest__section-img.left {
    top: -360px;

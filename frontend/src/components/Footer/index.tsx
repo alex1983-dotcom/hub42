@@ -1,13 +1,16 @@
 import React from "react";
 import "./index.css";
 import { useFetch } from "../../Helpers";
-import { FooterSection } from "../../types";
+import { FooterSection, UrlSoc1als } from "../../types";
 import { NavigationBar } from "../NavigationBar";
 import tgPng from "../../assets/stash_telegram.png";
 import insPng from "../../assets/mdi_instagram.png";
 export const Footer = () => {
    const { data, loading, error } = useFetch<FooterSection>(
       "http://localhost:8000/api/pages/footer/1/"
+   );
+   const { data: urls } = useFetch<UrlSoc1als>(
+      "http://localhost:8000/api/social/"
    );
 
    if (loading) return <p>Loading…</p>;
@@ -30,10 +33,10 @@ export const Footer = () => {
                <a href="mailto:office@hub.by">{data?.email}</a>
                <a href="tel:+375296999999">{data?.office_phone}</a>
                <div className="footer__pict">
-                  <a href="some">
+                  <a href={urls?.results[0].url} target="blank">
                      <img src={tgPng} alt="" />
                   </a>
-                  <a href="some">
+                  <a href={urls?.results[1].url} target="blank">
                      <img src={insPng} alt="" />
                   </a>
                </div>

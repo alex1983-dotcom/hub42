@@ -23,3 +23,6 @@ export * from "./NavigationBar";
 export * from "./PrinterPage";
 export * from "./СharacteristicsOfPrinter";
 export * from "./AdditionSection";
+export * from "./OpinionsPage";
+export * from "./Tabs";
+export * from "./OpinionsByUsersList";
