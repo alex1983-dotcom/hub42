@@ -1,0 +1,15 @@
+{% extends "admin/change_form.html" %}
+
+{% block submit_buttons_bottom %}
+    {% if original.is_system %}
+        <div class="submit-row">
+            <p style="color:#c0392b;font-weight:bold;margin:0;">
+                Системный элемент — удаление запрещено.
+            </p>
+            <input type="submit" value="Сохранить" class="default" name="_save">
+        </div>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+

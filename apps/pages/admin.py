@@ -25,6 +25,7 @@ class ServiceOfferItemInline(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ("service_type", "title", "icon", "sort_order", "is_system")
     inlines = [ServiceRoadmapItemInline, ServiceOfferItemInline]
 
@@ -42,6 +43,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(PageBlock)
 class PageBlockAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ("block_type", "title", "is_active", "sort_order", "is_system")
     list_editable = ("is_active", "sort_order")
     inlines = [BlockItemInline]
@@ -60,6 +62,7 @@ class PageBlockAdmin(admin.ModelAdmin):
 
 @admin.register(BlockItem)
 class BlockItemAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ('title', 'parent_block', 'icon', 'sort_order', 'is_active', 'is_system')
     list_filter = ('parent_block', 'icon')
     search_fields = ('title',)
@@ -79,6 +82,7 @@ class BlockItemAdmin(admin.ModelAdmin):
 
 @admin.register(Icon)
 class IconAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ('name', 'file_name', 'css_class', 'is_active', 'is_system')
     list_filter = ('is_active',)
     search_fields = ('name', 'file_name', 'css_class')
@@ -97,6 +101,7 @@ class IconAdmin(admin.ModelAdmin):
 
 @admin.register(ServiceRoadmapItem)
 class ServiceRoadmapItemAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ('text', 'service', 'sort_order', 'is_system')
     list_filter = ('service',)
     search_fields = ('text',)
@@ -115,6 +120,7 @@ class ServiceRoadmapItemAdmin(admin.ModelAdmin):
 
 @admin.register(ServiceOfferItem)
 class ServiceOfferItemAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ('text', 'service', 'sort_order', 'is_system')
     list_filter = ('service',)
     search_fields = ('text',)
@@ -133,7 +139,7 @@ class ServiceOfferItemAdmin(admin.ModelAdmin):
 
 @admin.register(ApplicationArticle)
 class ApplicationArticleAdmin(admin.ModelAdmin):
-    # убери 'is_system' из list_display
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ("title", "related_item", "is_published", "published_at")
     list_filter = ("is_published", "published_at")
     search_fields = ("title", "preview", "body")
@@ -143,6 +149,7 @@ class ApplicationArticleAdmin(admin.ModelAdmin):
 
 @admin.register(ContactFooter)
 class ContactFooterAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/pages/change_form.html'
     list_display = ('office_address', 'office_phone', 'email', 'is_system')
 
     def has_delete_permission(self, request, obj=None):
