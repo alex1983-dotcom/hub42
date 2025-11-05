@@ -17,11 +17,13 @@
 }
 .opinion-card__name {
    font-weight: 600;
-   margin: 0 0 8px;
+   margin: 0 0 20px;
+   font-size: 36px;
 }
 .opinion-card__text {
    white-space: pre-wrap;
    overflow: hidden;
+   font-size: 16px;
 }
 .opinion-card__toggle {
    margin-top: 8px;
