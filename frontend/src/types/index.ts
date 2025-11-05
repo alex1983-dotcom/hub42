@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export type Main = {
    id: number;
    block_type: string;
@@ -232,6 +234,20 @@ export type ObjSoc1al = {
    name: string;
    url: string;
 };
+export interface objReview {
+   id: number;
+   name: string;
+   email: string;
+   company: string;
+   review: string;
+   created_at: string;
+}
+export interface arrayReview {
+   count: number;
+   next: string | null;
+   previous: null | string;
+   results: objReview[];
+}
 // export type ID = number;
 // export type ISOString = string; // ISO-8601
 // export type Slug = string;
