@@ -72,6 +72,7 @@ export const OpinionsByUsersList: React.FC = () => {
 
    return (
       <section className="opinions-list">
+         <h3 className="opinion-lits__title">Мнение наших клиентов</h3>
          <ul className="opinions-list__ul">
             {reviews.slice(0, visibleCount).map((rv) => (
                <OpinionCard key={rv.id} review={rv} />
