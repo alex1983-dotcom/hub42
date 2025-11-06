@@ -17,11 +17,16 @@
 }
 .opinion-card__name {
    font-weight: 600;
-   margin: 0 0 8px;
+   margin: 0 0 20px;
+   font-size: 36px;
 }
 .opinion-card__text {
-   white-space: pre-wrap;
+   font-size: 16px;
+   line-height: 1.5 !important;
+   max-height: 4.5em; /* 5 строк × 1.5em */
    overflow: hidden;
+   transition: max-height 0.4s ease;
+   white-space: pre-wrap;
 }
 .opinion-card__toggle {
    margin-top: 8px;
@@ -39,4 +44,7 @@
    padding: 10px 24px;
    font-size: 16px;
    cursor: pointer;
+}
+.opinion-card__text--expanded {
+   max-height: none;
 }
