@@ -8,11 +8,10 @@ services:
     volumes:
       - ./media:/app/media
       - ./logs:/app/logs
-      - ./db.sqlite3:/app/db.sqlite3   # база хранится рядом с проектом
+      - ./db.sqlite3:/app/db.sqlite3
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.development
       - DEBUG=1
-      # DATABASE_URL не указываем – Django сам возьмёт SQLite из settings.development
     command: >
       sh -c "
         python manage.py migrate &&
@@ -24,8 +23,10 @@ services:
     working_dir: /app
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     ports:
-      - "3000:3000"
-    command: ["npm", "start"]
+      - "3001:3000"
+    command: sh -c "npm install && npm start"
     stdin_open: true
     tty: true
+
