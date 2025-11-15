@@ -28,7 +28,7 @@ export const PrinterSection = () => {
 
    return (
       <section className="printer__section">
-         <Tabs isReviewPage={false} />
+         <Tabs isReviewPage={false} content="Наши продукты" />
          <div className="printer__section-printer">
             <div className="printer__section-inner">
                <div className="printer__section-content">

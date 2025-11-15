@@ -26,3 +26,4 @@ export * from "./AdditionSection";
 export * from "./OpinionsPage";
 export * from "./Tabs";
 export * from "./OpinionsByUsersList";
+export * from "./BlogSLider";

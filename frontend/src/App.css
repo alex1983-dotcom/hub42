@@ -36,6 +36,13 @@ body {
    --font-adaptive-subtitle48: clamp(24px, -24px + 6.4vw, 48px);
    --font-adaptive-subtitle24: clamp(16px, -8px + 4.2667vw, 24px);
    --font-adaptive-subtitle36: clamp(16px, -16px + 6.4vw, 36px);
+   --gap: 24px; /* расстояние между маленькими */
+   --big-w: 983px;
+   --big-h: 1072px;
+   --small-w: 573px;
+   --small-h: 519px; /* 519 + 519 + 34 = 1072 */
+   --between-small: 34px;
+   --slider-total-w: 1598px;
 }
 h1,
 h2,

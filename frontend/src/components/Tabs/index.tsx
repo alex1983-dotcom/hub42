@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-export const Tabs = ({ isReviewPage }: { isReviewPage: boolean }) => {
+export const Tabs = ({
+   isReviewPage,
+   content,
+}: {
+   isReviewPage: boolean;
+   content: string;
+}) => {
    return (
       <div
          className={
@@ -14,9 +20,7 @@ export const Tabs = ({ isReviewPage }: { isReviewPage: boolean }) => {
             Главная
          </Link>
          <span className="printer__section-span">/</span>
-         <span className="printer__section-span">
-            {!isReviewPage ? "Наши продукты" : "Отзывы"}
-         </span>
+         <span className="printer__section-span">{content}</span>
       </div>
    );
 };

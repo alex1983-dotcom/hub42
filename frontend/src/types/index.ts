@@ -248,6 +248,20 @@ export interface arrayReview {
    previous: null | string;
    results: objReview[];
 }
+export type Post = {
+   id: number;
+   image: string;
+   title: string;
+   slug: string;
+   preview?: string;
+   body: string;
+};
+export type Paginated = {
+   count: number;
+   next: string | null;
+   previous: string | null;
+   results: Post[];
+};
 // export type ID = number;
 // export type ISOString = string; // ISO-8601
 // export type Slug = string;
