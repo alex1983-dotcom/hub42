@@ -1547,7 +1547,7 @@
   "pk": 6,
   "fields": {
     "created_at": "2025-10-24T17:37:40.912Z",
-    "updated_at": "2025-11-10T13:42:48.549Z",
+    "updated_at": "2025-11-11T21:18:34.407Z",
     "title": "Модели в Django",
     "image": "post/rectangle_3_OsAy1KD.png",
     "slug": "modeli-v-django",
@@ -1572,24 +1572,6 @@
     "status": "published",
     "published_at": "2025-11-07T07:43:51Z",
     "meta_description": "Металлические порошки — ключевой материал для аддитивного производства методом селективного лазерного спекания (SLS) или селективного лазерного плавления (SLM)."
-  }
-},
-{
-  "model": "social.sociallink",
-  "pk": 1,
-  "fields": {
-    "name": "Телеграмм",
-    "url": "https://t.me/aliaksandr_makarau",
-    "is_active": true
-  }
-},
-{
-  "model": "social.sociallink",
-  "pk": 2,
-  "fields": {
-    "name": "Инстаграмм",
-    "url": "https://instagram.com/aleksandrmakarov9271",
-    "is_active": true
   }
 },
 {
@@ -2060,6 +2042,26 @@
     "company": "ормгмгм",
     "review": "шпаашнеаеша",
     "is_published": false
+  }
+},
+{
+  "model": "social.sociallink",
+  "pk": 1,
+  "fields": {
+    "name": "telegram",
+    "url": "https://t.me/aliaksandr_makarau",
+    "is_active": true,
+    "is_system": true
+  }
+},
+{
+  "model": "social.sociallink",
+  "pk": 2,
+  "fields": {
+    "name": "instagram",
+    "url": "https://instagram.com/aleksandrmakarov9271",
+    "is_active": true,
+    "is_system": true
   }
 }
 ]
