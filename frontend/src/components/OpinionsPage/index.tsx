@@ -6,9 +6,9 @@ import { OpinionsByUsersList } from "../OpinionsByUsersList";
 export const OpinionsPage = () => {
    return (
       <>
-         <Tabs isReviewPage={true} />
+         <Tabs isReviewPage={true} content="Отзывы" />
          <FormRequest />
-         <OpinionsByUsersList/>
+         <OpinionsByUsersList />
       </>
    );
 };
