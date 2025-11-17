@@ -1,0 +1,21 @@
+.article-blog {
+   margin-top: 40px;
+   margin-inline: var(--margin-inline);
+}
+.article-title {
+   margin-left: 204px;
+}
+.article-figure-image {
+   width: 100%;
+   height: 771px;
+   object-fit: cover;
+   margin-top: 24px;
+}
+.article-lead {
+   font-size: var(--font-adaptive-subtitle36);
+   margin-top: 36px;
+}
+.article-body {
+   font-size: var(--font-adaptive-subtitle36);
+   margin-top: 100px;
+}
