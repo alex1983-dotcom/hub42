@@ -2,6 +2,8 @@ import React, { useMemo, useState, useEffect } from "react";
 import "./index.css";
 import { Paginated, Post } from "../../types";
 import { useFetch } from "../../Helpers";
+import { Link } from "react-router-dom";
+import { routes } from "../../Routes";
 
 const API = "http://localhost:8000/api/blog/";
 
@@ -69,7 +71,7 @@ export const BLogSLider = () => {
                   <article key={p.id} className="card">
                      <img src={p.image} alt="" />
                      <h3>
-                        <a href={`/${p.slug}`}>{p.title}</a>
+                        <Link to={routes.blogId(p.slug)}>{p.title}</Link>
                      </h3>
                      <p>{p.preview || p.body.slice(0, 120)}...</p>
                   </article>
