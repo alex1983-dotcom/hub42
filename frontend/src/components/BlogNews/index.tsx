@@ -4,6 +4,7 @@ import { routes } from "../../Routes";
 import { useFetch } from "../../Helpers";
 import { Blogs, Main } from "../../types";
 import "./index.css";
+import { BlogsCards } from "../BlogsCards";
 export const BlogNews = () => {
    const {
       data: headerContent,
@@ -18,6 +19,7 @@ export const BlogNews = () => {
    if (headerLoading || itemLoading) return <p>Loading…</p>;
 
    if (headerError || itemError) return <p>Error :</p>;
+   if (!itemContent) return <p>No content available</p>;
    return (
       <section className="blog__section" id="blog">
          <div className="blog__section-wrapper">
@@ -26,41 +28,8 @@ export const BlogNews = () => {
                <h3 className="blog__section-content-title">
                   {headerContent?.subtitle}
                </h3>
-               <div className="blog__section-content-wrapper">
-                  <ul className="blog__section-content-wrapper-list">
-                     {itemContent?.results.slice(-2).map((blog, idx) => (
-                        <li
-                           className="blog__section-content-wrapper-item"
-                           key={idx}
-                        >
-                           <img
-                              src={blog.image}
-                              alt="тут должны быть картинки"
-                              className="blog__section-content-wrapper-item-img"
-                           />
 
-                           <div className="blog__section-content-wrapper-item-inner">
-                              <h4 className="blog__section-content-wrapper-item-title">
-                                 {blog.preview}
-                              </h4>
-                           </div>
-
-                           <div className="blog__section-content-wrapper-item-subtitle">
-                              <p className="blog-tags">
-                                 #Основы 3D #Эксперты рекомендуют
-                              </p>
-                              <p className="blog-time">Время чтения: 8 минут</p>
-                           </div>
-                        </li>
-                     ))}
-                  </ul>
-                  <Link
-                     to={routes.blog}
-                     className="blog__section-content-wrapper-link"
-                  >
-                     Перейти в блог
-                  </Link>
-               </div>
+               <BlogsCards itemContent={itemContent.results} mainPage={true} />
             </div>
          </div>
       </section>

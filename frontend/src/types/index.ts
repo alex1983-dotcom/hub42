@@ -44,8 +44,17 @@ export interface Blog {
    created_at: string;
    updated_at: string;
    category: Category;
+   similar_posts: SimilarPost[]; // ← добавь это
 }
-
+export interface SimilarPost {
+   id: number;
+   title: string;
+   slug: string;
+   preview: string;
+   image: string;
+   published_at: string;
+   created_at: string;
+}
 export interface Blogs {
    count: number;
    next: string | null;
