@@ -29,3 +29,4 @@ export * from "./OpinionsByUsersList";
 export * from "./BlogSLider";
 export * from "./Markdown";
 export * from "./ArticleBlog";
+export * from "./BlogsCards";

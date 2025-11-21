@@ -1,6 +1,6 @@
 .md-viewer {
-   font-size: 25px; /* базовый размер текста статьи */
-   line-height: 1.6;
+   font-size: 25px;
+   line-height: 1.55;
    color: #222;
    margin-top: 40px;
    word-wrap: break-word;
@@ -95,4 +95,17 @@
    border: none;
    border-top: 1px solid #ddd;
    margin: 2em 0;
+}
+@media (max-width: 1920px) {
+   .md-viewer {
+      /* 36 px → 12 px в диапазоне 1920...375 */
+      font-size: clamp(12px, 12px + 24 * (100vw - 375px) / (1920 - 375), 36px);
+   }
+}
+
+/* ========== МИНИМАЛЬНАЯ ТОЧКА (375 px и уже) ========== */
+@media (max-width: 375px) {
+   .md-viewer {
+      font-size: 12px;
+   }
 }
