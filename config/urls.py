@@ -16,8 +16,10 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.permissions import AllowAny
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+admin.site.site_header = "Администрация HUB42"  # заголовок в верхней части страниц
+admin.site.site_title = "HUB42 Admin"           # титул вкладки браузера
+admin.site.index_title = "Добро пожаловать"     # заголовок на главной админки
 
-# свои view-классы без токена
 class OpenSpectacularAPIView(SpectacularAPIView):
     permission_classes = [AllowAny]
 
