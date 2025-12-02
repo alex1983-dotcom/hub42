@@ -24,7 +24,12 @@ export const BlogsCards = ({
     * -----------------------------------------------*/
    return (
       <div className="blog__section-content-wrapper">
-         <h3 className="blog__section-content-wrapper-title">Похожие статьи</h3>
+         {!mainPage && (
+            <h3 className="blog__section-content-wrapper-title">
+               Похожие статьи
+            </h3>
+         )}
+
          <ul
             className={
                mainPage

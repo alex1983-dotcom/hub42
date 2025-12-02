@@ -47,7 +47,7 @@
 }
 .blog__section-content-wrapper-link {
    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-   font-size: var(--font-adaptive-subtitle48);
+   font-size: var(--font-adaptive-);
    color: inherit;
    display: block;
    display: flex;
@@ -56,6 +56,7 @@
    border: var(--border);
    height: 91px;
    margin-bottom: 100px;
+   font-size: var(--font-adaptive-subtitle48);
 }
 .blog__section-content-wrapper-list--grid {
    display: grid;

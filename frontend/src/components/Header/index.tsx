@@ -45,6 +45,7 @@ export const Header = () => {
    return (
       <header className="header">
          <h1 className="logo">{data?.title}</h1>
+
          <nav className="header__nav__bar">
             <ul className="header__wrapper-list">
                <li className="header__wrapper-item">
@@ -66,11 +67,9 @@ export const Header = () => {
                   <a href="#blog">Блог</a>
                </li>
             </ul>
-
             <a href={urls?.results[1].url} target="_blank">
                <img src={imgs.img_1} alt="instagram" />
             </a>
-
             <a href={urls?.results[0].url} target="_blank">
                <img src={imgs.img_2} alt="instagram" />
             </a>
