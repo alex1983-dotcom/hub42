@@ -19,7 +19,7 @@
    font-size: 65px;
    color: var(--main-color);
    font-weight: 400;
-   margin-right: auto;
+
    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
    align-self: center;
 }
@@ -28,6 +28,7 @@
    align-items: center;
    margin-right: 100px;
    gap: 16px;
+   margin-left: auto;
 }
 
 .header__wrapper-list {

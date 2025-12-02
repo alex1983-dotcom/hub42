@@ -53,6 +53,7 @@
 
 .footer__title {
    font-size: clamp(16px, 1.6vw + 4px, 48px);
+   margin-left: auto;
 }
 @media (max-width: 1201px) {
    .footer__inner {

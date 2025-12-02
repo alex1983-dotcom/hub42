@@ -5,6 +5,8 @@ import { FooterSection, UrlSoc1als } from "../../types";
 import { NavigationBar } from "../NavigationBar";
 import tgPng from "../../assets/stash_telegram.png";
 import insPng from "../../assets/mdi_instagram.png";
+import { Link } from "react-router-dom";
+import { ScrollLink } from "../../Helpers/ScrollLink";
 export const Footer = () => {
    const { data, loading, error } = useFetch<FooterSection>(
       "http://localhost:8000/api/pages/footer/1/"
@@ -19,14 +21,40 @@ export const Footer = () => {
    return (
       <footer className="footer">
          <div className="footer__wrapper">
-            <h1 className="logo">{data?.title}</h1>
+            <Link to={"/"}>
+               <h1 className="logo">{data?.title}</h1>
+            </Link>
             <h3 className="footer__title">{data?.subtitle}</h3>
          </div>
          <div className="footer__inner">
-            <NavigationBar />
+            <ul className="header__wrapper-list footer">
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#equipment">Оборудование</ScrollLink>
+               </li>
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#company">О компании</ScrollLink>
+               </li>
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#services">Наши услуги</ScrollLink>
+               </li>
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#request">Оставить заявку</ScrollLink>
+               </li>
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#FAQ">FAQ</ScrollLink>
+               </li>
+               <li className="header__wrapper-item">
+                  <ScrollLink to="#blog">Блог</ScrollLink>
+               </li>
+            </ul>
             <div className="footer__UserAgreement">
-               <a href="">Пользовательское соглашение</a>
-               <a href="">Политика конфиденциальности</a>
+               <Link to="/privacy" target="_blank" rel="noopener noreferrer">
+                  Политикой конфиденциальности
+               </Link>
+
+               <Link to="/terms" target="_blank" rel="noopener noreferrer">
+                  Пользовательское соглашение
+               </Link>
             </div>
             <address className="footer__contacts">
                <p>Контакты:</p>

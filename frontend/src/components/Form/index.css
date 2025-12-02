@@ -98,6 +98,16 @@
    border: 1px solid #f5c6cb;
    border-radius: 4px;
 }
+.order-form__error-text {
+   color: #e74c3c;
+   font-size: 1.2rem;
+   margin-top: 4px;
+   display: block;
+}
+.order-form__submit:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+}
 @media (max-width: 768px) {
    .order-form__grid {
       display: grid;

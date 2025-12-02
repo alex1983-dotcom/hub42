@@ -231,6 +231,12 @@ export interface FooterSection {
    privacy_policy: string;
    is_system: boolean;
 }
+export interface FooterResponse {
+   count: number;
+   next: string | null;
+   previous: string | null;
+   results: FooterSection[];
+}
 export type StateIdPrinter = { id: number | null };
 
 export interface UrlSoc1als {

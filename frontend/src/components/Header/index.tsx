@@ -3,6 +3,8 @@ import { Main, UrlSoc1als } from "../../types";
 import "./index.css";
 import { BurgerButton, ModalPrinters, NavDrawer } from "../index";
 import { useFetch } from "../../Helpers";
+import { Link } from "react-router-dom";
+import { ScrollLink } from "../../Helpers/ScrollLink";
 
 const url = "http://localhost:8000/api";
 export const Header = () => {
@@ -44,33 +46,37 @@ export const Header = () => {
    if (error) return <p>Ошибка загрузки</p>;
    return (
       <header className="header">
-         <h1 className="logo">{data?.title}</h1>
+         <Link to={"/"}>
+            <h1 className="logo">{data?.title}</h1>
+         </Link>
+
          <nav className="header__nav__bar">
             <ul className="header__wrapper-list">
                <li className="header__wrapper-item">
-                  <a href="#equipment">Оборудование</a>
+                  <ScrollLink to="#equipment">Оборудование</ScrollLink>
                </li>
                <li className="header__wrapper-item">
-                  <a href="#company">О компании</a>
+                  <ScrollLink to="#company">О компании</ScrollLink>
                </li>
                <li className="header__wrapper-item">
-                  <a href="#services">Наши услуги</a>
+                  <ScrollLink to="#services">Наши услуги</ScrollLink>
                </li>
                <li className="header__wrapper-item">
-                  <a href="#request">Оставить заявку</a>
+                  <ScrollLink to="#request">Оставить заявку</ScrollLink>
+               
                </li>
                <li className="header__wrapper-item">
-                  <a href="#FAQ">FAQ</a>
+                  <ScrollLink to="#FAQ">FAQ</ScrollLink>
+               
                </li>
                <li className="header__wrapper-item">
-                  <a href="#blog">Блог</a>
+                  <ScrollLink to="#blog">Блог</ScrollLink>
+                  
                </li>
             </ul>
-
             <a href={urls?.results[1].url} target="_blank">
                <img src={imgs.img_1} alt="instagram" />
             </a>
-
             <a href={urls?.results[0].url} target="_blank">
                <img src={imgs.img_2} alt="instagram" />
             </a>

@@ -8,8 +8,10 @@ import { ReviewsAnswersAccordion } from "../ReviewsAnswersAccordion";
 import { ServicesSection } from "../ServicesSection";
 import { FormRequest } from "../FormRequest";
 import { BlogNews } from "../BlogNews";
+import { useScrollToHash } from "../../Helpers";
 
 export const Home = () => {
+     useScrollToHash(); // 👈 теперь срабатывает на любом hash-изменении
    return (
       <div className="App">
          <IndustryPrinters />
