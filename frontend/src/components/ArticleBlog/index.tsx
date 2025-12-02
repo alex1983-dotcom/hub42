@@ -1,5 +1,5 @@
 // src/pages/ArticleBlog/ArticleBlog.tsx
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Blog } from "../../types";
 import { useFetch } from "../../Helpers";
@@ -29,31 +29,21 @@ function extractAndRemoveFirstImage(md: string): {
 export const ArticleBlog = () => {
    const { slug } = useParams<{ slug: string }>();
 
-   /* ключ-перезапрос (cache-busting) */
-   const [tick, setTick] = useState(0);
-   const url = `${BASE_URL}/${slug}/?_t=${tick}`;
-
-   const { data: article, loading, error } = useFetch<Blog>(url);
+   const {
+      data: article,
+      loading,
+      error,
+   } = useFetch<Blog>(`${BASE_URL}/${slug}`);
 
    if (loading) return <div className="article-loading">Загрузка...</div>;
 
    if (error || !article)
-      return (
-         <div className="article-error">
-            {error ? "Ошибка загрузки" : "Статья не найдена"}
-            <br />
-            <button onClick={() => setTick((t) => t + 1)}>Обновить</button>
-         </div>
-      );
+      return <div className="article-error">Ошибка загрузки</div>;
 
    const { imagePath, newBody } = extractAndRemoveFirstImage(
       article.body ?? ""
    );
 
-   console.log("=== ArticleBlog render ===");
-   console.log("article:", article);
-   console.log("imagePath:", imagePath);
-   console.log("article.body:", article.body);
    return (
       <article className="article-blog">
          <h3 className="article-title">{article.title}</h3>
@@ -69,14 +59,6 @@ export const ArticleBlog = () => {
          )}
 
          <MdViewer markdown={newBody || "Материал подготавливается"} />
-
-         {/* кнопка обновления */}
-         <button
-            onClick={() => setTick((t) => t + 1)}
-            style={{ marginTop: 16 }}
-         >
-            Обновить статью
-         </button>
 
          <BlogsCards itemContent={[article]} mainPage={false} />
       </article>
