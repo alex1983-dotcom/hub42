@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css");
 .md-viewer {
    font-size: 25px;
    line-height: 1.55;
@@ -95,6 +96,15 @@
    border: none;
    border-top: 1px solid #ddd;
    margin: 2em 0;
+}
+/* Уменьшение размера степеней и индексов */
+.katex .msupsub .vlist-t {
+   font-size: 0.7em !important;
+}
+
+/* Убираем "вылезание" за черту дроби */
+.mord.mtight {
+   font-size: 20px;
 }
 @media (max-width: 1920px) {
    .md-viewer {
