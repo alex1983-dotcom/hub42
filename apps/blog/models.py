@@ -7,7 +7,8 @@ from django.utils import timezone
 from django.urls import reverse
 from mdeditor.fields import MDTextField
 from apps.core.models import TimeStampedModel
-
+from typing import cast
+from decouple import config
 
 class PostManager(models.Manager):
     def published(self):
@@ -49,36 +50,30 @@ class Post(TimeStampedModel):
     def save(self, *args, **kwargs):
         if self.status == "published" and not self.published_at:
             self.published_at = timezone.now()
+
+        self.body = re.sub(
+            r'src=(["\'])/media/',
+            rf'src=\1{config("DOMAIN")}/media/',
+            str(self.body)
+        )
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("blog:detail", kwargs={"slug": self.slug})
 
     def get_similar_posts(self, limit=3):
-        """
-        Находит похожие статьи по пересечению слов в заголовке и анонсе.
-        Возвращает список из `limit` статей, отсортированных по релевантности.
-        """
-        # Собираем "значимые" слова из текущей статьи
         current_text = f"{self.title} {self.preview}".lower()
-        words = set(re.findall(r"\w{3,}", current_text))  # только слова ≥3 символов
-
-        # Стоп-слова, которые не несут смысла
+        words = set(re.findall(r"\w{3,}", current_text))
         stop_words = {"про", "для", "что", "как", "при", "это", "наш", "вас"}
         keywords = words - stop_words
-
         if not keywords:
-            # Если ключевых слов нет — возвращаем последние статьи
             return Post.objects.published().exclude(id=self.id)[:limit]
 
-        # Ищем статьи, где встречаются эти слова
         query = Q()
         for word in keywords:
             query |= Q(title__icontains=word) | Q(preview__icontains=word)
-
         candidates = Post.objects.published().exclude(id=self.id).filter(query)
 
-        # Считаем баллы за каждую статью
         scored = []
         for post in candidates:
             score = 0
@@ -88,11 +83,8 @@ class Post(TimeStampedModel):
                     score += 1
             scored.append((post, score))
 
-        # Сортируем по баллам (по убыванию) и дате публикации
         scored.sort(
             key=lambda x: (x[1], x[0].published_at or x[0].created_at), reverse=True
         )
-
-        # Возвращаем только объекты, без счетчика
         return [post for post, score in scored[:limit]]
 

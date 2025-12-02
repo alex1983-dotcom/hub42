@@ -335,7 +335,7 @@
   "pk": 4,
   "fields": {
     "created_at": "2025-08-27T20:03:14.925Z",
-    "updated_at": "2025-10-28T11:43:55.890Z",
+    "updated_at": "2025-11-23T14:17:58.281Z",
     "block_type": "applications",
     "title": "Сферы применения",
     "subtitle": "Где уже работают принтеры",
@@ -872,16 +872,16 @@
 },
 {
   "model": "pages.blockitem",
-  "pk": 48,
+  "pk": 49,
   "fields": {
-    "created_at": "2025-10-28T11:46:08.599Z",
-    "updated_at": "2025-10-28T16:02:16.153Z",
+    "created_at": "2025-11-23T14:13:40.871Z",
+    "updated_at": "2025-11-23T14:15:48.802Z",
     "parent_block": 4,
     "title": "Робототехника",
-    "content": "Трансформеры",
-    "icon": null,
+    "content": "Терминатор.  \r\nСудный день",
+    "icon": 19,
     "sort_order": 0,
-    "is_active": true,
+    "is_active": false,
     "is_system": false
   }
 },
@@ -907,7 +907,7 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-09-08T11:37:56.948Z",
-    "updated_at": "2025-09-08T12:23:05.122Z",
+    "updated_at": "2025-11-19T19:34:51.154Z",
     "title": "КАК 3D-ПЕЧАТЬ ТРАНСФОРМИРУЕТ МЕДИЦИНУ: ТЕХНОЛОГИИ FDM В ЗДРАВООХРАНЕНИИ",
     "slug": "kak-3d-pechat-transformiruet-medicinu-tehnologii-fdm-v-zdravoohranenii",
     "preview": "FDM 3D-печать (Fused Deposition Modeling) меняет подход к созданию медицинских изделий. От анатомических моделей до функциональных протезов — технологии позволяют быстро, точно и доступно создавать то, что раньше требовало недель и крупных инвестиций.",
@@ -1323,7 +1323,7 @@
   "pk": 1,
   "fields": {
     "created_at": "2025-09-19T17:07:52.940Z",
-    "updated_at": "2025-10-30T18:31:43.701Z",
+    "updated_at": "2025-11-23T16:11:02.463Z",
     "icon": 16,
     "category": 4,
     "name": "CD400",
@@ -1455,10 +1455,10 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-09-24T18:43:34.914Z",
-    "updated_at": "2025-09-24T18:43:34.914Z",
+    "updated_at": "2025-11-23T16:08:42.765Z",
     "product": 1,
     "image": "equipment/gallery/CD400_CTzdhgz.png",
-    "alt": "",
+    "alt": "Принтер CD400",
     "sort_order": 0
   }
 },
@@ -1467,12 +1467,12 @@
   "pk": 1,
   "fields": {
     "created_at": "2025-08-19T20:50:16.911Z",
-    "updated_at": "2025-11-17T20:50:05.684Z",
+    "updated_at": "2025-11-29T19:25:10.576Z",
     "title": "Библиотека request",
     "image": "post/rectangle_2_d2Y2jvM.png",
     "slug": "biblioteka-request",
     "preview": "Requests превращает сложный HTTP-клиент в простой и интуитивно понятный инструмент.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\n# Библиотека `requests` — это\r\n\r\n**HTTP-библиотека для Python**, которая делает работу с веб-запросами невероятно простой и человекочитаемой. Это де-факто стандарт для выполнения HTTP-запросов в Python.\r\n\r\n## Основное назначение\r\n\r\nОтправка и получение данных по HTTP/HTTPS:\r\n- Получить веб-страницу или API-ответ\r\n- Отправить форму или JSON-данные\r\n- Работа с cookies, заголовками и аутентификацией\r\n- Загрузка файлов\r\n\r\n## Пример: \"До\" и \"После\"\r\n\r\n**Без requests (стандартный urllib):**\r\n```python\r\nimport urllib.request\r\nimport json\r\n\r\nreq = urllib.request.Request('https://api.example.com/data')\r\nreq.add_header('User-Agent', 'MyApp/1.0')\r\nwith urllib.request.urlopen(req) as response:\r\n    data = json.loads(response.read())\r\n```\r\n\r\n**С requests:**\r\n```python\r\nimport requests\r\n\r\nresponse = requests.get('https://api.example.com/data', \r\n                       headers={'User-Agent': 'MyApp/1.0'})\r\ndata = response.json()\r\n```\r\n\r\n## Ключевые возможности\r\n\r\n| Функция | Описание |\r\n|---------|----------|\r\n| `requests.get()` | GET-запрос (получение данных) |\r\n| `requests.post()` | POST-запрос (отправка данных) |\r\n| `requests.put()` / `.delete()` | PUT, DELETE и другие методы |\r\n| `response.json()` | Автоматический парсинг JSON |\r\n| `response.text` | Текстовое содержимое ответа |\r\n| `response.status_code` | HTTP-код статуса (200, 404 и т.д.) |\r\n| `params=...` | Автоматическая подстановка параметров в URL |\r\n| `headers=...` | Установка заголовков |\r\n| `cookies=...` | Работа с cookies |\r\n| `timeout=...` | Установка таймаута |\r\n| `auth=...` | Базовая аутентификация |\r\n\r\n## Установка\r\n\r\n```bash\r\npip install requests\r\n```\r\n\r\n## Практический пример\r\n\r\n```python\r\nimport requests\r\n\r\n# GET-запрос с параметрами\r\nresponse = requests.get(\r\n    'https://api.github.com/search/repositories',\r\n    params={'q': 'language:python'},\r\n    timeout=5\r\n)\r\n\r\nprint(f\"Статус: {response.status_code}\")\r\nprint(f\"Найдено: {response.json()['total_count']} репозиториев\")\r\n```\r\n\r\n**Requests превращает сложный HTTP-клиент в простой и интуитивно понятный инструмент.**",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n# Библиотека `requests` — это\r\n\r\n**HTTP-библиотека для Python**, которая делает работу с веб-запросами невероятно простой и человекочитаемой. Это де-факто стандарт для выполнения HTTP-запросов в Python.\r\n\r\n## Основное назначение\r\n\r\nОтправка и получение данных по HTTP/HTTPS:\r\n- Получить веб-страницу или API-ответ\r\n- Отправить форму или JSON-данные\r\n- Работа с cookies, заголовками и аутентификацией\r\n- Загрузка файлов\r\n\r\n## Пример: \"До\" и \"После\"\r\n\r\n**Без requests (стандартный urllib):**\r\n```python\r\nimport urllib.request\r\nimport json\r\n\r\nreq = urllib.request.Request('https://api.example.com/data')\r\nreq.add_header('User-Agent', 'MyApp/1.0')\r\nwith urllib.request.urlopen(req) as response:\r\n    data = json.loads(response.read())\r\n```\r\n\r\n**С requests:**\r\n```python\r\nimport requests\r\n\r\nresponse = requests.get('https://api.example.com/data', \r\n                       headers={'User-Agent': 'MyApp/1.0'})\r\ndata = response.json()\r\n```\r\n\r\n## Ключевые возможности\r\n\r\n| Функция | Описание |\r\n|---------|----------|\r\n| `requests.get()` | GET-запрос (получение данных) |\r\n| `requests.post()` | POST-запрос (отправка данных) |\r\n| `requests.put()` / `.delete()` | PUT, DELETE и другие методы |\r\n| `response.json()` | Автоматический парсинг JSON |\r\n| `response.text` | Текстовое содержимое ответа |\r\n| `response.status_code` | HTTP-код статуса (200, 404 и т.д.) |\r\n| `params=...` | Автоматическая подстановка параметров в URL |\r\n| `headers=...` | Установка заголовков |\r\n| `cookies=...` | Работа с cookies |\r\n| `timeout=...` | Установка таймаута |\r\n| `auth=...` | Базовая аутентификация |\r\n\r\n## Установка\r\n\r\n```bash\r\npip install requests\r\n```\r\n\r\n## Практический пример\r\n\r\n```python\r\nimport requests\r\n\r\n# GET-запрос с параметрами\r\nresponse = requests.get(\r\n    'https://api.github.com/search/repositories',\r\n    params={'q': 'language:python'},\r\n    timeout=5\r\n)\r\n\r\nprint(f\"Статус: {response.status_code}\")\r\nprint(f\"Найдено: {response.json()['total_count']} репозиториев\")\r\n```\r\n\r\n**Requests превращает сложный HTTP-клиент в простой и интуитивно понятный инструмент.**",
     "status": "published",
     "published_at": "2025-10-23T19:47:55Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
@@ -1483,12 +1483,12 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-10-24T17:31:04.853Z",
-    "updated_at": "2025-11-17T20:49:24.535Z",
+    "updated_at": "2025-11-29T19:23:54.681Z",
     "title": "Библиотека NumPy",
     "image": "post/rectangle_3_mQ4zJYZ.png",
     "slug": "biblioteka-numpy",
     "preview": "NumPy — библиотека Python, используемая для работы с массивами.",
-    "body": "![Подпись](/media/post/rectangle_3.png)\r\n\r\n### Что такое NumPy?\r\nNumPy — библиотека Python, используемая для работы с массивами.\r\n\r\nОн также имеет функции для работы в области линейной алгебры, преобразования Фурье и матриц.\r\n\r\nNumPy был создан в 2005 году Трэвисом Олифантом. Это проект с открытым исходным кодом, и вы можете использовать его бесплатно.\r\n\r\nNumPy означает Numerical Python.\r\n\r\nЗачем использовать NumPy?\r\nВ Python есть списки, которые выполняют функцию массивов, но они медленно обрабатываются.\r\n\r\nNumPy стремится предоставить объект массива, который в 50 раз быстрее традиционных списков Python.\r\n\r\nОбъект массива в NumPy называется ndarray, он предоставляет множество вспомогательных функций, которые ndarrayзначительно упрощают работу с ним.\r\n\r\nМассивы очень часто используются в науке о данных, где скорость и ресурсы имеют большое значение.\r\n\r\n### Тестовая таблица\r\n\r\n|  a | b  | c  |\r\n| ------------ | ------------ | ------------ |\r\n| 1  | 2  | 3  |\r\n| 4  | 5  | 6  |\r\n| 7  | 8  | 9  |\r\n| 10  | 11  | 12  |\r\n|  13 | 14  | 15  |\r\n\r\n### Математические формулы\r\n\r\n$$F = G \\frac{m_1 m_2}{r^2}$$\r\n\r\n$$\r\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\r\n$$\r\n\r\n### Тестовый список\r\n- строка 1\r\n- строка 2\r\n- строка 3\r\n\r\n1. строка_1\r\n2. строка_2\r\n\r\n### Строки кода\r\n```python\r\nclass Category(TimeStampedModel):\r\n    name = models.CharField(max_length=64, verbose_name=\"Название\")\r\n    slug = models.SlugField(unique=True, verbose_name=\"URL\")\r\n\r\n    class Meta:\r\n        verbose_name = \"Категория\"\r\n        verbose_name_plural = \"Категории\"\r\n        ordering = [\"name\"]\r\n```\r\n\r\n### Блок с цитатами\r\n\r\n> Цитаты к статье",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_3.png)\r\n\r\n### Что такое NumPy?\r\nNumPy — библиотека Python, используемая для работы с массивами.  \r\nОн также имеет функции для работы в области линейной алгебры, преобразования Фурье и матриц.  \r\nNumPy был создан в 2005 году Трэвисом Олифантом. Это проект с открытым исходным кодом, и вы можете использовать его бесплатно.  \r\nNumPy означает Numerical Python.  \r\n\r\n### Зачем использовать NumPy?  \r\n  \r\nВ Python есть списки, которые выполняют функцию массивов, но они медленно обрабатываются.  \r\nNumPy стремится предоставить объект массива, который в 50 раз быстрее традиционных списков Python.  \r\nОбъект массива в NumPy называется ndarray, он предоставляет множество вспомогательных функций, которые ndarray значительно упрощают работу с ним.  \r\nМассивы очень часто используются в науке о данных, где скорость и ресурсы имеют большое значение.  \r\n\r\n\r\n### Тестовая таблица\r\n\r\n|  a | b  | c  |\r\n| ------------ | ------------ | ------------ |\r\n| 1  | 2  | 3  |\r\n| 4  | 5  | 6  |\r\n| 7  | 8  | 9  |\r\n| 10  | 11  | 12  |\r\n|  13 | 14  | 15  |\r\n\r\n### Математические формулы\r\n\r\n$$F = G \\frac{m_1 m_2}{r^2}$$\r\n\r\n$$\r\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\r\n$$\r\n\r\n### Тестовый список\r\n- строка 1\r\n- строка 2\r\n- строка 3\r\n\r\n1. строка_1\r\n2. строка_2\r\n\r\n### Строки кода\r\n```python\r\nclass Category(TimeStampedModel):\r\n    name = models.CharField(max_length=64, verbose_name=\"Название\")\r\n    slug = models.SlugField(unique=True, verbose_name=\"URL\")\r\n\r\n    class Meta:\r\n        verbose_name = \"Категория\"\r\n        verbose_name_plural = \"Категории\"\r\n        ordering = [\"name\"]\r\n```\r\n\r\n### Блок с цитатами\r\n\r\n> Цитаты к статье",
     "status": "published",
     "published_at": "2025-10-24T17:30:50Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
@@ -1499,12 +1499,12 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-10-24T17:32:51.769Z",
-    "updated_at": "2025-11-17T20:48:39.981Z",
+    "updated_at": "2025-11-29T19:23:20.338Z",
     "title": "Фреймворк Django",
     "image": "post/rectangle_3_G9cPs8V.png",
     "slug": "frejmvork-django",
     "preview": "Django превращает разработку веб-приложений в упорядоченный, быстрый и безопасный процесс.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\n**Фреймворк Django — это**\r\n\r\n**Полноценный веб-фреймворк для Python**, который следует принципу **\"batteries included\"** — поставляется со всем необходимым для создания масштабируемых веб-приложений \"из коробки\".\r\n\r\n---\r\n\r\n## Основное назначение\r\n\r\nБыстрая разработка сложных веб-сайтов и API с минимальным количеством рутинного кода. Django берет на себя:\r\n\r\n- Приём HTTP-запросов и маршрутизацию\r\n- Работу с базой данных (ORM)\r\n- Административный интерфейс\r\n- Аутентификацию и авторизацию\r\n- Защиту от уязвимостей (SQL-инъекции, XSS, CSRF)\r\n- Управление статическими файлами и медиа\r\n\r\n---\r\n\r\n## Философия\r\n\r\n- **MTV (Model-Template-View)** — паттерн архитектуры\r\n- **DRY (Don't Repeat Yourself)** — минимум дублирования\r\n- **Convention over Configuration** — разумные значения по умолчанию\r\n- **Явное лучше неявного** — код должен быть понятным\r\n\r\n---\r\n\r\n## Ключевые возможности\r\n\r\n| Компонент | Что делает |\r\n|-----------|------------|\r\n| **ORM** | Работа с БД через Python-классы (не пишете SQL) |\r\n| **Админка** | Готовый интерфейс для управления данными |\r\n| **Маршрутизатор (URLs)** | Чистая система маршрутов с регулярными выражениями |\r\n| **Шаблонизатор** | Мощная система HTML-шаблонов |\r\n| **Формы** | Автогенерация, валидация, защита от CSRF |\r\n| **Аутентификация** | Система пользователей, групп, прав (готова к использованию) |\r\n| **Middleware** | Обработка запросов/ответов на всех этапах |\r\n| **Migrations** | Контроль версий структуры БД |\r\n\r\n---\r\n\r\n## Структура проекта\r\n\r\n```\r\nmyproject/\r\n├── manage.py          # Управляющий скрипт\r\n├── myproject/         # Настройки проекта\r\n│   ├── settings.py\r\n│   ├── urls.py\r\n│   └── wsgi.py\r\n└── myapp/             # Приложение (логика)\r\n    ├── models.py      # Модели БД\r\n    ├── views.py       # Представления\r\n    ├── urls.py        # Маршруты приложения\r\n    └── templates/     # HTML-шаблоны\r\n```\r\n\r\n---\r\n\r\n## Установка\r\n\r\n```bash\r\npip install django\r\ndjango-admin startproject myproject\r\ncd myproject\r\npython manage.py startapp myapp\r\n```\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```python\r\n# myapp/models.py\r\nfrom django.db import models\r\n\r\nclass Article(models.Model):\r\n    title = models.CharField(max_length=200)\r\n    content = models.TextField()\r\n    published = models.DateTimeField(auto_now_add=True)\r\n\r\n# myapp/views.py\r\nfrom django.shortcuts import render\r\nfrom .models import Article\r\n\r\ndef article_list(request):\r\n    articles = Article.objects.all()[:10]\r\n    return render(request, 'list.html', {'articles': articles})\r\n\r\n# myapp/urls.py\r\nfrom django.urls import path\r\nfrom . import views\r\n\r\nurlpatterns = [\r\n    path('articles/', views.article_list, name='article-list'),\r\n]\r\n\r\n# myproject/urls.py (подключить)\r\nfrom django.contrib import admin\r\nfrom django.urls import include, path\r\n\r\nurlpatterns = [\r\n    path('admin/', admin.site.urls),\r\n    path('', include('myapp.urls')),\r\n]\r\n```\r\n\r\n**Django превращает разработку веб-приложений в упорядоченный, быстрый и безопасный процесс.**",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n**Фреймворк Django — это**\r\n\r\n**Полноценный веб-фреймворк для Python**, который следует принципу **\"batteries included\"** — поставляется со всем необходимым для создания масштабируемых веб-приложений \"из коробки\".\r\n\r\n---\r\n\r\n## Основное назначение\r\n\r\nБыстрая разработка сложных веб-сайтов и API с минимальным количеством рутинного кода. Django берет на себя:\r\n\r\n- Приём HTTP-запросов и маршрутизацию\r\n- Работу с базой данных (ORM)\r\n- Административный интерфейс\r\n- Аутентификацию и авторизацию\r\n- Защиту от уязвимостей (SQL-инъекции, XSS, CSRF)\r\n- Управление статическими файлами и медиа\r\n\r\n---\r\n\r\n## Философия\r\n\r\n- **MTV (Model-Template-View)** — паттерн архитектуры\r\n- **DRY (Don't Repeat Yourself)** — минимум дублирования\r\n- **Convention over Configuration** — разумные значения по умолчанию\r\n- **Явное лучше неявного** — код должен быть понятным\r\n\r\n---\r\n\r\n## Ключевые возможности\r\n\r\n| Компонент | Что делает |\r\n|-----------|------------|\r\n| **ORM** | Работа с БД через Python-классы (не пишете SQL) |\r\n| **Админка** | Готовый интерфейс для управления данными |\r\n| **Маршрутизатор (URLs)** | Чистая система маршрутов с регулярными выражениями |\r\n| **Шаблонизатор** | Мощная система HTML-шаблонов |\r\n| **Формы** | Автогенерация, валидация, защита от CSRF |\r\n| **Аутентификация** | Система пользователей, групп, прав (готова к использованию) |\r\n| **Middleware** | Обработка запросов/ответов на всех этапах |\r\n| **Migrations** | Контроль версий структуры БД |\r\n\r\n---\r\n\r\n## Структура проекта\r\n\r\n```\r\nmyproject/\r\n├── manage.py          # Управляющий скрипт\r\n├── myproject/         # Настройки проекта\r\n│   ├── settings.py\r\n│   ├── urls.py\r\n│   └── wsgi.py\r\n└── myapp/             # Приложение (логика)\r\n    ├── models.py      # Модели БД\r\n    ├── views.py       # Представления\r\n    ├── urls.py        # Маршруты приложения\r\n    └── templates/     # HTML-шаблоны\r\n```\r\n\r\n---\r\n\r\n## Установка\r\n\r\n```bash\r\npip install django\r\ndjango-admin startproject myproject\r\ncd myproject\r\npython manage.py startapp myapp\r\n```\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```python\r\n# myapp/models.py\r\nfrom django.db import models\r\n\r\nclass Article(models.Model):\r\n    title = models.CharField(max_length=200)\r\n    content = models.TextField()\r\n    published = models.DateTimeField(auto_now_add=True)\r\n\r\n# myapp/views.py\r\nfrom django.shortcuts import render\r\nfrom .models import Article\r\n\r\ndef article_list(request):\r\n    articles = Article.objects.all()[:10]\r\n    return render(request, 'list.html', {'articles': articles})\r\n\r\n# myapp/urls.py\r\nfrom django.urls import path\r\nfrom . import views\r\n\r\nurlpatterns = [\r\n    path('articles/', views.article_list, name='article-list'),\r\n]\r\n\r\n# myproject/urls.py (подключить)\r\nfrom django.contrib import admin\r\nfrom django.urls import include, path\r\n\r\nurlpatterns = [\r\n    path('admin/', admin.site.urls),\r\n    path('', include('myapp.urls')),\r\n]\r\n```\r\n\r\n**Django превращает разработку веб-приложений в упорядоченный, быстрый и безопасный процесс.**",
     "status": "published",
     "published_at": "2025-10-24T17:32:33Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
@@ -1515,12 +1515,12 @@
   "pk": 4,
   "fields": {
     "created_at": "2025-10-24T17:35:06.334Z",
-    "updated_at": "2025-11-17T20:47:43.309Z",
+    "updated_at": "2025-11-29T19:23:04.485Z",
     "title": "Фреймоврк REACT",
     "image": "post/rectangle_2_zhpMb1J.png",
     "slug": "frejmovrk-react",
     "preview": "React превращает создание сложных интерфейсов в модульный, предсказуемый и высокопроизводительный процесс.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\n**React — это**\r\n\r\n**JavaScript-библиотека для построения пользовательских интерфейсов** (хотя в современной разработке её часто называют фреймворком из-за обширной экосистемы). Разработана Facebook (Meta) для создания интерактивных одностраничных приложений (SPA).\r\n\r\n---\r\n\r\n## Основное назначение\r\n\r\nСоздание динамичных, быстрых и масштабируемых UI с помощью **компонентного подхода**. React позволяет разбить интерфейс на независимые, переиспользуемые блоки и автоматически обновляет только изменённые части страницы.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Virtual DOM** | Виртуальное представление DOM для максимально быстрых обновлений |\r\n| **JSX** | Синтаксис, позволяющий писать HTML внутри JavaScript |\r\n| **Компоненты** | Всё — это компоненты: функции, возвращающие UI |\r\n| **Props** | Поток данных от родителя к дочерним компонентам |\r\n| **State** | Внутреннее состояние компонента (reactive) |\r\n| **Hooks** | Современный способ управления состоянием (useState, useEffect) |\r\n\r\n---\r\n\r\n## Установка и запуск\r\n\r\n```bash\r\n# Создать новое React-приложение\r\nnpx create-react-app my-app\r\ncd my-app\r\nnpm start\r\n```\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```jsx\r\n// Пример современного функционального компонента\r\nimport React, { useState } from 'react';\r\n\r\nfunction Counter() {\r\n  // Хук состояния\r\n  const [count, setCount] = useState(0);\r\n\r\n  return (\r\n    <div style={{ textAlign: 'center', padding: '50px' }}>\r\n      <h1>Счётчик: {count}</h1>\r\n      <button onClick={() => setCount(count + 1)}>\r\n        Увеличить\r\n      </button>\r\n      <button onClick={() => setCount(0)}>\r\n        Сбросить\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Counter;\r\n```\r\n\r\n---\r\n\r\n## Что React решает из коробки\r\n\r\n✅ **Мощная реактивность** — UI автоматически обновляется при изменении данных  \r\n✅ **Компонентная архитектура** — легко переиспользовать код  \r\n✅ **Огромная экосистема** — Redux, React Router, Next.js  \r\n✅ **React Native** — тот же код для iOS/Android  \r\n✅ **DevTools** — расширение браузера для отладки  \r\n\r\n**React превращает создание сложных интерфейсов в модульный, предсказуемый и высокопроизводительный процесс.**",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n**React — это**\r\n\r\n**JavaScript-библиотека для построения пользовательских интерфейсов** (хотя в современной разработке её часто называют фреймворком из-за обширной экосистемы). Разработана Facebook (Meta) для создания интерактивных одностраничных приложений (SPA).\r\n\r\n---\r\n\r\n## Основное назначение\r\n\r\nСоздание динамичных, быстрых и масштабируемых UI с помощью **компонентного подхода**. React позволяет разбить интерфейс на независимые, переиспользуемые блоки и автоматически обновляет только изменённые части страницы.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Virtual DOM** | Виртуальное представление DOM для максимально быстрых обновлений |\r\n| **JSX** | Синтаксис, позволяющий писать HTML внутри JavaScript |\r\n| **Компоненты** | Всё — это компоненты: функции, возвращающие UI |\r\n| **Props** | Поток данных от родителя к дочерним компонентам |\r\n| **State** | Внутреннее состояние компонента (reactive) |\r\n| **Hooks** | Современный способ управления состоянием (useState, useEffect) |\r\n\r\n---\r\n\r\n## Установка и запуск\r\n\r\n```bash\r\n# Создать новое React-приложение\r\nnpx create-react-app my-app\r\ncd my-app\r\nnpm start\r\n```\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```jsx\r\n// Пример современного функционального компонента\r\nimport React, { useState } from 'react';\r\n\r\nfunction Counter() {\r\n  // Хук состояния\r\n  const [count, setCount] = useState(0);\r\n\r\n  return (\r\n    <div style={{ textAlign: 'center', padding: '50px' }}>\r\n      <h1>Счётчик: {count}</h1>\r\n      <button onClick={() => setCount(count + 1)}>\r\n        Увеличить\r\n      </button>\r\n      <button onClick={() => setCount(0)}>\r\n        Сбросить\r\n      </button>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Counter;\r\n```\r\n\r\n---\r\n\r\n## Что React решает из коробки\r\n\r\n✅ **Мощная реактивность** — UI автоматически обновляется при изменении данных  \r\n✅ **Компонентная архитектура** — легко переиспользовать код  \r\n✅ **Огромная экосистема** — Redux, React Router, Next.js  \r\n✅ **React Native** — тот же код для iOS/Android  \r\n✅ **DevTools** — расширение браузера для отладки  \r\n\r\n**React превращает создание сложных интерфейсов в модульный, предсказуемый и высокопроизводительный процесс.**",
     "status": "published",
     "published_at": "2025-10-24T17:34:15Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
@@ -1531,14 +1531,14 @@
   "pk": 5,
   "fields": {
     "created_at": "2025-10-24T17:36:09.570Z",
-    "updated_at": "2025-11-17T20:50:36.172Z",
+    "updated_at": "2025-11-29T19:20:23.127Z",
     "title": "ОПП Python",
     "image": "post/rectangle_3_fTIde16.png",
     "slug": "opp-python",
     "preview": "ООП превращает код в понятную систему взаимодействующих объектов, делая сложные приложения управляемыми и расширяемыми.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\n#**ООП в Python — это**\r\n\r\n**Парадигма программирования**, которая объединяет данные и функции в единые сущности — **объекты**, позволяя создавать модульные, переиспользуемые и легко поддерживаемые программы через моделирование реальных сущностей и их взаимодействий.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Класс и объект** | Класс — это \"чертеж\" (структура), объект — конкретный экземпляр |\r\n| **Наследование** | Создание новых классов на основе существующих (переиспользование кода) |\r\n| **Инкапсуляция** | Сокрытие внутреннего состояния (приватные атрибуты) и предоставление публичного интерфейса |\r\n| **Полиморфизм** | Возможность использовать объекты разных классов с одинаковым интерфейсом |\r\n| **Абстракция** | Выделение главных характеристик, отделение от деталей реализации |\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```python\r\nfrom abc import ABC, abstractmethod\r\n\r\nclass BankAccount(ABC):\r\n    \"\"\"Абстрактный класс банковского счёта\"\"\"\r\n    \r\n    def __init__(self, owner: str, balance: float = 0):\r\n        self.owner = owner\r\n        self.__balance = balance  # Приватный атрибут (инкапсуляция)\r\n    \r\n    @property\r\n    def balance(self) -> float:\r\n        return self.__balance\r\n    \r\n    def deposit(self, amount: float) -> None:\r\n        if amount > 0:\r\n            self.__balance += amount\r\n    \r\n    @abstractmethod\r\n    def withdraw(self, amount: float) -> bool:\r\n        \"\"\"Абстрактный метод — каждый счёт снимает по-своему\"\"\"\r\n        pass\r\n\r\nclass CheckingAccount(BankAccount):\r\n    \"\"\"Расчётный счёт с базовыми правилами снятия\"\"\"\r\n    \r\n    def withdraw(self, amount: float) -> bool:\r\n        if amount <= self.balance:\r\n            self._BankAccount__balance -= amount  # Доступ к приватному атрибуту\r\n            return True\r\n        return False\r\n\r\nclass SavingsAccount(BankAccount):\r\n    \"\"\"Сберегательный счёт с лимитом снятий\"\"\"\r\n    \r\n    def __init__(self, owner: str, balance: float = 0, limit: int = 3):\r\n        super().__init__(owner, balance)\r\n        self.__withdrawal_limit = limit\r\n        self.__withdrawals = 0\r\n    \r\n    def withdraw(self, amount: float) -> bool:\r\n        \"\"\"Полиморфизм: своя логика снятия\"\"\"\r\n        if self.__withdrawals >= self.__withdrawal_limit:\r\n            return False\r\n        if amount <= self.balance:\r\n            self._BankAccount__balance -= amount\r\n            self.__withdrawals += 1\r\n            return True\r\n        return False\r\n\r\n# Использование\r\naccounts: list[BankAccount] = [\r\n    CheckingAccount(\"Иван\", 1000),\r\n    SavingsAccount(\"Мария\", 5000, limit=2)\r\n]\r\n\r\nfor acc in accounts:\r\n    print(f\"{acc.owner}: {acc.balance}₽\")\r\n    print(acc.withdraw(100))  # Полиморфизм: вызывается свой метод\r\n    print(f\"Остаток: {acc.balance}₽\\n\")\r\n```\r\n\r\n---\r\n\r\n**ООП превращает код в понятную систему взаимодействующих объектов, делая сложные приложения управляемыми и расширяемыми.**",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n# **ООП в Python — это**\r\n\r\n**Парадигма программирования**, которая объединяет данные и функции в единые сущности — **объекты**, позволяя создавать модульные, переиспользуемые и легко поддерживаемые программы через моделирование реальных сущностей и их взаимодействий.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Класс и объект** | Класс — это \"чертеж\" (структура), объект — конкретный экземпляр |\r\n| **Наследование** | Создание новых классов на основе существующих (переиспользование кода) |\r\n| **Инкапсуляция** | Сокрытие внутреннего состояния (приватные атрибуты) и предоставление публичного интерфейса |\r\n| **Полиморфизм** | Возможность использовать объекты разных классов с одинаковым интерфейсом |\r\n| **Абстракция** | Выделение главных характеристик, отделение от деталей реализации |\r\n\r\n---\r\n\r\n## Практический пример\r\n\r\n```python\r\nfrom abc import ABC, abstractmethod\r\n\r\nclass BankAccount(ABC):\r\n    \"\"\"Абстрактный класс банковского счёта\"\"\"\r\n    \r\n    def __init__(self, owner: str, balance: float = 0):\r\n        self.owner = owner\r\n        self.__balance = balance  # Приватный атрибут (инкапсуляция)\r\n    \r\n    @property\r\n    def balance(self) -> float:\r\n        return self.__balance\r\n    \r\n    def deposit(self, amount: float) -> None:\r\n        if amount > 0:\r\n            self.__balance += amount\r\n    \r\n    @abstractmethod\r\n    def withdraw(self, amount: float) -> bool:\r\n        \"\"\"Абстрактный метод — каждый счёт снимает по-своему\"\"\"\r\n        pass\r\n\r\nclass CheckingAccount(BankAccount):\r\n    \"\"\"Расчётный счёт с базовыми правилами снятия\"\"\"\r\n    \r\n    def withdraw(self, amount: float) -> bool:\r\n        if amount <= self.balance:\r\n            self._BankAccount__balance -= amount  # Доступ к приватному атрибуту\r\n            return True\r\n        return False\r\n\r\nclass SavingsAccount(BankAccount):\r\n    \"\"\"Сберегательный счёт с лимитом снятий\"\"\"\r\n    \r\n    def __init__(self, owner: str, balance: float = 0, limit: int = 3):\r\n        super().__init__(owner, balance)\r\n        self.__withdrawal_limit = limit\r\n        self.__withdrawals = 0\r\n    \r\n    def withdraw(self, amount: float) -> bool:\r\n        \"\"\"Полиморфизм: своя логика снятия\"\"\"\r\n        if self.__withdrawals >= self.__withdrawal_limit:\r\n            return False\r\n        if amount <= self.balance:\r\n            self._BankAccount__balance -= amount\r\n            self.__withdrawals += 1\r\n            return True\r\n        return False\r\n\r\n# Использование\r\naccounts: list[BankAccount] = [\r\n    CheckingAccount(\"Иван\", 1000),\r\n    SavingsAccount(\"Мария\", 5000, limit=2)\r\n]\r\n\r\nfor acc in accounts:\r\n    print(f\"{acc.owner}: {acc.balance}₽\")\r\n    print(acc.withdraw(100))  # Полиморфизм: вызывается свой метод\r\n    print(f\"Остаток: {acc.balance}₽\\n\")\r\n```\r\n\r\n---\r\n\r\n**ООП превращает код в понятную систему взаимодействующих объектов, делая сложные приложения управляемыми и расширяемыми.**",
     "status": "published",
-    "published_at": "2025-10-24T17:35:58Z",
+    "published_at": "2025-11-23T15:58:56Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
   }
 },
@@ -1547,12 +1547,12 @@
   "pk": 6,
   "fields": {
     "created_at": "2025-10-24T17:37:40.912Z",
-    "updated_at": "2025-11-17T20:46:03.139Z",
+    "updated_at": "2025-11-29T19:22:51.033Z",
     "title": "Модели в Django",
     "image": "post/rectangle_3_OsAy1KD.png",
     "slug": "modeli-v-django",
     "preview": "Модели Django превращают работу с базой данных в удобную и безопасную работу с Python-объектами, автоматически обрабатывая SQL, валидацию и связи.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\n**Модели в Django — это**\r\n\r\n**Слой объектно-реляционного отображения (ORM)**, который превращает таблицы базы данных в **Python-классы**, а записи — в объекты. Это сердце любого Django-приложения, где описывается структура данных, логика работы с ними и связи между сущностями.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Поля (Fields)** | Определяют тип данных: `CharField`, `IntegerField`, `DateTimeField`, `BooleanField` и др. |\r\n| **Связи** | `ForeignKey` (один-ко-многим), `ManyToManyField`, `OneToOneField` |\r\n| **Методы** | Логика работы с объектом: `__str__()`, `save()`, `delete()`, кастомные методы |\r\n| **Meta-класс** | Настройки модели: сортировка, название в админке, индексы |\r\n| **Менеджеры** | `objects` — интерфейс для запросов в БД (`filter()`, `get()`, `all()`) |\r\n| **Миграции** | `makemigrations` + `migrate` — версионность схемы БД |\r\n| **Админка** | Автоматический интерфейс для управления данными |\r\n\r\n---\r\n\r\n## Практический пример: Блог\r\n\r\n```python\r\nfrom django.db import models\r\nfrom django.contrib.auth.models import User\r\n\r\nclass Category(models.Model):\r\n    \"\"\"Категория статей\"\"\"\r\n    name = models.CharField(max_length=100, unique=True)\r\n    slug = models.SlugField(unique=True)\r\n    \r\n    class Meta:\r\n        verbose_name_plural = \"Categories\"\r\n        ordering = ['name']\r\n    \r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\nclass Article(models.Model):\r\n    \"\"\"Статья блога\"\"\"\r\n    STATUS_CHOICES = [\r\n        ('draft', 'Черновик'),\r\n        ('published', 'Опубликовано'),\r\n    ]\r\n    \r\n    title = models.CharField(max_length=200)\r\n    slug = models.SlugField(max_length=200, unique_for_date='published_date')\r\n    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles')\r\n    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)\r\n    tags = models.ManyToManyField('Tag', blank=True)\r\n    content = models.TextField()\r\n    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')\r\n    published_date = models.DateTimeField(auto_now_add=True)\r\n    updated_date = models.DateTimeField(auto_now=True)\r\n    views_count = models.IntegerField(default=0)\r\n    \r\n    class Meta:\r\n        ordering = ['-published_date']\r\n        indexes = [models.Index(fields=['-published_date'])]\r\n    \r\n    def __str__(self):\r\n        return self.title\r\n    \r\n    def get_short_content(self):\r\n        \"\"\"Возвращает первые 150 символов контента\"\"\"\r\n        return f\"{self.content[:150]}...\" if len(self.content) > 150 else self.content\r\n\r\n\r\nclass Tag(models.Model):\r\n    \"\"\"Тег для статей\"\"\"\r\n    name = models.CharField(max_length=50, unique=True)\r\n    \r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\n# Использование в консоли (python manage.py shell)\r\n# Создание\r\n# category = Category.objects.create(name=\"Python\", slug=\"python\")\r\n# article = Article.objects.create(\r\n#     title=\"О моделях Django\",\r\n#     author=User.objects.first(),\r\n#     category=category,\r\n#     content=\"Подробный текст...\",\r\n#     status=\"published\"\r\n# )\r\n\r\n# Чтение\r\n# published_articles = Article.objects.filter(status='published')\r\n# article = Article.objects.get(slug=\"o-modeljah-django\")\r\n\r\n# Обновление\r\n# article.views_count = 100\r\n# article.save()\r\n\r\n# Удаление\r\n# article.delete()\r\n```\r\n\r\n---\r\n\r\n**Модели Django превращают работу с базой данных в удобную и безопасную работу с Python-объектами, автоматически обрабатывая SQL, валидацию и связи.**",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n**Модели в Django — это**\r\n\r\n**Слой объектно-реляционного отображения (ORM)**, который превращает таблицы базы данных в **Python-классы**, а записи — в объекты. Это сердце любого Django-приложения, где описывается структура данных, логика работы с ними и связи между сущностями.\r\n\r\n---\r\n\r\n## Ключевые концепции\r\n\r\n| Концепция | Описание |\r\n|-----------|----------|\r\n| **Поля (Fields)** | Определяют тип данных: `CharField`, `IntegerField`, `DateTimeField`, `BooleanField` и др. |\r\n| **Связи** | `ForeignKey` (один-ко-многим), `ManyToManyField`, `OneToOneField` |\r\n| **Методы** | Логика работы с объектом: `__str__()`, `save()`, `delete()`, кастомные методы |\r\n| **Meta-класс** | Настройки модели: сортировка, название в админке, индексы |\r\n| **Менеджеры** | `objects` — интерфейс для запросов в БД (`filter()`, `get()`, `all()`) |\r\n| **Миграции** | `makemigrations` + `migrate` — версионность схемы БД |\r\n| **Админка** | Автоматический интерфейс для управления данными |\r\n\r\n---\r\n\r\n![Подпись](/media/post/rectangle_2.png)\r\n\r\n## Практический пример: Блог\r\n\r\n```python\r\nfrom django.db import models\r\nfrom django.contrib.auth.models import User\r\n\r\nclass Category(models.Model):\r\n    \"\"\"Категория статей\"\"\"\r\n    name = models.CharField(max_length=100, unique=True)\r\n    slug = models.SlugField(unique=True)\r\n    \r\n    class Meta:\r\n        verbose_name_plural = \"Categories\"\r\n        ordering = ['name']\r\n    \r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\nclass Article(models.Model):\r\n    \"\"\"Статья блога\"\"\"\r\n    STATUS_CHOICES = [\r\n        ('draft', 'Черновик'),\r\n        ('published', 'Опубликовано'),\r\n    ]\r\n    \r\n    title = models.CharField(max_length=200)\r\n    slug = models.SlugField(max_length=200, unique_for_date='published_date')\r\n    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles')\r\n    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)\r\n    tags = models.ManyToManyField('Tag', blank=True)\r\n    content = models.TextField()\r\n    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')\r\n    published_date = models.DateTimeField(auto_now_add=True)\r\n    updated_date = models.DateTimeField(auto_now=True)\r\n    views_count = models.IntegerField(default=0)\r\n    \r\n    class Meta:\r\n        ordering = ['-published_date']\r\n        indexes = [models.Index(fields=['-published_date'])]\r\n    \r\n    def __str__(self):\r\n        return self.title\r\n    \r\n    def get_short_content(self):\r\n        \"\"\"Возвращает первые 150 символов контента\"\"\"\r\n        return f\"{self.content[:150]}...\" if len(self.content) > 150 else self.content\r\n\r\n\r\nclass Tag(models.Model):\r\n    \"\"\"Тег для статей\"\"\"\r\n    name = models.CharField(max_length=50, unique=True)\r\n    \r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\n# Использование в консоли (python manage.py shell)\r\n# Создание\r\n# category = Category.objects.create(name=\"Python\", slug=\"python\")\r\n# article = Article.objects.create(\r\n#     title=\"О моделях Django\",\r\n#     author=User.objects.first(),\r\n#     category=category,\r\n#     content=\"Подробный текст...\",\r\n#     status=\"published\"\r\n# )\r\n\r\n# Чтение\r\n# published_articles = Article.objects.filter(status='published')\r\n# article = Article.objects.get(slug=\"o-modeljah-django\")\r\n\r\n# Обновление\r\n# article.views_count = 100\r\n# article.save()\r\n\r\n# Удаление\r\n# article.delete()\r\n```\r\n\r\n---\r\n\r\n**Модели Django превращают работу с базой данных в удобную и безопасную работу с Python-объектами, автоматически обрабатывая SQL, валидацию и связи.**",
     "status": "published",
     "published_at": "2025-10-24T17:37:08Z",
     "meta_description": "Обзор нового 3D-принтера HUB42-X1: скорость 200 мм/с, точность ±0.05 мм, цена от 250 000 ₽. Подробности внутри!"
@@ -1563,12 +1563,12 @@
   "pk": 7,
   "fields": {
     "created_at": "2025-11-07T07:45:43.603Z",
-    "updated_at": "2025-11-17T20:47:01.913Z",
+    "updated_at": "2025-11-29T19:19:36.657Z",
     "title": "Хранение металлических порошков, практические рекомендации",
     "image": "post/rectangle_2_002sEPa.png",
     "slug": "hranenie-metallicheskih-poroshkov-prakticheskie-rekomendacii",
     "preview": "Металлические порошки — ключевой материал для аддитивного производства методом селективного лазерного спекания (SLS) или селективного лазерного плавления (SLM). Их качество напрямую влияет на прочность, точность и стабильность итоговых изделий. Поэтому правильное хранение порошков — критически важный этап, который нельзя недооценивать.",
-    "body": "![Подпись](/media/post/rectangle_2.png)\r\n\r\nМеталлические порошки — ключевой материал для аддитивного производства методом селективного лазерного спекания (SLS) или селективного лазерного плавления (SLM). Их качество напрямую влияет на прочность, точность и стабильность итоговых изделий. Поэтому правильное хранение порошков — критически важный этап, который нельзя недооценивать.\r\nПочему важно соблюдать условия хранения\r\n\r\nМеталлические порошки гигроскопичны и чувствительны к внешней среде. При неправильном хранении они могут:\r\nВпитывать влагу, что приводит к агломерации и затруднённой подаче в принтер;\r\nОкисляться, теряя свои физико-химические свойства;\r\nЗагрязняться механически (пылинками, масляными парами, органическими веществами), что может повлиять на качество печати и даже повредить оборудование.\r\n\r\n\r\n\r\nОптимальные условия хранения\r\n\r\n1. Контроль влажности\r\n\r\nМеталлические порошки необходимо хранить в сухом помещении с относительной влажностью не выше 30–40%. Идеально — использовать герметичные контейнеры с осушителями или специализированные шкафы с контролем влажности.\r\n\r\n2. Температурный режим\r\n\r\nТемпература хранения должна быть стабильной, в пределах +18…+25 °C. Резкие перепады температуры могут привести к конденсации влаги внутри упаковки.\r\n\r\n3. Защита от кислорода\r\n\r\nДля некоторых порошков, таких как титановые или алюминиевые сплавы, рекомендуется хранение в инертной среде (например, под азотом или аргоном), чтобы предотвратить окисление.\r\n\r\n4. Использование оригинальной упаковки\r\n\r\nПроизводители порошков поставляют материал в герметичных упаковках, часто с осушителями. Не стоит пересыпать порошок без крайней необходимости. Если упаковка вскрыта — плотно её закройте и используйте как можно скорее.\r\n\r\n5. Хранение по партиям\r\n\r\nКаждая партия порошка должна храниться с маркировкой: дата поставки, производитель, тип сплава, номер партии. Это важно для отслеживания свойств материала и контроля качества печати.\r\n\r\n\r\n\r\nКак понять, что порошок испортился\r\n\r\nОбразование комков или слёживание — признак влаги.\r\nИзменение цвета — возможный сигнал окисления.\r\nПовышенное пылеобразование или нестабильная подача — указывает на загрязнение или нарушение фракционного состава.\r\n\r\nВ случае сомнений, перед использованием рекомендуется провести повторный анализ порошка (например, с помощью лазерной дифракции или спектроскопии).\r\n\r\n\r\n\r\nИтоги\r\n\r\nПравильное хранение металлических порошков — основа стабильной и безопасной работы 3D-принтера. Мы рекомендуем:\r\nХранить порошки в сухом, прохладном, защищённом от света месте;\r\nИспользовать герметичную упаковку и контролировать влажность;\r\nВести строгий учёт партий и соблюдать FIFO (first in — first out) при использовании материала.\r\n\r\nЕсли вы подбираете оборудование для печати металлом или ищете решения для безопасного хранения расходников — команда [название вашей компании] готова помочь. Мы не только поставляем промышленное оборудование, но и консультируем по всей цепочке аддитивного производства: от выбора материала до послепечатной обработки.",
+    "body": "![Подпись](http://localhost:8000/media/post/rectangle_2.png)\r\n\r\n\r\nМеталлические порошки — ключевой материал для аддитивного производства методом селективного лазерного спекания (SLS) или селективного лазерного плавления (SLM). Их качество напрямую влияет на прочность, точность и стабильность итоговых изделий. Поэтому правильное хранение порошков — критически важный этап, который нельзя недооценивать.\r\nПочему важно соблюдать условия хранения\r\n\r\nМеталлические порошки гигроскопичны и чувствительны к внешней среде. При неправильном хранении они могут:\r\nВпитывать влагу, что приводит к агломерации и затруднённой подаче в принтер;\r\nОкисляться, теряя свои физико-химические свойства;\r\nЗагрязняться механически (пылинками, масляными парами, органическими веществами), что может повлиять на качество печати и даже повредить оборудование.\r\n\r\n\r\n\r\nОптимальные условия хранения\r\n\r\n1. Контроль влажности\r\n\r\nМеталлические порошки необходимо хранить в сухом помещении с относительной влажностью не выше 30–40%. Идеально — использовать герметичные контейнеры с осушителями или специализированные шкафы с контролем влажности.\r\n\r\n2. Температурный режим\r\n\r\nТемпература хранения должна быть стабильной, в пределах +18…+25 °C. Резкие перепады температуры могут привести к конденсации влаги внутри упаковки.\r\n\r\n3. Защита от кислорода\r\n\r\nДля некоторых порошков, таких как титановые или алюминиевые сплавы, рекомендуется хранение в инертной среде (например, под азотом или аргоном), чтобы предотвратить окисление.\r\n\r\n4. Использование оригинальной упаковки\r\n\r\nПроизводители порошков поставляют материал в герметичных упаковках, часто с осушителями. Не стоит пересыпать порошок без крайней необходимости. Если упаковка вскрыта — плотно её закройте и используйте как можно скорее.\r\n\r\n5. Хранение по партиям\r\n\r\nКаждая партия порошка должна храниться с маркировкой: дата поставки, производитель, тип сплава, номер партии. Это важно для отслеживания свойств материала и контроля качества печати.\r\n\r\n\r\n\r\nКак понять, что порошок испортился\r\n\r\nОбразование комков или слёживание — признак влаги.\r\nИзменение цвета — возможный сигнал окисления.\r\nПовышенное пылеобразование или нестабильная подача — указывает на загрязнение или нарушение фракционного состава.\r\n\r\nВ случае сомнений, перед использованием рекомендуется провести повторный анализ порошка (например, с помощью лазерной дифракции или спектроскопии).\r\n\r\n\r\n\r\nИтоги\r\n\r\nПравильное хранение металлических порошков — основа стабильной и безопасной работы 3D-принтера. Мы рекомендуем:\r\nХранить порошки в сухом, прохладном, защищённом от света месте;\r\nИспользовать герметичную упаковку и контролировать влажность;\r\nВести строгий учёт партий и соблюдать FIFO (first in — first out) при использовании материала.\r\n\r\nЕсли вы подбираете оборудование для печати металлом или ищете решения для безопасного хранения расходников — команда [название вашей компании] готова помочь. Мы не только поставляем промышленное оборудование, но и консультируем по всей цепочке аддитивного производства: от выбора материала до послепечатной обработки.",
     "status": "published",
     "published_at": "2025-11-07T07:43:51Z",
     "meta_description": "Металлические порошки — ключевой материал для аддитивного производства методом селективного лазерного спекания (SLS) или селективного лазерного плавления (SLM)."
@@ -1835,6 +1835,66 @@
   }
 },
 {
+  "model": "requests.contactrequest",
+  "pk": 16,
+  "fields": {
+    "created_at": "2025-11-21T23:04:18.013Z",
+    "updated_at": "2025-11-21T23:04:18.013Z",
+    "name": "Александр Макаров",
+    "email": "alebarda2018@gmail.com",
+    "phone": "+375295565530",
+    "company": "ProffShina",
+    "lead_source": 5,
+    "message": "",
+    "is_processed": false
+  }
+},
+{
+  "model": "requests.contactrequest",
+  "pk": 17,
+  "fields": {
+    "created_at": "2025-11-23T15:53:24.398Z",
+    "updated_at": "2025-11-23T15:53:24.398Z",
+    "name": "Александр Макаров",
+    "email": "alebarda2018@gmail.com",
+    "phone": "+375295565530",
+    "company": "ProffShina",
+    "lead_source": 5,
+    "message": "",
+    "is_processed": false
+  }
+},
+{
+  "model": "requests.contactrequest",
+  "pk": 18,
+  "fields": {
+    "created_at": "2025-11-25T15:53:35.851Z",
+    "updated_at": "2025-11-25T15:53:35.851Z",
+    "name": "Александр Макаров",
+    "email": "alebarda2018@gmail.com",
+    "phone": "+375295565530",
+    "company": "proff",
+    "lead_source": 5,
+    "message": "",
+    "is_processed": false
+  }
+},
+{
+  "model": "requests.contactrequest",
+  "pk": 19,
+  "fields": {
+    "created_at": "2025-11-26T20:56:24.065Z",
+    "updated_at": "2025-11-26T20:56:24.065Z",
+    "name": "Александр Макаров",
+    "email": "alebarda2018@gmail.com",
+    "phone": "+375295565530",
+    "company": "ООО \"Златодар\"",
+    "lead_source": 3,
+    "message": "Привет мир!",
+    "is_processed": false
+  }
+},
+{
   "model": "requests.reviews",
   "pk": 1,
   "fields": {
@@ -2035,13 +2095,13 @@
   "pk": 15,
   "fields": {
     "created_at": "2025-11-06T19:09:40.924Z",
-    "updated_at": "2025-11-06T19:09:40.924Z",
+    "updated_at": "2025-11-25T16:37:22.894Z",
     "name": "Александр Макаров",
     "email": "alebarda2018@gmail.com",
     "phone": "+375295565530",
     "company": "ормгмгм",
     "review": "шпаашнеаеша",
-    "is_published": false
+    "is_published": true
   }
 },
 {
