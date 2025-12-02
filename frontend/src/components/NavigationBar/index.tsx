@@ -1,25 +1,26 @@
 import React from "react";
 import "./index.css";
+import { ScrollLink } from "../../Helpers/ScrollLink";
 export const NavigationBar = () => {
    return (
       <ul className="header__wrapper-list footer">
          <li className="header__wrapper-item">
-            <a href="#equipment">Оборудование</a>
+            <ScrollLink to="#equipment">Оборудование</ScrollLink>
          </li>
          <li className="header__wrapper-item">
-            <a href="#company">О компании</a>
+            <ScrollLink to="#company">О компании</ScrollLink>
          </li>
          <li className="header__wrapper-item">
-            <a href="#services">Наши услуги</a>
+            <ScrollLink to="#services">Наши услуги</ScrollLink>
          </li>
          <li className="header__wrapper-item">
-            <a href="#request">Оставить заявку</a>
+            <ScrollLink to="#request">Оставить заявку</ScrollLink>
          </li>
          <li className="header__wrapper-item">
-            <a href="#FAQ">FAQ</a>
+            <ScrollLink to="#FAQ">FAQ</ScrollLink>
          </li>
          <li className="header__wrapper-item">
-            <a href="#blog">Блог</a>
+            <ScrollLink to="#blog">Блог</ScrollLink>
          </li>
       </ul>
    );
