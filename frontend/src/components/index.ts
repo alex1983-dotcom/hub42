@@ -30,3 +30,5 @@ export * from "./BlogSLider";
 export * from "./Markdown";
 export * from "./ArticleBlog";
 export * from "./BlogsCards";
+export * from "./Terms";
+export * from "./Privacy";

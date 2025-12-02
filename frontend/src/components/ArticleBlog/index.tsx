@@ -9,7 +9,8 @@ import { BlogsCards, MdViewer } from "../../components";
 const BASE_URL = "http://localhost:8000/api/blog";
 
 /* ищем первую Markdown-картинку в любом месте текста */
-const MD_IMG_REGEX = /!\[.*?\]\(\/media\/[^)]+\.(?:png|jpg|jpeg|gif|webp)\)/;
+const MD_IMG_REGEX =
+   /!\[.*?\]\(https?:\/\/[^)]+\/media\/[^)]+\.(?:png|jpg|jpeg|gif|webp)\)/i;
 
 function extractAndRemoveFirstImage(md: string): {
    imagePath: string | null;
@@ -18,9 +19,10 @@ function extractAndRemoveFirstImage(md: string): {
    const match = MD_IMG_REGEX.exec(md);
    if (!match) return { imagePath: null, newBody: md };
 
-   const imagePath =
-      match[0].match(/\(\/media\/[^)]+\)/)?.[0].slice(1, -1) ?? null;
+   const fullUrl = match[0].match(/\((https?:\/\/[^)]+)\)/)?.[1] ?? "";
+   const imagePath = fullUrl.replace("http://localhost:8000", ""); // убираем хост
    const newBody = md.replace(match[0], "").trim();
+
    return { imagePath, newBody };
 }
 
@@ -48,11 +50,15 @@ export const ArticleBlog = () => {
       article.body ?? ""
    );
 
+   console.log("=== ArticleBlog render ===");
+   console.log("article:", article);
+   console.log("imagePath:", imagePath);
+   console.log("article.body:", article.body);
    return (
       <article className="article-blog">
          <h3 className="article-title">{article.title}</h3>
 
-         {imagePath ? (
+         {imagePath && (
             <figure className="article-figure">
                <img
                   className="article-figure-image"
@@ -60,8 +66,6 @@ export const ArticleBlog = () => {
                   alt={article.title}
                />
             </figure>
-         ) : (
-            <div className="article-no-image">Нет изображения</div>
          )}
 
          <MdViewer markdown={newBody || "Материал подготавливается"} />

@@ -5,6 +5,7 @@ import { FooterSection, UrlSoc1als } from "../../types";
 import { NavigationBar } from "../NavigationBar";
 import tgPng from "../../assets/stash_telegram.png";
 import insPng from "../../assets/mdi_instagram.png";
+import { Link } from "react-router-dom";
 export const Footer = () => {
    const { data, loading, error } = useFetch<FooterSection>(
       "http://localhost:8000/api/pages/footer/1/"
@@ -19,7 +20,9 @@ export const Footer = () => {
    return (
       <footer className="footer">
          <div className="footer__wrapper">
-            <h1 className="logo">{data?.title}</h1>
+            <Link to={"/"}>
+               <h1 className="logo">{data?.title}</h1>
+            </Link>
             <h3 className="footer__title">{data?.subtitle}</h3>
          </div>
          <div className="footer__inner">
