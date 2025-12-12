@@ -17,59 +17,51 @@ export const Header = () => {
       data: urls,
       loading,
       error,
-   } = useFetch<UrlSoc1als>("http://localhost:8000/api/social/");
+   } = useFetch<UrlSoc1als>(`${url}/social/`);
 
+   /* --------- данные блока --------- */
    useEffect(() => {
-      const loadHeaderData = async () => {
-         // 1. блок с логотипом
+      const loadBlocks = async () => {
          try {
-            const rPage = await fetch(url + "/pages/blocks/1");
-            if (rPage.ok) setData(await rPage.json());
+            const r = await fetch(`${url}/pages/blocks/1`);
+            if (r.ok) setData(await r.json());
          } catch {
             console.log("blocks fetch failed");
          }
+      };
+      loadBlocks();
+   }, []);
 
-         // 2. иконки – берём ТОЛЬКО активные
+   /* --------- иконки всегда --------- */
+   useEffect(() => {
+      const loadIcons = async () => {
          try {
-            const rIcons = await fetch(url + "/pages/icons/");
-            if (!rIcons.ok) throw new Error("icons empty");
-            const list: {
-               id: number;
-               url?: string;
-               css_class?: string;
-               name?: string;
-            }[] = await rIcons.json();
-
-            // ищем нужные картинки
-            const instIcon = list.find((i) =>
-               (i.css_class || i.name || "").toLowerCase().includes("instagram")
-            );
-            const tgIcon = list.find((i) =>
-               (i.css_class || i.name || "").toLowerCase().includes("telegram")
-            );
-
+            const [r1, r2] = await Promise.all([
+               fetch(`${url}/pages/icons/1/`),
+               fetch(`${url}/pages/icons/2/`),
+            ]);
+            const instIcon = r1.ok ? await r1.json() : null;
+            const tgIcon = r2.ok ? await r2.json() : null;
             setImgs({
                img_1: instIcon?.url ?? "",
                img_2: tgIcon?.url ?? "",
             });
          } catch {
-            // если бэк вернул 404 или пустой массив – ничего не ставим
             setImgs({ img_1: "", img_2: "" });
          }
       };
-
-      loadHeaderData();
+      loadIcons();
    }, []);
 
    if (loading) return <p>Loading…</p>;
    if (error) return <p>Ошибка загрузки</p>;
 
-   const inst = urls?.results?.find((s: any) => s.name === "instagram");
-   const tg = urls?.results?.find((s: any) => s.name === "telegram");
+   const inst = urls?.results?.find((s) => s.name === "instagram");
+   const tg = urls?.results?.find((s) => s.name === "telegram");
 
    return (
       <header className="header">
-         <Link to={"/"}>
+         <Link to="/">
             <h1 className="logo">{data?.title}</h1>
          </Link>
 
@@ -94,18 +86,23 @@ export const Header = () => {
                   <ScrollLink to="#blog">Блог</ScrollLink>
                </li>
             </ul>
+            <a
+               href={inst?.url || undefined}
+               target="_blank"
+               rel="noreferrer"
+               className="header__wrapper-item"
+            >
+               <img src={imgs.img_1} alt="instagram" />
+            </a>
 
-            {/* рендерим только если есть и url и картинка */}
-            {inst?.url && imgs.img_1 && (
-               <a href={inst.url} target="_blank" rel="noreferrer">
-                  <img src={imgs.img_1} alt="instagram" />
-               </a>
-            )}
-            {tg?.url && imgs.img_2 && (
-               <a href={tg.url} target="_blank" rel="noreferrer">
-                  <img src={imgs.img_2} alt="telegram" />
-               </a>
-            )}
+            <a
+               href={tg?.url || undefined}
+               target="_blank"
+               rel="noreferrer"
+               className="header__wrapper-item"
+            >
+               <img src={imgs.img_2} alt="telegram" />
+            </a>
          </nav>
 
          <BurgerButton isOpen={isOpen} setOpen={setOpen} />
