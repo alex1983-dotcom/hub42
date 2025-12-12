@@ -1,27 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import { useFetch } from "../../Helpers";
 import { FooterSection, UrlSoc1als } from "../../types";
-import { NavigationBar } from "../NavigationBar";
-import tgPng from "../../assets/stash_telegram.png";
-import insPng from "../../assets/mdi_instagram.png";
 import { Link } from "react-router-dom";
 import { ScrollLink } from "../../Helpers/ScrollLink";
 
+const url = "http://localhost:8000/api";
+
 export const Footer = () => {
    const { data, loading, error } = useFetch<FooterSection>(
-      "http://localhost:8000/api/pages/footer/1/"
+      `${url}/pages/footer/1/`
    );
-   const { data: urls } = useFetch<UrlSoc1als>(
-      "http://localhost:8000/api/social/"
-   );
+   const { data: urls } = useFetch<UrlSoc1als>(`${url}/social/`);
+
+   const [imgs, setImgs] = React.useState({ img_1: "", img_2: "" });
+
+   /* иконки всегда */
+   useEffect(() => {
+      const loadIcons = async () => {
+         try {
+            const [r1, r2] = await Promise.all([
+               fetch(`${url}/pages/icons/1/`),
+               fetch(`${url}/pages/icons/2/`),
+            ]);
+            const instIcon = r1.ok ? await r1.json() : null;
+            const tgIcon = r2.ok ? await r2.json() : null;
+            setImgs({
+               img_1: instIcon?.url ?? "",
+               img_2: tgIcon?.url ?? "",
+            });
+         } catch {
+            setImgs({ img_1: "", img_2: "" });
+         }
+      };
+      loadIcons();
+   }, []);
 
    if (loading) return <p>Loading…</p>;
    if (error) return <p>Ошибка загрузки</p>;
 
-   // безопасно достаём активные ссылки
-   const inst = urls?.results?.find?.((s: any) => s.name === "instagram");
-   const tg = urls?.results?.find?.((s: any) => s.name === "telegram");
+   const inst = urls?.results?.find((s) => s.name === "instagram");
+   const tg = urls?.results?.find((s) => s.name === "telegram");
 
    return (
       <footer className="footer">
@@ -65,21 +84,27 @@ export const Footer = () => {
 
             <address className="footer__contacts">
                <p>Контакты:</p>
-               <a href="mailto:office@hub.by">{data?.email}</a>
-               <a href="tel:+375296999999">{data?.office_phone}</a>
+               <a href={`mailto:${data?.email}`}>{data?.email}</a>
+               <a href={`tel:${data?.office_phone}`}>{data?.office_phone}</a>
 
                <div className="footer__pict">
-                  {/* показываем иконку только если есть url */}
-                  {tg?.url && (
-                     <a href={tg.url} target="_blank" rel="noreferrer">
-                        <img src={tgPng} alt="telegram" />
-                     </a>
-                  )}
-                  {inst?.url && (
-                     <a href={inst.url} target="_blank" rel="noreferrer">
-                        <img src={insPng} alt="instagram" />
-                     </a>
-                  )}
+                  {/* иконки всегда, ссылка – если активна */}
+
+                  <a
+                     href={tg?.url || undefined}
+                     target="_blank"
+                     rel="noreferrer"
+                  >
+                     <img src={imgs.img_2} alt="telegram" />
+                  </a>
+
+                  <a
+                     href={inst?.url || undefined}
+                     target="_blank"
+                     rel="noreferrer"
+                  >
+                     <img src={imgs.img_1} alt="instagram" />
+                  </a>
                </div>
             </address>
 
