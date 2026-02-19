@@ -1,18 +1,12 @@
-# config/settings/production.py
-"""
-Боевые настройки HUB42.
-MySQL 8, логи WARNING+, опциональный INFO-хендлер для отладки.
-Всё секретное через python-decouple.
-"""
 from .base import *
 from pathlib import Path
 from decouple import config
 
-# --------------- базовые ---------------------------------------------------
+
 DEBUG = False
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=lambda v: [s.strip() for s in v.split(",")])
 
-# --------------- MySQL -----------------------------------------------------
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -28,7 +22,7 @@ DATABASES = {
     }
 }
 
-# --------------- логирование --------------------------------------------------
+
 LOG_DIR = Path(config("LOG_DIR", default="/var/log/hub42"))
 LOG_DIR.mkdir(mode=0o755, exist_ok=True)
 
